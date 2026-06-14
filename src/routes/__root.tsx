@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Acompañamiento nutricional personalizado en Playa del Carmen y en línea: recomposición corporal, salud digestiva y mejora de hábitos sin dietas extremas.",
       },
       { name: "author", content: "LN Susana Wignall" },
-      { property: "og:title", content: "LN Susana Wignall — Nutrióloga" },
+      { property: "og:title", content: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
       {
         property: "og:description",
         content:
@@ -93,6 +93,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_MX" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
+      { name: "description", content: "Nutri Conecta: Professional landing page for a nutritionist, focused on personalized guidance and habit transformation." },
+      { property: "og:description", content: "Nutri Conecta: Professional landing page for a nutritionist, focused on personalized guidance and habit transformation." },
+      { name: "twitter:description", content: "Nutri Conecta: Professional landing page for a nutritionist, focused on personalized guidance and habit transformation." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3838481e-5531-4020-9b26-1079b5ca9e7a/id-preview-bbdf0914--cfd46fa8-db71-400f-b280-bec75a7f8a03.lovable.app-1781407374175.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3838481e-5531-4020-9b26-1079b5ca9e7a/id-preview-bbdf0914--cfd46fa8-db71-400f-b280-bec75a7f8a03.lovable.app-1781407374175.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
