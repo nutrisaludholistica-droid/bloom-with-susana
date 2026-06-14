@@ -77,22 +77,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
+      {
+        name: "description",
+        content:
+          "Acompañamiento nutricional personalizado en Playa del Carmen y en línea: recomposición corporal, salud digestiva y mejora de hábitos sin dietas extremas.",
+      },
+      { name: "author", content: "LN Susana Wignall" },
+      { property: "og:title", content: "LN Susana Wignall — Nutrióloga" },
+      {
+        property: "og:description",
+        content:
+          "Reconecta con tu cuerpo desde una nutrición consciente y sostenible. Consultas y paquetes de acompañamiento en Playa del Carmen y en línea.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:locale", content: "es_MX" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap",
       },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
