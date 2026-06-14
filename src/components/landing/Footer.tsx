@@ -61,7 +61,12 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border/60 pt-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} LN Susana Wignall. Todos los derechos reservados.</p>
-          <p>Hecho con cariño en Playa del Carmen.</p>
+          <div className="flex items-center gap-4">
+            <p>Hecho con cariño en Playa del Carmen.</p>
+            <a href="/auth" className="hover:text-sage opacity-60 hover:opacity-100 transition">
+              Acceso CRM
+            </a>
+          </div>
         </div>
       </div>
     </footer>

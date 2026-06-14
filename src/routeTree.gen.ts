@@ -9,38 +9,150 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedCrmRouteImport } from './routes/_authenticated/crm'
+import { Route as AuthenticatedCrmIndexRouteImport } from './routes/_authenticated/crm.index'
+import { Route as AuthenticatedCrmPacientesRouteImport } from './routes/_authenticated/crm.pacientes'
+import { Route as AuthenticatedCrmAgendaRouteImport } from './routes/_authenticated/crm.agenda'
+import { Route as AuthenticatedCrmPacientesPatientIdRouteImport } from './routes/_authenticated/crm.pacientes.$patientId'
+import { Route as AuthenticatedCrmPacientesPatientIdConsultaRouteImport } from './routes/_authenticated/crm.pacientes.$patientId.consulta'
 
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedCrmRoute = AuthenticatedCrmRouteImport.update({
+  id: '/crm',
+  path: '/crm',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedCrmIndexRoute = AuthenticatedCrmIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedCrmRoute,
+} as any)
+const AuthenticatedCrmPacientesRoute =
+  AuthenticatedCrmPacientesRouteImport.update({
+    id: '/pacientes',
+    path: '/pacientes',
+    getParentRoute: () => AuthenticatedCrmRoute,
+  } as any)
+const AuthenticatedCrmAgendaRoute = AuthenticatedCrmAgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
+  getParentRoute: () => AuthenticatedCrmRoute,
+} as any)
+const AuthenticatedCrmPacientesPatientIdRoute =
+  AuthenticatedCrmPacientesPatientIdRouteImport.update({
+    id: '/$patientId',
+    path: '/$patientId',
+    getParentRoute: () => AuthenticatedCrmPacientesRoute,
+  } as any)
+const AuthenticatedCrmPacientesPatientIdConsultaRoute =
+  AuthenticatedCrmPacientesPatientIdConsultaRouteImport.update({
+    id: '/consulta',
+    path: '/consulta',
+    getParentRoute: () => AuthenticatedCrmPacientesPatientIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/crm': typeof AuthenticatedCrmRouteWithChildren
+  '/crm/agenda': typeof AuthenticatedCrmAgendaRoute
+  '/crm/pacientes': typeof AuthenticatedCrmPacientesRouteWithChildren
+  '/crm/': typeof AuthenticatedCrmIndexRoute
+  '/crm/pacientes/$patientId': typeof AuthenticatedCrmPacientesPatientIdRouteWithChildren
+  '/crm/pacientes/$patientId/consulta': typeof AuthenticatedCrmPacientesPatientIdConsultaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/crm/agenda': typeof AuthenticatedCrmAgendaRoute
+  '/crm/pacientes': typeof AuthenticatedCrmPacientesRouteWithChildren
+  '/crm': typeof AuthenticatedCrmIndexRoute
+  '/crm/pacientes/$patientId': typeof AuthenticatedCrmPacientesPatientIdRouteWithChildren
+  '/crm/pacientes/$patientId/consulta': typeof AuthenticatedCrmPacientesPatientIdConsultaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
+  '/_authenticated/crm': typeof AuthenticatedCrmRouteWithChildren
+  '/_authenticated/crm/agenda': typeof AuthenticatedCrmAgendaRoute
+  '/_authenticated/crm/pacientes': typeof AuthenticatedCrmPacientesRouteWithChildren
+  '/_authenticated/crm/': typeof AuthenticatedCrmIndexRoute
+  '/_authenticated/crm/pacientes/$patientId': typeof AuthenticatedCrmPacientesPatientIdRouteWithChildren
+  '/_authenticated/crm/pacientes/$patientId/consulta': typeof AuthenticatedCrmPacientesPatientIdConsultaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/crm'
+    | '/crm/agenda'
+    | '/crm/pacientes'
+    | '/crm/'
+    | '/crm/pacientes/$patientId'
+    | '/crm/pacientes/$patientId/consulta'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/crm/agenda'
+    | '/crm/pacientes'
+    | '/crm'
+    | '/crm/pacientes/$patientId'
+    | '/crm/pacientes/$patientId/consulta'
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/auth'
+    | '/_authenticated/crm'
+    | '/_authenticated/crm/agenda'
+    | '/_authenticated/crm/pacientes'
+    | '/_authenticated/crm/'
+    | '/_authenticated/crm/pacientes/$patientId'
+    | '/_authenticated/crm/pacientes/$patientId/consulta'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +160,112 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/crm': {
+      id: '/_authenticated/crm'
+      path: '/crm'
+      fullPath: '/crm'
+      preLoaderRoute: typeof AuthenticatedCrmRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/crm/': {
+      id: '/_authenticated/crm/'
+      path: '/'
+      fullPath: '/crm/'
+      preLoaderRoute: typeof AuthenticatedCrmIndexRouteImport
+      parentRoute: typeof AuthenticatedCrmRoute
+    }
+    '/_authenticated/crm/pacientes': {
+      id: '/_authenticated/crm/pacientes'
+      path: '/pacientes'
+      fullPath: '/crm/pacientes'
+      preLoaderRoute: typeof AuthenticatedCrmPacientesRouteImport
+      parentRoute: typeof AuthenticatedCrmRoute
+    }
+    '/_authenticated/crm/agenda': {
+      id: '/_authenticated/crm/agenda'
+      path: '/agenda'
+      fullPath: '/crm/agenda'
+      preLoaderRoute: typeof AuthenticatedCrmAgendaRouteImport
+      parentRoute: typeof AuthenticatedCrmRoute
+    }
+    '/_authenticated/crm/pacientes/$patientId': {
+      id: '/_authenticated/crm/pacientes/$patientId'
+      path: '/$patientId'
+      fullPath: '/crm/pacientes/$patientId'
+      preLoaderRoute: typeof AuthenticatedCrmPacientesPatientIdRouteImport
+      parentRoute: typeof AuthenticatedCrmPacientesRoute
+    }
+    '/_authenticated/crm/pacientes/$patientId/consulta': {
+      id: '/_authenticated/crm/pacientes/$patientId/consulta'
+      path: '/consulta'
+      fullPath: '/crm/pacientes/$patientId/consulta'
+      preLoaderRoute: typeof AuthenticatedCrmPacientesPatientIdConsultaRouteImport
+      parentRoute: typeof AuthenticatedCrmPacientesPatientIdRoute
+    }
   }
 }
 
+interface AuthenticatedCrmPacientesPatientIdRouteChildren {
+  AuthenticatedCrmPacientesPatientIdConsultaRoute: typeof AuthenticatedCrmPacientesPatientIdConsultaRoute
+}
+
+const AuthenticatedCrmPacientesPatientIdRouteChildren: AuthenticatedCrmPacientesPatientIdRouteChildren =
+  {
+    AuthenticatedCrmPacientesPatientIdConsultaRoute:
+      AuthenticatedCrmPacientesPatientIdConsultaRoute,
+  }
+
+const AuthenticatedCrmPacientesPatientIdRouteWithChildren =
+  AuthenticatedCrmPacientesPatientIdRoute._addFileChildren(
+    AuthenticatedCrmPacientesPatientIdRouteChildren,
+  )
+
+interface AuthenticatedCrmPacientesRouteChildren {
+  AuthenticatedCrmPacientesPatientIdRoute: typeof AuthenticatedCrmPacientesPatientIdRouteWithChildren
+}
+
+const AuthenticatedCrmPacientesRouteChildren: AuthenticatedCrmPacientesRouteChildren =
+  {
+    AuthenticatedCrmPacientesPatientIdRoute:
+      AuthenticatedCrmPacientesPatientIdRouteWithChildren,
+  }
+
+const AuthenticatedCrmPacientesRouteWithChildren =
+  AuthenticatedCrmPacientesRoute._addFileChildren(
+    AuthenticatedCrmPacientesRouteChildren,
+  )
+
+interface AuthenticatedCrmRouteChildren {
+  AuthenticatedCrmAgendaRoute: typeof AuthenticatedCrmAgendaRoute
+  AuthenticatedCrmPacientesRoute: typeof AuthenticatedCrmPacientesRouteWithChildren
+  AuthenticatedCrmIndexRoute: typeof AuthenticatedCrmIndexRoute
+}
+
+const AuthenticatedCrmRouteChildren: AuthenticatedCrmRouteChildren = {
+  AuthenticatedCrmAgendaRoute: AuthenticatedCrmAgendaRoute,
+  AuthenticatedCrmPacientesRoute: AuthenticatedCrmPacientesRouteWithChildren,
+  AuthenticatedCrmIndexRoute: AuthenticatedCrmIndexRoute,
+}
+
+const AuthenticatedCrmRouteWithChildren =
+  AuthenticatedCrmRoute._addFileChildren(AuthenticatedCrmRouteChildren)
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedCrmRoute: typeof AuthenticatedCrmRouteWithChildren
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedCrmRoute: AuthenticatedCrmRouteWithChildren,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
