@@ -1,46 +1,96 @@
-# Landing Page — LN Susana Wignall
+# CRM clínico — LN Susana Wignall
 
-Landing one-page mobile-first, estética wellness premium (verde salvia + crema + terracota), enfocada 100% en conversión a WhatsApp. Sin backend, sin formularios, sin precios.
+CRM privado de un solo usuario (Susana) para gestionar expedientes nutricionales conforme a **NOM-004-SSA3-2012** (expediente clínico, base regulatoria de COFEPRIS). Vive en `/crm/*`, separado de la landing pública. Pacientes NO entran.
 
-## Decisiones confirmadas
+## 1. Backend (Lovable Cloud)
 
-- **Mapa:** iframe de Google Maps embebido en sección Ubicación + botón "Ver en Google Maps".
-- **Tipografía:** Fraunces (títulos, serif cálida) + Inter (cuerpo).
-- **Marca:** monograma "SW" provisional (reemplazable después por logo).
-- **CTA universal:** todos los botones llevan a `https://wa.me/529842799652?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20para%20reservar.`
+Se activa Lovable Cloud para: auth email/password (solo Susana), base de datos PostgreSQL con RLS, y storage privado para archivos.
 
-## Estructura (una sola ruta `/`)
+**Tablas (todas con RLS: solo el dueño autenticado lee/escribe):**
 
-1. **Header fijo** — monograma SW + nav (Inicio, Paquetes, Sobre mí, Talleres, Testimonios, FAQs, Ubicación) + botón "Reservar". En móvil: hamburguesa.
-2. **Hero** — nombre profesional, título, subtítulo, CTA principal, imagen generada wellness.
-3. **Beneficios / problema** — texto introductorio + 7 beneficios con íconos sutiles.
-4. **Servicios** — 4 tarjetas (consulta personalizada, recomposición, salud digestiva, hábitos).
-5. **Paquetes** — 3 tarjetas comparativas (Básico 3m, Transformación 6m destacado como recomendado, Reconexión 9m). Lista de incluye, nota "No incluye insumos", CTA WhatsApp en cada uno. Sin precios.
-6. **Sobre mí** — bio + cédula 156228944 + formación/logros + imagen wellness.
-7. **Cursos y talleres** (secundario, visualmente más discreto) — 4 tarjetas: Fermentos, Kéfir desde cero, Hagamos el súper saludable, Aprende a leer etiquetas. CTA "Solicitar información".
-8. **Testimonios** — 2 reseñas + 1 caso de transformación, con badge "Testimonio provisional" para que sea fácil reemplazarlos.
-9. **FAQs** — acordeón con las 11 preguntas.
-10. **Ubicación** — dirección Hea'n Clinic, teléfono 984 367 7627, iframe Google Maps, botón "Ver en Google Maps".
-11. **CTA final** — bloque grande con título de cierre y botón WhatsApp.
-12. **Footer** — nombre, cédula, teléfonos, copyright, estructura preparada (oculta) para redes sociales futuras.
-13. **Botón flotante WhatsApp** — siempre visible en móvil y desktop.
+- `profiles` — perfil de Susana (cédula 156228944, nombre, firma).
+- `patients` — ficha de identificación: nombre, fecha de nacimiento, sexo, teléfono, email, ocupación, dirección, contacto de emergencia, fecha de alta.
+- `allergies` — alergias e intolerancias alimentarias por paciente (alérgeno, severidad, notas, fecha de detección). Campo destacado en toda la ficha.
+- `medical_history` — antecedentes heredofamiliares, patológicos, no patológicos, gineco-obstétricos, quirúrgicos (1 registro por paciente, editable).
+- `medications` — medicamentos y suplementos activos/históricos (nombre, dosis, frecuencia, indicación, fecha inicio/fin, prescriptor).
+- `consultations` — cada consulta (inicial o seguimiento): fecha/hora, tipo, motivo, notas SOAP (subjetivo/objetivo/análisis/plan), objetivos, próxima cita.
+- `anthropometry` — mediciones por consulta: peso, talla, IMC (calculado), circunferencias (cintura, cadera, brazo, muslo, pantorrilla), pliegues cutáneos.
+- `bioimpedance` — captura Tanita 8 electrodos: % grasa total, masa muscular total + por segmento (brazo izq/der, pierna izq/der, tronco), agua corporal, masa ósea, grasa visceral, edad metabólica, BMR.
+- `food_recall` — recordatorio 24h (desayuno/colación/comida/cena con descripción) + frecuencia alimentaria (grupos × frecuencia semanal).
+- `nutrition_plans` — plan: kcal objetivo, distribución macros, recomendaciones, restricciones (autollenadas desde alergias), archivo PDF opcional.
+- `appointments` — agenda: paciente, fecha/hora, duración, modalidad (presencial Hea'n / online), estatus (agendada/realizada/cancelada), notas.
+- `attachments` — laboratorios, fotos progreso, consentimientos firmados (storage privado).
+- `audit_log` — bitácora inmutable: tabla, registro, acción (insert/update/delete), usuario, timestamp, diff (cumplimiento NOM-004 nivel "base sólida").
 
-## Detalles técnicos
+**Cumplimiento COFEPRIS / NOM-004 incluido:**
+- Identificación del responsable (cédula visible) en cada nota.
+- Fecha y hora automática en cada registro.
+- Consentimiento informado: campo en `patients` + archivo en `attachments`.
+- Bitácora de cambios (`audit_log`) vía triggers de Postgres.
+- RLS estricto: nadie excepto Susana autenticada accede a los datos.
+- Storage privado con URLs firmadas de corta duración.
+- Alergias destacadas en banner rojo en toda la ficha del paciente.
 
-- Stack del proyecto: TanStack Start + React 19 + Tailwind v4 (ya configurado). Construyo en `src/routes/index.tsx` con componentes en `src/components/landing/`.
-- **Design system** en `src/styles.css`: tokens oklch para paleta wellness (salvia, crema, terracota, oliva oscuro, blanco cálido) en `:root` + `@theme inline`. Tipografías via `<link>` en `__root.tsx` head, tokens `--font-display` (Fraunces) y `--font-sans` (Inter).
-- **Imágenes generadas** (5 en total, guardadas en `src/assets/`):
-  - Hero: nutrióloga en escena de consulta cálida y natural
-  - Sobre mí: retrato editorial wellness
-  - Servicios/paquetes: bowl con alimentos frescos y orgánicos
-  - Talleres: escena de cocina saludable casera
-  - Decorativa secundaria: ingredientes / frutas frescas
-- **SEO** en el `head` de la ruta: title, description, og:title, og:description, og:image (hero), twitter card, lang="es".
-- **Accesibilidad:** contraste AA, alt text en todas las imágenes, navegación por teclado en menú móvil y acordeón FAQ, `aria-label` en botones de icono.
-- **Performance:** imágenes `loading="lazy"` excepto hero, scroll suave entre secciones, sin librerías pesadas (solo lucide-react ya disponible).
-- **Animaciones sutiles:** fade-in al hacer scroll en secciones, hover suave en tarjetas. Nada exagerado.
-- **Mobile-first:** breakpoints sm/md/lg, menú colapsable, paquetes en stack vertical en móvil → 3 columnas en desktop, botón flotante WhatsApp visible siempre.
+## 2. Frontend (rutas protegidas)
 
-## Fuera de alcance (confirmado)
+Toda la sección bajo `src/routes/_authenticated/crm/...` (gate `ssr: false` ya gestionado por la integración Supabase). Login en `/auth`.
 
-Sin pagos, sin formulario, sin login, sin base de datos, sin blog, sin agenda, sin CRM, sin precios visibles, sin redes sociales activas.
+**Páginas:**
+
+- `/auth` — login email/password.
+- `/crm` — dashboard: próximas citas hoy/semana, pacientes recientes, alertas de seguimiento atrasado.
+- `/crm/pacientes` — listado con búsqueda, filtros (activos/inactivos), badge de alergias.
+- `/crm/pacientes/nuevo` — alta con wizard (datos → antecedentes → alergias → consentimiento).
+- `/crm/pacientes/$id` — ficha completa con tabs:
+  - **Resumen** (banner de alergias, datos, próxima cita, último peso)
+  - **Antecedentes** (heredofamiliares, patológicos, etc.)
+  - **Alergias & Medicamentos**
+  - **Consultas** (timeline: inicial + seguimientos, cada uno expande SOAP)
+  - **Antropometría & Tanita** (tabla histórica + gráficas de evolución: peso, % grasa, masa muscular)
+  - **Alimentación** (recordatorios 24h y frecuencia)
+  - **Planes nutricionales** (lista + descarga)
+  - **Archivos** (laboratorios, fotos, PDFs)
+  - **Bitácora** (audit log filtrado por paciente)
+- `/crm/pacientes/$id/consulta/nueva` — formulario completo de consulta (SOAP + antropometría + Tanita + plan).
+- `/crm/agenda` — calendario mensual/semanal con citas, drag para reagendar, alta rápida.
+- `/crm/configuracion` — perfil de Susana, plantillas de plan, exportación de expediente PDF.
+
+**UI:** misma estética wellness de la landing (Fraunces + Inter, paleta salvia/crema), pero con densidad de datos tipo dashboard clínico (tablas compactas, sidebar de navegación CRM, breadcrumbs).
+
+## 3. Detalles técnicos
+
+- **Stack:** TanStack Start + React 19 + Tailwind v4 + shadcn/ui (ya instalado).
+- **Server functions** (`src/lib/crm/*.functions.ts`) con `requireSupabaseAuth` para todas las lecturas/escrituras → RLS aplica como Susana.
+- **Validación:** Zod en cliente y servidor (longitudes, formatos, rangos clínicos plausibles).
+- **Gráficas:** Recharts (ya en proyecto) para evolución antropométrica.
+- **Calendario:** componente custom sobre `date-fns` + shadcn (sin libs pesadas).
+- **PDF de expediente:** server function con `pdf-lib` (Worker-compatible) para exportación firmada con cédula y timestamp.
+- **Triggers de auditoría:** función plpgsql `audit_trigger()` aplicada a tablas clínicas.
+- **Sin afectar la landing:** el sitio público `/` queda intacto; el header de la landing no muestra el CRM.
+
+## 4. Entrega por fases
+
+**Fase 1 (esta iteración, MVP funcional):**
+- Auth + esquema completo + RLS + audit log.
+- Pacientes (alta, listado, ficha con todos los tabs estructurales).
+- Consulta inicial y seguimiento con SOAP + antropometría + Tanita 8 elec.
+- Alergias destacadas, medicamentos, antecedentes.
+- Agenda básica (lista + alta).
+
+**Fase 2 (siguiente turno, si lo apruebas):**
+- Recordatorio 24h y frecuencia alimentaria.
+- Gráficas de evolución.
+- Carga de archivos.
+- Exportación PDF NOM-004.
+- Vista calendario completa con drag-to-reschedule.
+
+## 5. Fuera de alcance
+
+- Portal de pacientes / login para pacientes.
+- Cobros, facturación, integración con PSP.
+- Envío automático de WhatsApp/SMS (puede agregarse después con Twilio).
+- Multi-usuario / roles (queda preparado pero no se expone).
+
+---
+
+**Confirmar para construir Fase 1.** Si quieres mover algo a Fase 1 (ej. recordatorio 24h o gráficas), dímelo antes de aprobar.
