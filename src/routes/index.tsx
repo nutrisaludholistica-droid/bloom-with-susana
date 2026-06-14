@@ -1,29 +1,59 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/landing/Header";
+import { Hero } from "@/components/landing/Hero";
+import { Benefits } from "@/components/landing/Benefits";
+import { Services } from "@/components/landing/Services";
+import { Packages } from "@/components/landing/Packages";
+import { About } from "@/components/landing/About";
+import { Workshops } from "@/components/landing/Workshops";
+import { Testimonials } from "@/components/landing/Testimonials";
+import { FAQ } from "@/components/landing/FAQ";
+import { Location } from "@/components/landing/Location";
+import { FinalCTA } from "@/components/landing/FinalCTA";
+import { Footer } from "@/components/landing/Footer";
+import { WhatsappFloat } from "@/components/landing/WhatsappFloat";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
+      {
+        name: "description",
+        content:
+          "Acompañamiento nutricional personalizado: recomposición corporal, salud digestiva y hábitos sostenibles en Playa del Carmen y en línea.",
+      },
+      {
+        property: "og:title",
+        content: "LN Susana Wignall — Nutrióloga",
+      },
+      {
+        property: "og:description",
+        content:
+          "Reconecta con tu cuerpo desde una nutrición consciente y sostenible. Consultas y paquetes en Playa del Carmen y en línea.",
+      },
     ],
   }),
-  component: Index,
+  component: LandingPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function LandingPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <Hero />
+        <Benefits />
+        <Services />
+        <Packages />
+        <About />
+        <Workshops />
+        <Testimonials />
+        <FAQ />
+        <Location />
+        <FinalCTA />
+      </main>
+      <Footer />
+      <WhatsappFloat />
     </div>
   );
 }
