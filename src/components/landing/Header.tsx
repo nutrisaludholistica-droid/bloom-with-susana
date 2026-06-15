@@ -106,11 +106,18 @@ export function Header() {
               </a>
             ))}
             <a
+              href="/crm"
+              onClick={() => setOpen(false)}
+              className="mt-3 inline-flex items-center justify-center rounded-full border border-sage/50 px-5 py-3 text-base font-medium text-olive"
+            >
+              Acceso CRM
+            </a>
+            <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-base font-medium text-primary-foreground"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-base font-medium text-primary-foreground"
             >
               Reservar por WhatsApp
             </a>
