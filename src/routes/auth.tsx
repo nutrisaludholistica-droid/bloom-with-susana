@@ -10,22 +10,27 @@ import { Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
+  validateSearch: (s: Record<string, unknown>) => ({
+    denied: s.denied ? 1 : undefined,
+  }),
   head: () => ({ meta: [{ title: "Acceso CRM — LN Susana Wignall" }] }),
   component: AuthPage,
 });
 
 function AuthPage() {
   const navigate = useNavigate();
+  const { denied } = Route.useSearch();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (denied) return;
     supabase.auth.getSession().then(({ data }) => {
       if (data.session) navigate({ to: "/crm" });
     });
-  }, [navigate]);
+  }, [navigate, denied]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -64,6 +69,11 @@ function AuthPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
+          {denied && (
+            <div className="mb-4 rounded-md border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+              Esta cuenta no tiene autorización para acceder al CRM.
+            </div>
+          )}
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Correo</Label>
