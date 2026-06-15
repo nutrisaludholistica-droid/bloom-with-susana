@@ -41,7 +41,7 @@ export function About() {
             Sobre mí
           </span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl text-olive">
-            LN Susana Wignall
+            Susana Wignall
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Cédula profesional: 156228944
