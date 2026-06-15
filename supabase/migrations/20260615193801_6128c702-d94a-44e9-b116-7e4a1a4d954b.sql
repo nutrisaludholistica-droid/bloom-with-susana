@@ -1,0 +1,3 @@
+REVOKE EXECUTE ON FUNCTION public.log_audit() FROM PUBLIC, authenticated, anon;
+REVOKE EXECUTE ON FUNCTION public.set_updated_at() FROM PUBLIC, authenticated, anon;
+REVOKE EXECUTE ON FUNCTION public.handle_new_user() FROM PUBLIC, authenticated, anon;
