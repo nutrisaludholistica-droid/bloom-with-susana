@@ -74,6 +74,7 @@ function AuthPage() {
               Esta cuenta no tiene autorización para acceder al CRM.
             </div>
           )}
+          <form onSubmit={onSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Correo</Label>
               <Input
