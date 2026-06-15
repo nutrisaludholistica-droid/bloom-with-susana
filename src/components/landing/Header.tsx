@@ -51,7 +51,7 @@ export function Header() {
             SW
           </span>
           <span className="truncate font-display text-base sm:text-lg text-olive">
-            LN Susana Wignall
+            &nbsp;Susana Wignall
           </span>
         </a>
 

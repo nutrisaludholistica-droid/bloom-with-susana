@@ -25,10 +25,8 @@ export function Hero() {
             Playa del Carmen · Consulta en línea
           </div>
 
-          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] sm:text-5xl lg:text-[3.4rem] text-olive">
-            Deja de sentirte estancado/a: transforma tus hábitos y{" "}
-            <span className="italic text-sage">reconecta con tu cuerpo</span>{" "}
-            desde una nutrición personalizada y sostenible.
+          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] sm:text-5xl lg:text-[3.4rem] text-olive whitespace-pre-line">
+            Transforma tus hábitos y reconecta con tu cuerpo {"\n"}
           </h1>
 
           <p className="mt-6 max-w-xl text-base sm:text-lg text-foreground/75 leading-relaxed">
