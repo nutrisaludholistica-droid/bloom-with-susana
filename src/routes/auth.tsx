@@ -10,6 +10,9 @@ import { Loader2 } from "lucide-react";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
+  validateSearch: (s: Record<string, unknown>) => ({
+    denied: s.denied ? 1 : undefined,
+  }),
   head: () => ({ meta: [{ title: "Acceso CRM — LN Susana Wignall" }] }),
   component: AuthPage,
 });
