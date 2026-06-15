@@ -69,7 +69,11 @@ function AuthPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form onSubmit={onSubmit} className="space-y-4">
+          {denied && (
+            <div className="mb-4 rounded-md border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+              Esta cuenta no tiene autorización para acceder al CRM.
+            </div>
+          )}
             <div className="space-y-2">
               <Label htmlFor="email">Correo</Label>
               <Input
