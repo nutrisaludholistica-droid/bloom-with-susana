@@ -1,5 +1,5 @@
 import { ArrowRight, MapPin } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero-mangos.jpg.asset.json";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export function Hero() {
@@ -62,8 +62,8 @@ export function Hero() {
           <div className="absolute -inset-6 rounded-[2.5rem] bg-sage-soft/40 -rotate-2" aria-hidden />
           <div className="relative overflow-hidden rounded-[2rem] border border-border/70 shadow-xl shadow-olive/5">
             <img
-              src={heroImg}
-              alt="Bowl con alimentos frescos: hojas verdes, aguacate, cítricos y semillas sobre mantel de lino"
+              src={heroImg.url}
+              alt="Mangos frescos de temporada en composición cenital"
               width={1536}
               height={1280}
               className="aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] w-full object-cover"
