@@ -1,5 +1,5 @@
 import { ArrowRight, MapPin } from "lucide-react";
-import heroImg from "@/assets/hero-mangos.jpg.asset.json";
+import heroImg from "@/assets/hero-susana.png.asset.json";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export function Hero() {
@@ -63,9 +63,9 @@ export function Hero() {
           <div className="relative overflow-hidden rounded-[2rem] border border-border/70 shadow-xl shadow-olive/5">
             <img
               src={heroImg.url}
-              alt="Mangos frescos de temporada en composición cenital"
-              width={1536}
-              height={1280}
+              alt="LN Susana Wignall, nutrióloga en Playa del Carmen"
+              width={896}
+              height={1152}
               className="aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] w-full object-cover"
             />
           </div>
