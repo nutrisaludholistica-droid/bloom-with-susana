@@ -1,5 +1,5 @@
 import { ArrowRight, MapPin } from "lucide-react";
-import heroImg from "@/assets/hero-susana.png.asset.json";
+import heroImg from "@/assets/hero-image.png.asset.json";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export function Hero() {
