@@ -25,11 +25,11 @@ export function About() {
             aria-hidden
           />
           <div className="relative overflow-hidden rounded-[2rem] border border-border/70 shadow-xl shadow-olive/5">
-            <img
+          <img
               src={aboutImg.url}
-              alt="Retrato de LN Susana Wignall, nutrióloga"
-              width={1024}
-              height={1280}
+              alt="Susana Wignall en la playa"
+              width={577}
+              height={1024}
               loading="lazy"
               className="aspect-[4/5] w-full object-cover"
             />
