@@ -1,5 +1,5 @@
 import { Award } from "lucide-react";
-import aboutImg from "@/assets/about-susana.jpg.asset.json";
+import aboutImg from "@/assets/hero-image.png.asset.json";
 
 const FORMATION = [
   "Primer lugar en la FECII 2024",
@@ -25,11 +25,11 @@ export function About() {
             aria-hidden
           />
           <div className="relative overflow-hidden rounded-[2rem] border border-border/70 shadow-xl shadow-olive/5">
-            <img
+          <img
               src={aboutImg.url}
-              alt="Retrato de LN Susana Wignall, nutrióloga"
-              width={1024}
-              height={1280}
+              alt="Susana Wignall en la playa"
+              width={577}
+              height={1024}
               loading="lazy"
               className="aspect-[4/5] w-full object-cover"
             />
