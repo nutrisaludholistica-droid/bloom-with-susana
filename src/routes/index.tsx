@@ -33,6 +33,77 @@ export const Route = createFileRoute("/")({
           "Reconecta con tu cuerpo desde una nutrición consciente y sostenible. Consultas y paquetes en Playa del Carmen y en línea.",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "LocalBusiness",
+              name: "LN Susana Wignall — Nutrióloga",
+              description:
+                "Acompañamiento nutricional personalizado en Playa del Carmen y en línea. Especialista en recomposición corporal, salud digestiva y microbiota.",
+              url: "https://susanawignall.com",
+              telephone: "+529842799652",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress:
+                  "Av. Paseo Central, Humana Works Center, Fracc. La Gran Plaza, Riviera 2",
+                addressLocality: "Playa del Carmen",
+                addressRegion: "Quintana Roo",
+                postalCode: "77723",
+                addressCountry: "MX",
+              },
+              image:
+                "https://susanawignall.com/__l5e/assets-v1/586f0359-d9d1-49df-b643-d3b17f9ca16a/hero-image.png",
+              priceRange: "$$",
+              "@id": "https://susanawignall.com/#localbusiness",
+            },
+            {
+              "@type": "Person",
+              name: "Susana Wignall",
+              jobTitle: "Licenciada en Nutrición",
+              identifier: "156228944",
+              worksFor: {
+                "@id": "https://susanawignall.com/#localbusiness",
+              },
+              url: "https://susanawignall.com/#sobre-mi",
+              award: "Primer lugar FECII 2024",
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "¿La consulta puede ser presencial o en línea?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Sí. La consulta puede realizarse en línea o presencial en Hea'n Clinic, en Playa del Carmen.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "¿Los paquetes incluyen seguimiento por WhatsApp?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Sí, todos los paquetes incluyen seguimiento por WhatsApp 2 veces por semana.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "¿El plan nutricional es personalizado?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Sí. Cada plan se adapta a los objetivos, estilo de vida y hábitos específicos de cada persona.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: LandingPage,
 });

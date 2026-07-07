@@ -1,34 +1,31 @@
-## Plan: Sección de promoción de lanzamiento
+Plan: 3 correcciones SEO urgentes
 
-### Objetivo
-Agregar una sección promocional visible y llamativa justo debajo del Hero (antes de Beneficios/Servicios) para anunciar la primera consulta gratuita por lanzamiento.
+---
 
-### Cambios
+## 1. Twitter Card (meta tag)
 
-#### 1. Nuevo componente: `src/components/landing/LaunchPromo.tsx`
-- **Diseño**: banner de ancho completo con fondo verde profundo (token nuevo `--promo-bg`, aproximando el `#0F3D24` en oklch) y texto blanco/crème.
-- **Contenido**:
-  - Título: "🎉 Lanzamiento: Primera consulta GRATIS"
-  - Subtítulo: "Válido para las primeras 20 personas. Sin compromisos."
-  - Descripción: "Es tu oportunidad de conocerme, hablar de tus objetivos y recibir orientación nutricional personalizada — sin costo."
-  - Contador estático: "Lugares disponibles: 20 de 20"
-  - Badge visual tipo "GRATIS" o "LIMITADO" (usando un ícono/badge estilizado).
-- **CTA**: botón "Quiero mi consulta gratis" que abre WhatsApp (`https://wa.me/529842799652?text=...`) con el mensaje exacto solicitado.
-- **Estilo**: aspecto de oferta limitada y urgente. Usa `font-display` para el título, layout centrado, padding generoso, y posible borde sutil o sombra para separar del Hero.
+En `src/routes/__root.tsx` hay entradas duplicadas de description. Reemplazar la entrada `twitter:description` actual (en inglés) por:
 
-#### 2. Ajuste de diseño (`src/styles.css`)
-- Agregar token semántico `--promo-bg` en `@theme inline` (mapeado a oklch equivalente de `#0F3D24`) para que Tailwind genere `bg-promo-bg` sin romper el sistema de tokens.
-- Opcionalmente agregar `--promo-foreground` para el texto blanco sobre fondo oscuro (puede reusar `text-cream` o `text-primary-foreground`).
+> "Nutrióloga en Playa del Carmen y en línea. Acompañamiento personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Cédula profesional 156228944."
 
-#### 3. Integración en la landing (`src/routes/index.tsx`)
-- Importar `<LaunchPromo />`.
-- Insertarlo entre `<Hero />` y `<Benefits />`.
+También limpiar las entradas duplicadas de `description` y `og:description` en inglés para evitar que anulen las versiones en español.
 
-#### 4. Verificación
-- Correr `bun run build` para confirmar que no hay errores de TypeScript ni de Tailwind.
-- Revisar en preview que se vea correctamente en desktop y mobile.
+## 2. H1 principal del Hero
 
-### Notas técnicas
-- Se respetará el sistema de tokens de diseño existente: el color exacto `#0F3D24` se registrará como variable CSS/oklch en `styles.css`, no como clase arbitraria en el componente.
-- El contador será texto estático por ahora; el usuario lo actualizará manualmente más adelante.
-- El enlace de WhatsApp se construirá como constante inline o en `src/lib/whatsapp.ts` con el mensaje de lanzamiento codificado.
+En `src/components/landing/Hero.tsx`:
+- Reemplazar el `<h1>` actual por: "Nutrióloga en Playa del Carmen y en línea — Susana Wignall"
+- Actualizar el subtítulo (párrafo descriptivo) agregando al inicio: "Acompañamiento nutricional personalizado para mejorar tu composición corporal, salud digestiva y calidad de vida sin dietas extremas."
+
+## 3. Schema Markup (JSON-LD)
+
+Agregar en `src/routes/index.tsx` dentro de la función `head()` el bloque `scripts` con el JSON-LD exacto proporcionado:
+
+- `LocalBusiness` con datos de contacto, dirección e imagen
+- `Person` con datos de Susana Wignall
+- `FAQPage` con las 3 preguntas frecuentes
+
+El script se inyectará como `type: "application/ld+json"` en el array `scripts` del `head()` de la ruta raíz.
+
+---
+
+**Nota técnica:** En `__root.tsx` se detectaron duplicados de meta tags (description, og:description, twitter:description en inglés sobreescribiendo los españoles). El plan incluye limpiar esos duplicados para que los tags en español sean los únicos presentes.

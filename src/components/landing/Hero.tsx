@@ -25,14 +25,14 @@ export function Hero() {
             Playa del Carmen · Consulta en línea
           </div>
 
-          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] sm:text-5xl lg:text-[3.4rem] text-olive whitespace-pre-line">
-            Transforma tus hábitos y reconecta con tu cuerpo {"\n"}
+          <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] sm:text-5xl lg:text-[3.4rem] text-olive">
+            Nutrióloga en Playa del Carmen y en línea — Susana Wignall
           </h1>
 
           <p className="mt-6 max-w-xl text-base sm:text-lg text-foreground/75 leading-relaxed">
-            Acompañamiento nutricional en Playa del Carmen y en línea para mejorar tu
-            composición corporal, tu salud digestiva y tu calidad de vida sin dietas
-            extremas.
+            Acompañamiento nutricional personalizado para mejorar tu composición
+            corporal, salud digestiva y calidad de vida sin dietas extremas. Consultas
+            presenciales en Playa del Carmen y en línea.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
