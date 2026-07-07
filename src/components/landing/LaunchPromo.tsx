@@ -26,7 +26,7 @@ export function LaunchPromo() {
 
           {/* Title */}
           <h2 className="mt-5 font-display text-2xl sm:text-4xl text-cream leading-tight max-w-2xl">
-            🎉 Lanzamiento: Primera consulta{" "}
+            <span className="font-sans">🎉</span> Lanzamiento: Primera consulta{" "}
             <span className="text-sage-soft">GRATIS</span>
           </h2>
 
