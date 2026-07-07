@@ -95,6 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
       { name: "twitter:description", content: "Nutrióloga en Playa del Carmen y en línea. Acompañamiento personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Cédula profesional 156228944." },
+      { name: "google-site-verification", content: "vHBjtVrI93psm_AlDbLID0HsELH4UsR1Imv3X78tRtI" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3838481e-5531-4020-9b26-1079b5ca9e7a/id-preview-bbdf0914--cfd46fa8-db71-400f-b280-bec75a7f8a03.lovable.app-1781407374175.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3838481e-5531-4020-9b26-1079b5ca9e7a/id-preview-bbdf0914--cfd46fa8-db71-400f-b280-bec75a7f8a03.lovable.app-1781407374175.png" },
     ],

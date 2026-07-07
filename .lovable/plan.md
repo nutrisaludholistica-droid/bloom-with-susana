@@ -1,31 +1,16 @@
-## Plan: Actualizar sección de promoción (LaunchPromo)
+### Meta de verificación de Google Search Console
 
-### Cambios a aplicar en `src/components/landing/LaunchPromo.tsx`:
+**Objetivo:** Agregar la meta tag de verificación de Google Search Console al sitio.
 
-1. **Título**
-   - Reemplazar: `🎉 Lanzamiento: Primera consulta GRATIS`
-   - Por: `Julio: Primera consulta GRATIS`
-   - Eliminar el emoji del título (quitar `<span className="font-sans">🎉</span>`).
+El usuario ya posee el token de verificación: `vHBjtVrI93psm_AlDbLID0HsELH4UsR1Imv3X78tRtI`
 
-2. **Badge**
-   - Reemplazar: `Oferta limitada`
-   - Por: `PROMO JULIO`
+### Cambios a realizar
 
-3. **Contador**
-   - Reemplazar: `20 de 20`
-   - Por: `10 de 10`
+1. **Agregar la meta tag** en `src/routes/__root.tsx` dentro del array `meta` del `head()`:
+   ```html
+   <meta name="google-site-verification" content="vHBjtVrI93psm_AlDbLID0HsELH4UsR1Imv3X78tRtI" />
+   ```
 
-4. **Subtítulo**
-   - Reemplazar: `Válido para las primeras 20 personas. Sin compromisos.`
-   - Por: `Válido para las primeras 10 personas. Solo este mes.`
+2. **Verificar que el build pase** correctamente tras el cambio.
 
-5. **Texto adicional debajo del botón CTA**
-   - Agregar debajo del `<a>` del botón un párrafo en texto pequeño y gris claro:
-     - Texto: `Consulta presencial en Playa del Carmen o en línea · Sin costo, sin compromiso`
-   - Estilo sugerido: `text-xs text-cream/50 mt-3`
-
-6. **Diseño**
-   - Mantener fondo verde oscuro (`bg-promo-bg`) y estilos actuales sin cambios.
-
-### Archivo afectado
-- `src/components/landing/LaunchPromo.tsx`
+No se requieren otros archivos ni cambios de diseño.
