@@ -27,9 +27,9 @@ export function About() {
           <div className="relative overflow-hidden rounded-[2rem] border border-border/70 shadow-xl shadow-olive/5">
           <img
               src={aboutImg.url}
-              alt="Susana Wignall en la playa"
-              width={577}
-              height={1024}
+              alt="Susana Wignall, nutrióloga, sonriendo en su consultorio"
+              width={1086}
+              height={1448}
               loading="lazy"
               className="aspect-[4/5] w-full object-cover"
             />
