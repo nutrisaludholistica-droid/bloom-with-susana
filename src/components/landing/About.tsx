@@ -1,5 +1,5 @@
 import { Award } from "lucide-react";
-import aboutImg from "@/assets/about-image.png.asset.json";
+import aboutImg from "@/assets/about-susana-new.png.asset.json";
 
 const FORMATION = [
   "Primer lugar en la FECII 2024",
