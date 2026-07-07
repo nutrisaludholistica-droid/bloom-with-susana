@@ -51,6 +51,7 @@
   --color-sand: var(--sand);
   --color-cream: var(--cream);
   --color-whatsapp: var(--whatsapp);
+  --color-promo-bg: var(--promo-bg);
 }
 
 :root {
@@ -95,6 +96,7 @@
   --sand: oklch(0.92 0.025 80);
   --cream: oklch(0.985 0.012 85);
   --whatsapp: oklch(0.7 0.16 145);
+  --promo-bg: oklch(0.3214 0.0668 155.5587);
 }
 
 .dark {
