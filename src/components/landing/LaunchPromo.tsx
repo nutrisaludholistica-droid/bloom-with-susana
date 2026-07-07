@@ -21,18 +21,18 @@ export function LaunchPromo() {
           {/* Badge */}
           <span className="inline-flex items-center gap-2 rounded-full bg-clay px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-cream shadow-sm">
             <Gift className="h-3.5 w-3.5" />
-            Oferta limitada
+            PROMO JULIO
           </span>
 
           {/* Title */}
           <h2 className="mt-5 font-display text-2xl sm:text-4xl text-cream leading-tight max-w-2xl">
-            <span className="font-sans">🎉</span> Lanzamiento: Primera consulta{" "}
+            Julio: Primera consulta{" "}
             <span className="text-sage-soft">GRATIS</span>
           </h2>
 
           {/* Subtitle */}
           <p className="mt-3 text-sm sm:text-base text-cream/80 font-medium">
-            Válido para las primeras 20 personas. Sin compromisos.
+            Válido para las primeras 10 personas. Solo este mes.
           </p>
 
           {/* Description */}
@@ -46,7 +46,7 @@ export function LaunchPromo() {
             <Users className="h-4 w-4 text-sage-soft" />
             <span className="text-sm text-cream/90">
               Lugares disponibles:{" "}
-              <span className="font-semibold text-cream">20 de 20</span>
+              <span className="font-semibold text-cream">10 de 10</span>
             </span>
           </div>
 
@@ -60,6 +60,11 @@ export function LaunchPromo() {
             Quiero mi consulta gratis
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
+
+          {/* Fine print */}
+          <p className="mt-3 text-xs text-cream/50">
+            Consulta presencial en Playa del Carmen o en línea · Sin costo, sin compromiso
+          </p>
         </div>
       </div>
     </section>

@@ -1,31 +1,31 @@
-Plan: 3 correcciones SEO urgentes
+## Plan: Actualizar sección de promoción (LaunchPromo)
 
----
+### Cambios a aplicar en `src/components/landing/LaunchPromo.tsx`:
 
-## 1. Twitter Card (meta tag)
+1. **Título**
+   - Reemplazar: `🎉 Lanzamiento: Primera consulta GRATIS`
+   - Por: `Julio: Primera consulta GRATIS`
+   - Eliminar el emoji del título (quitar `<span className="font-sans">🎉</span>`).
 
-En `src/routes/__root.tsx` hay entradas duplicadas de description. Reemplazar la entrada `twitter:description` actual (en inglés) por:
+2. **Badge**
+   - Reemplazar: `Oferta limitada`
+   - Por: `PROMO JULIO`
 
-> "Nutrióloga en Playa del Carmen y en línea. Acompañamiento personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Cédula profesional 156228944."
+3. **Contador**
+   - Reemplazar: `20 de 20`
+   - Por: `10 de 10`
 
-También limpiar las entradas duplicadas de `description` y `og:description` en inglés para evitar que anulen las versiones en español.
+4. **Subtítulo**
+   - Reemplazar: `Válido para las primeras 20 personas. Sin compromisos.`
+   - Por: `Válido para las primeras 10 personas. Solo este mes.`
 
-## 2. H1 principal del Hero
+5. **Texto adicional debajo del botón CTA**
+   - Agregar debajo del `<a>` del botón un párrafo en texto pequeño y gris claro:
+     - Texto: `Consulta presencial en Playa del Carmen o en línea · Sin costo, sin compromiso`
+   - Estilo sugerido: `text-xs text-cream/50 mt-3`
 
-En `src/components/landing/Hero.tsx`:
-- Reemplazar el `<h1>` actual por: "Nutrióloga en Playa del Carmen y en línea — Susana Wignall"
-- Actualizar el subtítulo (párrafo descriptivo) agregando al inicio: "Acompañamiento nutricional personalizado para mejorar tu composición corporal, salud digestiva y calidad de vida sin dietas extremas."
+6. **Diseño**
+   - Mantener fondo verde oscuro (`bg-promo-bg`) y estilos actuales sin cambios.
 
-## 3. Schema Markup (JSON-LD)
-
-Agregar en `src/routes/index.tsx` dentro de la función `head()` el bloque `scripts` con el JSON-LD exacto proporcionado:
-
-- `LocalBusiness` con datos de contacto, dirección e imagen
-- `Person` con datos de Susana Wignall
-- `FAQPage` con las 3 preguntas frecuentes
-
-El script se inyectará como `type: "application/ld+json"` en el array `scripts` del `head()` de la ruta raíz.
-
----
-
-**Nota técnica:** En `__root.tsx` se detectaron duplicados de meta tags (description, og:description, twitter:description en inglés sobreescribiendo los españoles). El plan incluye limpiar esos duplicados para que los tags en español sean los únicos presentes.
+### Archivo afectado
+- `src/components/landing/LaunchPromo.tsx`
