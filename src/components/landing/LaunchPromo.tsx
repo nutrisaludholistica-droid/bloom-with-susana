@@ -5,7 +5,7 @@ const PROMO_WHATSAPP_URL =
 
 export function LaunchPromo() {
   return (
-    <section className="relative overflow-hidden bg-promo-bg py-14 sm:py-18">
+    <section className="relative overflow-hidden bg-promo-bg py-14 sm:py-16">
       {/* subtle organic accent */}
       <div
         aria-hidden
