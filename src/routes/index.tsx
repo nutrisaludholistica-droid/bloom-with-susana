@@ -43,6 +43,7 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
+        <LaunchPromo />
         <Benefits />
         <Services />
         <Packages />
