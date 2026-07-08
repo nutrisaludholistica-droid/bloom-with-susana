@@ -116,10 +116,12 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
-        <LaunchPromo />
         <Benefits />
         <Services />
+        <LaunchPromo />
+        <HowItWorks />
         <Packages />
+        <TrustBlock />
         <About />
         <Workshops />
         <Testimonials />
