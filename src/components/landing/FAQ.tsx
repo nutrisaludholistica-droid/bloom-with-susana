@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 import { WA_MSG, waUrl } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
 import { FAQS } from "./faq-data";
