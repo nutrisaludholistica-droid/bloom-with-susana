@@ -4,7 +4,9 @@ import { Hero } from "@/components/landing/Hero";
 import { LaunchPromo } from "@/components/landing/LaunchPromo";
 import { Benefits } from "@/components/landing/Benefits";
 import { Services } from "@/components/landing/Services";
+import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Packages } from "@/components/landing/Packages";
+import { TrustBlock } from "@/components/landing/TrustBlock";
 import { About } from "@/components/landing/About";
 import { Workshops } from "@/components/landing/Workshops";
 import { Testimonials } from "@/components/landing/Testimonials";
@@ -114,10 +116,12 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
-        <LaunchPromo />
         <Benefits />
         <Services />
+        <LaunchPromo />
+        <HowItWorks />
         <Packages />
+        <TrustBlock />
         <About />
         <Workshops />
         <Testimonials />

@@ -121,6 +121,19 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        {/*
+          Analítica: para trackear los clics de WhatsApp (eventos
+          `whatsapp_click_*` disparados desde src/lib/analytics.ts),
+          pega aquí tu snippet de GA4 o GTM. Ejemplo GA4:
+
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX" />
+          <script dangerouslySetInnerHTML={{ __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXX');
+          `}} />
+        */}
       </head>
       <body>
         {children}

@@ -1,6 +1,7 @@
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Gift } from "lucide-react";
 import heroImg from "@/assets/hero-image.png.asset.json";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 export function Hero() {
   return (
@@ -20,9 +21,9 @@ export function Hero() {
 
       <div className="container-prose grid gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14 items-center relative">
         <div className="fade-in-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1.5 text-xs sm:text-sm text-olive/80">
-            <MapPin className="h-3.5 w-3.5" />
-            Playa del Carmen · Consulta en línea
+          <div className="inline-flex items-center gap-2 rounded-full border border-clay/40 bg-clay/10 px-3.5 py-1.5 text-xs sm:text-sm text-clay">
+            <Gift className="h-3.5 w-3.5" />
+            Julio · Primera consulta GRATIS · 10 lugares
           </div>
 
           <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] sm:text-5xl lg:text-[3.4rem] text-olive">
@@ -37,12 +38,13 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
             <a
-              href={WHATSAPP_URL}
+              href={waUrl(WA_MSG.promoGratis)}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWaClick("whatsapp_click_hero")}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-base font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition"
             >
-              Reserva y conoce nuestros paquetes
+              Agendar mi consulta gratis por WhatsApp
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
@@ -53,7 +55,12 @@ export function Hero() {
             </a>
           </div>
 
-          <p className="mt-6 text-xs text-muted-foreground">
+          <p className="mt-4 max-w-xl text-sm text-foreground/60 flex items-start gap-1.5">
+            <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0 text-sage" />
+            Te responderé por WhatsApp para confirmar horario y modalidad (presencial u online).
+          </p>
+
+          <p className="mt-4 text-xs text-muted-foreground">
             LN Susana Wignall · Céd. profesional 156228944
           </p>
         </div>

@@ -1,11 +1,13 @@
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 export function WhatsappFloat() {
   return (
     <a
-      href={WHATSAPP_URL}
+      href={waUrl(WA_MSG.float)}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWaClick("whatsapp_click_float")}
       aria-label="Escríbeme por WhatsApp"
       className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-3.5 text-sm font-medium text-white shadow-xl shadow-olive/20 hover:scale-[1.03] transition"
     >
