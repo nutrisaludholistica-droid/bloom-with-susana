@@ -1,6 +1,7 @@
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Gift } from "lucide-react";
 import heroImg from "@/assets/hero-image.png.asset.json";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 export function Hero() {
   return (
