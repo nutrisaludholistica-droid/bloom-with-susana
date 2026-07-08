@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 const FAQS = [
   {
