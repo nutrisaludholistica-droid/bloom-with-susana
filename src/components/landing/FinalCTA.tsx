@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 import produceImg from "@/assets/produce.jpg";
 
 export function FinalCTA() {
@@ -24,18 +25,22 @@ export function FinalCTA() {
           consciente y sostenible.
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base sm:text-lg text-cream/85 leading-relaxed">
-          Solicita información sobre consultas y paquetes de acompañamiento nutricional
-          en Playa del Carmen o en línea.
+          Julio: primera consulta gratis para las primeras 10 personas. Presencial en
+          Playa del Carmen o en línea.
         </p>
         <a
-          href={WHATSAPP_URL}
+          href={waUrl(WA_MSG.finalCta)}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWaClick("whatsapp_click_final_cta")}
           className="group mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-cream px-7 py-4 text-base font-medium text-olive hover:bg-background transition"
         >
-          Reserva y conoce nuestros paquetes
+          Quiero reservar mi consulta gratis
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </a>
+        <p className="mt-4 text-xs text-cream/60">
+          Te responderé por WhatsApp para confirmar horario y modalidad.
+        </p>
       </div>
     </section>
   );

@@ -24,13 +24,13 @@ export function Testimonials() {
       <div className="container-prose">
         <div className="flex flex-col items-start sm:items-center sm:text-center max-w-2xl sm:mx-auto">
           <span className="text-xs uppercase tracking-[0.18em] text-sage font-medium">
-            Testimonios y resultados
+            Casos reales
           </span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl text-olive">
-            Historias de quienes han comenzado este camino
+            Casos y experiencias de acompañamiento
           </h2>
           <p className="mt-3 text-xs text-muted-foreground italic">
-            * Testimonios provisionales — se reemplazarán por reseñas reales.
+            Testimonios reales en proceso de actualización.
           </p>
         </div>
 

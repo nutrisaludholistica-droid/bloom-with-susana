@@ -1,13 +1,19 @@
-import { Check, Sparkles } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { Check, Sparkles, Target, TrendingUp } from "lucide-react";
+import { WA_MSG, waUrl, type WaMessageKey } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 type Pkg = {
   name: string;
   tagline: string;
   desc: string;
+  forWho: string;
+  outcome: string;
   includes: string[];
   note?: string;
   featured?: boolean;
+  waKey: WaMessageKey;
+  eventId: string;
+  cta: string;
 };
 
 const PACKAGES: Pkg[] = [
@@ -15,6 +21,10 @@ const PACKAGES: Pkg[] = [
     name: "Básico",
     tagline: "3 meses",
     desc: "Acompañamiento inicial para comenzar con estructura, seguimiento y educación nutricional.",
+    forWho:
+      "Para ti si quieres empezar con orden, aprender a comer mejor y tener seguimiento cercano sin comprometerte a un programa largo.",
+    outcome:
+      "Sales con hábitos básicos instalados, tu plan personalizado y mediciones de progreso claras.",
     includes: [
       "1 consulta al mes",
       "Modalidad en línea o presencial",
@@ -24,11 +34,18 @@ const PACKAGES: Pkg[] = [
       "Apoyo mediante app Avena Health",
       "Bioimpedancia de 8 elementos",
     ],
+    waKey: "basico",
+    eventId: "whatsapp_click_paquete_basico",
+    cta: "Quiero el paquete Básico",
   },
   {
     name: "Transformación",
     tagline: "6 meses",
     desc: "Acompañamiento más completo para integrar hábitos, compras saludables y cocina práctica.",
+    forWho:
+      "Para ti si buscas recomposición corporal real y quieres que tus compras y tu cocina también cambien, no solo tu plan.",
+    outcome:
+      "Cambios visibles en composición corporal, cocina saludable resuelta y hábitos que sostienes solo/a.",
     includes: [
       "Todo lo del paquete Básico",
       "1 visita al supermercado para revisar opciones de compra",
@@ -40,11 +57,18 @@ const PACKAGES: Pkg[] = [
     ],
     note: "No incluye insumos.",
     featured: true,
+    waKey: "transformacion",
+    eventId: "whatsapp_click_paquete_transformacion",
+    cta: "Quiero el paquete Transformación",
   },
   {
     name: "Reconexión",
     tagline: "9 meses",
     desc: "Programa integral para profundizar en hábitos, cocina saludable, salud digestiva y autonomía nutricional.",
+    forWho:
+      "Para ti si quieres transformación profunda: salud digestiva, microbiota, autonomía en la cocina y hábitos para toda la vida.",
+    outcome:
+      "Autonomía nutricional completa, mejor digestión y microbiota, y una relación distinta con la comida.",
     includes: [
       "Todo lo del paquete Transformación",
       "Taller de elaboración de fermentos",
@@ -56,6 +80,9 @@ const PACKAGES: Pkg[] = [
       "Bioimpedancia de 8 elementos",
     ],
     note: "No incluye insumos.",
+    waKey: "reconexion",
+    eventId: "whatsapp_click_paquete_reconexion",
+    cta: "Quiero el paquete Reconexión",
   },
 ];
 
@@ -105,6 +132,25 @@ export function Packages() {
                 </p>
               </header>
 
+              <div className="mt-5 space-y-3">
+                <div className="rounded-2xl bg-sage/8 px-4 py-3">
+                  <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-sage font-medium">
+                    <Target className="h-3.5 w-3.5" /> Para quién es
+                  </div>
+                  <p className="mt-1.5 text-sm text-foreground/80 leading-relaxed">
+                    {p.forWho}
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-clay/8 px-4 py-3">
+                  <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-clay font-medium">
+                    <TrendingUp className="h-3.5 w-3.5" /> Resultado esperado
+                  </div>
+                  <p className="mt-1.5 text-sm text-foreground/80 leading-relaxed">
+                    {p.outcome}
+                  </p>
+                </div>
+              </div>
+
               <ul className="mt-6 space-y-2.5">
                 {p.includes.map((line) => (
                   <li key={line} className="flex gap-2.5 text-sm text-foreground/85">
@@ -121,23 +167,25 @@ export function Packages() {
               )}
 
               <a
-                href={WHATSAPP_URL}
+                href={waUrl(WA_MSG[p.waKey])}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWaClick(p.eventId, { package: p.name })}
                 className={`mt-7 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium transition ${
                   p.featured
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "bg-olive/95 text-cream hover:bg-olive"
                 }`}
               >
-                Quiero información de este paquete
+                {p.cta}
               </a>
             </article>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-xs text-muted-foreground">
-          Los precios se comparten por WhatsApp o directamente en la clínica.
+        <p className="mt-8 mx-auto max-w-2xl text-center text-sm text-muted-foreground leading-relaxed">
+          Los precios y paquetes se confirman por WhatsApp según tus objetivos,
+          modalidad y nivel de acompañamiento. Puedes escribir sin compromiso.
         </p>
       </div>
     </section>
