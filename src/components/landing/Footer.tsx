@@ -1,4 +1,5 @@
-import { PHONE_CLINIC, PHONE_WHATSAPP, WHATSAPP_URL } from "@/lib/whatsapp";
+import { PHONE_CLINIC, PHONE_WHATSAPP, WA_MSG, waUrl } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 export function Footer() {
   return (

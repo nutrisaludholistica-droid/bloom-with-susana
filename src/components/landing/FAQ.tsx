@@ -96,9 +96,10 @@ export function FAQ() {
         <div className="mt-10 text-center">
           <p className="text-sm text-foreground/75">¿Tienes otra pregunta?</p>
           <a
-            href={WHATSAPP_URL}
+            href={waUrl(WA_MSG.faq)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWaClick("whatsapp_click_faq")}
             className="mt-3 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition"
           >
             Escríbeme por WhatsApp
