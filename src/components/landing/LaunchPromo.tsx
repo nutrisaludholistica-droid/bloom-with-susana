@@ -5,7 +5,7 @@ export function LaunchPromo() {
   return (
     <section className="relative overflow-hidden bg-background py-14 sm:py-16">
       <div className="container-prose relative">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center rounded-3xl bg-card px-6 py-10 text-center shadow-lg shadow-olive/5 sm:px-10 sm:py-14 border border-border/50">
           <span className="inline-flex items-center rounded-full border border-clay/20 bg-clay/10 px-3.5 py-1.5 text-xs text-clay">
             Julio 2026
           </span>
