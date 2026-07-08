@@ -15,6 +15,7 @@ import { Location } from "@/components/landing/Location";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
 import { WhatsappFloat } from "@/components/landing/WhatsappFloat";
+import { FAQS } from "@/components/landing/faq-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,12 +43,18 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "LocalBusiness",
+              "@type": ["LocalBusiness", "MedicalBusiness"],
               name: "LN Susana Wignall — Nutrióloga",
               description:
                 "Acompañamiento nutricional personalizado en Playa del Carmen y en línea. Especialista en recomposición corporal, salud digestiva y microbiota.",
               url: "https://susanawignall.com",
               telephone: "+529842799652",
+              medicalSpecialty: [
+                "Nutrition",
+                "Nutriología clínica",
+                "Recomposición corporal",
+                "Salud digestiva",
+              ],
               address: {
                 "@type": "PostalAddress",
                 streetAddress:
@@ -65,43 +72,27 @@ export const Route = createFileRoute("/")({
             {
               "@type": "Person",
               name: "Susana Wignall",
-              jobTitle: "Licenciada en Nutrición",
+              jobTitle: "Nutrióloga",
               identifier: "156228944",
+              description: "Cédula profesional 156228944",
+              url: "https://susanawignall.com",
               worksFor: {
                 "@id": "https://susanawignall.com/#localbusiness",
               },
-              url: "https://susanawignall.com/#sobre-mi",
               award: "Primer lugar FECII 2024",
             },
             {
               "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "¿La consulta puede ser presencial o en línea?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Sí. La consulta puede realizarse en línea o presencial en Hea'n Clinic, en Playa del Carmen.",
-                  },
+              mainEntity: FAQS.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: f.a,
                 },
-                {
-                  "@type": "Question",
-                  name: "¿Los paquetes incluyen seguimiento por WhatsApp?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Sí, todos los paquetes incluyen seguimiento por WhatsApp 2 veces por semana.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "¿El plan nutricional es personalizado?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Sí. Cada plan se adapta a los objetivos, estilo de vida y hábitos específicos de cada persona.",
-                  },
-                },
-              ],
+              })),
             },
+
           ],
         }),
       },
