@@ -27,9 +27,10 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <a
-                  href={WHATSAPP_URL}
+                  href={waUrl(WA_MSG.footer)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWaClick("whatsapp_click_footer")}
                   className="text-foreground/80 hover:text-sage"
                 >
                   WhatsApp · {PHONE_WHATSAPP}
