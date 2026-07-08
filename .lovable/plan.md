@@ -1,27 +1,56 @@
-## Cambios técnicos SEO
+## Validar y corregir JSON-LD
 
-### 1. `public/robots.txt` (crear)
-```
-User-agent: *
-Allow: /
-Sitemap: https://susanawignall.com/sitemap.xml
-```
+No hay API oficial del Rich Results Test, así que la validación se hace contra las especificaciones de schema.org / Google Search Central y el validador público (`https://validator.schema.org/`) manualmente si hace falta. Reviso el `@graph` actual en `src/routes/index.tsx` contra las reglas y aplico correcciones.
 
-### 2. Sitemap dinámico
-Crear `src/routes/sitemap[.]xml.ts` como server route TanStack (siguiendo el patrón del proyecto) sirviendo `https://susanawignall.com/` con `changefreq=weekly`, `priority=1.0`. Preferido sobre un archivo estático para mantenerse sincronizado con rutas futuras.
+### Problemas detectados en el JSON-LD actual
 
-### 3. JSON-LD ampliado en `src/routes/index.tsx`
+**LocalBusiness + MedicalBusiness**
+- `medicalSpecialty` incluye strings libres en español (`"Nutriología clínica"`, `"Recomposición corporal"`, `"Salud digestiva"`). Google exige valores del enum `MedicalSpecialty` de schema.org — sólo `"Nutrition"` es válido. Los demás disparan advertencia.
+- Falta `openingHoursSpecification` (recomendado por Google para LocalBusiness).
+- Falta `geo` (lat/long) — recomendado.
+- Falta `areaServed` — útil para negocio local + online.
+- `image` apunta a `susanawignall.com/__l5e/...` (ruta interna de preview que puede 404 en producción). Debe usarse una imagen accesible públicamente en el dominio final.
+- Falta `sameAs` (redes sociales) — opcional pero mejora entidad.
 
-Ya existe un bloque `@graph` con `LocalBusiness`, `Person` y `FAQPage` (3 preguntas). Se ampliará:
+**Person**
+- `identifier` como string suelto genera advertencia — mejor `PropertyValue` con `propertyID: "Cédula Profesional"`.
+- `worksFor` referencia por `@id`, correcto.
 
-- **LocalBusiness**: añadir `@type: ["LocalBusiness", "MedicalBusiness"]`, `medicalSpecialty` (Nutriología clínica, recomposición corporal, salud digestiva). Mantener nombre, url, teléfono, dirección existentes (ya coinciden).
-- **Person**: mantener (ya incluye nombre, jobTitle "Licenciada en Nutrición", identifier 156228944, url). Confirmar campos requeridos presentes.
-- **FAQPage**: reemplazar las 3 preguntas actuales por las 11 preguntas/respuestas completas de `src/components/landing/FAQ.tsx` para que coincidan 1:1 con el HTML visible.
+**FAQPage**
+- Las 11 Q&A se generan desde `FAQS`. Verificar que ninguna respuesta contenga HTML sin escapar y que sean únicas — actualmente OK.
+- Google requiere que las FAQs sean visibles en la página con el mismo texto — ya lo están (mismo `FAQS` compartido). OK.
+
+### Cambios a aplicar en `src/routes/index.tsx`
+
+1. **LocalBusiness/MedicalBusiness**:
+   - `medicalSpecialty: "Nutrition"` (string único, valor del enum).
+   - Añadir `openingHoursSpecification` (pendiente de horario real — por defecto Lun-Vie 09:00-18:00, ajustable).
+   - Añadir `geo` con lat/long de Playa del Carmen (aproximado sobre la dirección de Hea'n Clinic).
+   - Añadir `areaServed: ["Playa del Carmen", "Quintana Roo", "México", "Online"]`.
+   - Cambiar `image` a una URL pública estable (usar la imagen del hero servida desde `susanawignall.com` o dejar la URL absoluta del asset R2 que ya usa `og:image` en `__root.tsx`).
+   - Añadir `sameAs` sólo si el usuario tiene redes (pendiente confirmar — si no, se omite).
+
+2. **Person**:
+   - Reemplazar `identifier: "156228944"` por:
+     ```json
+     "identifier": {
+       "@type": "PropertyValue",
+       "propertyID": "Cédula Profesional",
+       "value": "156228944"
+     }
+     ```
+   - Añadir `alumniOf` si aplica (omitir si no hay dato).
+
+3. **FAQPage**: sin cambios (ya correcto).
+
+### Preguntas pendientes antes de implementar
+
+- ¿Horario real de atención de la clínica (para `openingHoursSpecification`)? Si no, uso Lun-Vie 09:00-18:00 como valor razonable y comento para revisar.
+- ¿URL de imagen pública preferida para `image` del LocalBusiness? Opciones: (a) la misma del `og:image` actual (R2), (b) subir al dominio, (c) dejar la actual.
+- ¿Redes sociales para `sameAs` (Instagram, Facebook)? Si no hay, se omite.
+
+Aplico defaults razonables si no hay respuesta, marcando con comentario `TODO` los campos que conviene revisar.
 
 ### Fuera de alcance
-- Sin cambios de diseño ni de copy visible.
-- Sin tocar `__root.tsx` meta tags (ya correctos).
-
-### Detalles técnicos
-- Sitemap: `createFileRoute("/sitemap.xml")` con handler GET devolviendo XML (`Content-Type: application/xml`, cache 1h).
-- FAQ JSON-LD: importar/reusar el array `FAQS` — se extraerá a un módulo compartido (`src/components/landing/faq-data.ts`) para que tanto `FAQ.tsx` como `index.tsx` consuman la misma fuente, evitando desincronización.
+- No se cambia contenido visible ni diseño.
+- No se toca `__root.tsx`.
