@@ -1,4 +1,4 @@
-import { ArrowRight, MapPin, Gift } from "lucide-react";
+import { MapPin, Gift } from "lucide-react";
 import heroImg from "@/assets/hero-image.png.asset.json";
 import { WA_MSG, waUrl } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
@@ -44,8 +44,7 @@ export function Hero() {
               onClick={() => trackWaClick("whatsapp_click_hero")}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-base font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition"
             >
-              Agendar mi consulta gratis por WhatsApp
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              Agendar mi consulta →
             </a>
             <a
               href="#paquetes"
@@ -54,6 +53,9 @@ export function Hero() {
               Ver paquetes
             </a>
           </div>
+          <p className="mt-2 text-sm text-muted-foreground">
+            🎁 Julio: primera consulta sin costo · Solo 10 lugares
+          </p>
 
           <p className="mt-4 max-w-xl text-sm text-foreground/60 flex items-start gap-1.5">
             <MapPin className="h-3.5 w-3.5 mt-0.5 shrink-0 text-sage" />

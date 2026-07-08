@@ -1,25 +1,20 @@
-## Actualizar JSON-LD en `src/routes/index.tsx`
+## Ajuste del Hero — Separar CTA principal de la promo de julio
 
-Reemplazar el `@graph` actual con los tres bloques exactos que pediste, manteniéndolos como scripts JSON-LD separados en `head().scripts` (patrón ya usado en el proyecto). Sin cambios visuales.
+### Cambios en `src/components/landing/Hero.tsx`
 
-### Cambios
+1. **Texto del botón principal (línea 47)**
+   - Reemplazar: `Agendar mi consulta gratis por WhatsApp`
+   - Por: `Agendar mi consulta →`
+   - Se reemplaza el icono `<ArrowRight />` por el texto `→` al final del label, o se mantiene el icono si se prefiere la coherencia visual. Dado el pedido literal, se usará el texto `→` como parte del label.
 
-**Archivo:** `src/routes/index.tsx`
+2. **Nueva línea debajo del botón (después de la fila de botones, líneas 39-56)**
+   - Agregar un `<p>` con clase de texto secundario (más pequeño, color suave) que diga exactamente:
+     > 🎁 Julio: primera consulta sin costo · Solo 10 lugares
+   - Estilo propuesto: `text-sm text-muted-foreground mt-2` (o equivalente temático del proyecto).
 
-Reemplazar el array `scripts` actual (que contiene un único script con `@graph`) por tres scripts JSON-LD independientes:
+3. **Chip de promo sobre el H1 (líneas 24-27)**
+   - Sin cambios. Se mantiene: "Julio · Primera consulta GRATIS · 10 lugares"
 
-1. **MedicalBusiness** — copiar tu JSON tal cual (incluye `telephone`, `image` de about-susana-new, `geo`, `openingHours`, `priceRange`, `medicalSpecialty: "Nutrition"`).
-2. **Person** — copiar tal cual (con `hasCredential` como `EducationalOccupationalCredential` reconocido por SEP México, y `knowsAbout`).
-3. **FAQPage** — generado dinámicamente desde `FAQS` (ya importado desde `@/components/landing/faq-data`), mapeando las 11 preguntas actuales al formato `Question`/`acceptedAnswer`.
-
-### Notas técnicas
-
-- Se eliminan campos del `@graph` anterior que ya no aplican: `@id`, `areaServed`, `openingHoursSpecification` (reemplazado por `openingHours` string), `award`, `worksFor` por `@id`, `knowsAbout` en LocalBusiness. Queda exactamente lo que enviaste.
-- El `image` del MedicalBusiness usará la URL `susanawignall.com/__l5e/...` que enviaste. Nota: esa ruta es un asset servido desde el dominio de preview/producción de Lovable; si el dominio final rota, la URL puede romper. Se deja tal cual como pediste.
-- FAQPage sigue leyendo desde `FAQS` para que el JSON-LD siempre refleje lo visible en la página (requerido por Google).
-- No se toca `__root.tsx`, ni componentes, ni estilos, ni `sitemap`, ni `robots.txt`.
-
-### Fuera de alcance
-
-- No se modifica diseño ni contenido visible.
-- No se cambian meta tags en `__root.tsx`.
+### Alcance
+- Solo edición del componente `Hero.tsx`.
+- Sin cambios en diseño, colores, imágenes, rutas ni otros componentes.
