@@ -1,20 +1,43 @@
-## Ajuste del Hero — Separar CTA principal de la promo de julio
+## Objetivo
+Rediseñar la sección `LaunchPromo` para que se sienta como una invitación elegante, no una oferta agresiva.
 
-### Cambios en `src/components/landing/Hero.tsx`
+## Alcance
+Solo el componente `src/components/landing/LaunchPromo.tsx`. Sin cambios en contenido visible de otras secciones.
 
-1. **Texto del botón principal (línea 47)**
-   - Reemplazar: `Agendar mi consulta gratis por WhatsApp`
-   - Por: `Agendar mi consulta →`
-   - Se reemplaza el icono `<ArrowRight />` por el texto `→` al final del label, o se mantiene el icono si se prefiere la coherencia visual. Dado el pedido literal, se usará el texto `→` como parte del label.
+## Cambios
 
-2. **Nueva línea debajo del botón (después de la fila de botones, líneas 39-56)**
-   - Agregar un `<p>` con clase de texto secundario (más pequeño, color suave) que diga exactamente:
-     > 🎁 Julio: primera consulta sin costo · Solo 10 lugares
-   - Estilo propuesto: `text-sm text-muted-foreground mt-2` (o equivalente temático del proyecto).
+### 1. Fondo
+- Reemplazar `bg-promo-bg` (verde oscuro) por `bg-background` (crema/beige del hero).
+- Eliminar los círculos decorativos de blur blanco (no tienen sentido sobre fondo claro).
 
-3. **Chip de promo sobre el H1 (líneas 24-27)**
-   - Sin cambios. Se mantiene: "Julio · Primera consulta GRATIS · 10 lugares"
+### 2. Tipografía y jerarquía
+- **Chip superior:** reemplazar `"PROMO JULIO"` por `"Julio 2026"`.
+  - Estilo: chip sutil con fondo `bg-clay/10`, texto `text-clay`, borde `border-clay/20`, sin uppercase, sin `font-semibold`, tamaño `text-xs`.
+- **Título:** reemplazar `"Julio: Primera consulta GRATIS"` por `"Primera consulta sin costo — solo julio"`.
+  - Estilo: `font-display text-olive text-2xl sm:text-4xl`, sin mayúsculas forzadas, sin span con `text-sage-soft`.
+- **Subtítulo:** mantener la línea de validación pero con color `text-foreground/70` en lugar de `text-cream/80`.
+- **Descripción:** mantener el párrafo explicativo con `text-foreground/60`.
 
-### Alcance
-- Solo edición del componente `Hero.tsx`.
-- Sin cambios en diseño, colores, imágenes, rutas ni otros componentes.
+### 3. Botón CTA
+- Texto: `"Apartar mi lugar por WhatsApp →"`.
+- Estilo: igual al botón principal del hero (`bg-primary text-primary-foreground rounded-full px-7 py-3.5 font-medium shadow-sm hover:bg-primary/90`).
+- Seguir usando `waUrl(WA_MSG.promoGratis)` y `trackWaClick("whatsapp_click_promo")`.
+
+### 4. Contador de lugares
+- Reemplazar el badge destacado (`inline-flex rounded-2xl border bg-white/8 backdrop-blur-sm`) por una simple línea de texto:
+  - `"Lugares disponibles: 10 de 10"`
+  - Clases: `text-sm text-muted-foreground`.
+
+### 5. Pie de sección
+- Mantener la línea `"Consulta presencial en Playa del Carmen o en línea · Sin costo, sin compromiso"`.
+- Cambiar color a `text-muted-foreground` para armonizar con fondo claro.
+
+## Tokens de diseño a usar
+- Fondo: `bg-background` (ya existe en `src/styles.css`).
+- Texto principal: `text-olive`, `font-display`.
+- Texto secundario: `text-muted-foreground`, `text-foreground/70`.
+- Botón: `bg-primary text-primary-foreground`.
+- Chip: `bg-clay/10 text-clay border-clay/20`.
+
+## Nota técnica
+No se requieren nuevos tokens CSS ni dependencias adicionales. Todos los valores están disponibles en el design system actual.
