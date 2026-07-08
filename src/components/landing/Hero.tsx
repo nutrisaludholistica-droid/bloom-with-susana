@@ -27,7 +27,7 @@ export function Hero() {
           </div>
 
           <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] sm:text-5xl lg:text-[3.4rem] text-olive">
-            Nutrióloga en Playa del Carmen y en línea — Susana Wignall
+            Nutrióloga en Playa del Carmen y en línea · Susana Wignall
           </h1>
 
           <p className="mt-6 max-w-xl text-base sm:text-lg text-foreground/75 leading-relaxed">
