@@ -23,7 +23,7 @@ export function Hero() {
         <div className="fade-in-up">
           <div className="inline-flex items-center gap-2 rounded-full border border-clay/40 bg-clay/10 px-3.5 py-1.5 text-xs sm:text-sm text-clay">
             <Gift className="h-3.5 w-3.5" />
-            Julio · Primera consulta GRATIS · 10 lugares
+            Agosto · Primera consulta GRATIS · 10 lugares
           </div>
 
           <h1 className="mt-5 font-display text-[2.1rem] leading-[1.1] sm:text-5xl lg:text-[3.4rem] text-olive">
@@ -54,7 +54,7 @@ export function Hero() {
             </a>
           </div>
           <p className="mt-2 text-sm text-muted-foreground">
-            🎁 Julio: primera consulta sin costo · Solo 10 lugares
+            🎁 Agosto: primera consulta sin costo · Solo 10 lugares
           </p>
 
           <p className="mt-4 max-w-xl text-sm text-foreground/60 flex items-start gap-1.5">
