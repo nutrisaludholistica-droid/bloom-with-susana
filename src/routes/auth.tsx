@@ -16,7 +16,11 @@ export const Route = createFileRoute("/auth")({
   },
   head: () => ({
     meta: [
-      { title: "Acceso CRM — LN Susana Wignall" },
+      { title: "Acceso al CRM clínico — LN Susana Wignall" },
+      {
+        name: "description",
+        content: "Acceso privado al CRM clínico de LN Susana Wignall. Uso exclusivo del consultorio.",
+      },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
