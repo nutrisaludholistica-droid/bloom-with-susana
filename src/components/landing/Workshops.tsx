@@ -1,5 +1,6 @@
 import workshopsImg from "@/assets/workshops.jpg";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 const WORKSHOPS = [
   { title: "Taller de fermentos", desc: "Aprende a preparar fermentos vivos para apoyar tu salud digestiva." },
