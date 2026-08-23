@@ -56,13 +56,6 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
           "Acompañamiento nutricional personalizado en Playa del Carmen y en línea. Primera consulta sin costo en agosto.",
       },
       { property: "og:url", content: pageUrl },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:description",
-        content:
-          "Nutrióloga en Playa del Carmen. Acompañamiento personalizado presencial y en línea. Cédula profesional 156228944.",
-      },
     ],
     links: [{ rel: "canonical", href: pageUrl }],
     scripts: [
