@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { initGA4, trackPageView } from "../lib/ga4";
 
 function NotFoundComponent() {
   return (
@@ -123,19 +124,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es-MX">
       <head>
         <HeadContent />
-        {/*
-          Analítica: para trackear los clics de WhatsApp (eventos
-          `whatsapp_click_*` disparados desde src/lib/analytics.ts),
-          pega aquí tu snippet de GA4 o GTM. Ejemplo GA4:
-
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX" />
-          <script dangerouslySetInnerHTML={{ __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXX');
-          `}} />
-        */}
       </head>
       <body>
         {children}
@@ -145,12 +133,32 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+/** Carga gtag.js y envía page_view en cada cambio de ruta del SPA. */
+function GoogleAnalytics() {
+  const router = useRouter();
+
+  useEffect(() => {
+    initGA4();
+    let last = window.location.pathname + window.location.search;
+    const unsubscribe = router.subscribe("onResolved", () => {
+      const current = window.location.pathname + window.location.search;
+      if (current === last) return;
+      last = current;
+      trackPageView(current);
+    });
+    return unsubscribe;
+  }, [router]);
+
+  return null;
+}
+
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
+      <GoogleAnalytics />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>

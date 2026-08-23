@@ -1,5 +1,6 @@
 import workshopsImg from "@/assets/workshops.jpg";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 const WORKSHOPS = [
   { title: "Taller de fermentos", desc: "Aprende a preparar fermentos vivos para apoyar tu salud digestiva." },
@@ -53,6 +54,7 @@ export function Workshops() {
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWaClick("whatsapp_click_workshops", { workshop: w.title })}
                     className="mt-3 inline-flex text-sm font-medium text-sage hover:text-olive"
                   >
                     Solicitar información →
