@@ -20,15 +20,15 @@ import { FAQS } from "@/components/landing/faq-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
+      { title: "Nutrióloga en Playa del Carmen y en línea — Susana Wignall" },
       {
         name: "description",
         content:
-          "Acompañamiento nutricional personalizado: recomposición corporal, salud digestiva y hábitos sostenibles en Playa del Carmen y en línea.",
+          "Agenda tu consulta con Susana Wignall: planes de recomposición corporal, salud digestiva y hábitos sostenibles, presencial en Playa del Carmen o en línea.",
       },
       {
         property: "og:title",
-        content: "LN Susana Wignall — Nutrióloga",
+        content: "Nutrióloga en Playa del Carmen y en línea — Susana Wignall",
       },
       {
         property: "og:description",
