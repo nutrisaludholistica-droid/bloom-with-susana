@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as NutriologaPlayaDelCarmenRouteImport } from './routes/nutriologa-playa-del-carmen'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
@@ -25,6 +26,12 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NutriologaPlayaDelCarmenRoute =
+  NutriologaPlayaDelCarmenRouteImport.update({
+    id: '/nutriologa-playa-del-carmen',
+    path: '/nutriologa-playa-del-carmen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
@@ -76,6 +83,7 @@ const AuthenticatedCrmPacientesPatientIdConsultaRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/nutriologa-playa-del-carmen': typeof NutriologaPlayaDelCarmenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/crm': typeof AuthenticatedCrmRouteWithChildren
   '/crm/agenda': typeof AuthenticatedCrmAgendaRoute
@@ -87,6 +95,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
+  '/nutriologa-playa-del-carmen': typeof NutriologaPlayaDelCarmenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/crm/agenda': typeof AuthenticatedCrmAgendaRoute
   '/crm/pacientes': typeof AuthenticatedCrmPacientesRouteWithChildren
@@ -99,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
+  '/nutriologa-playa-del-carmen': typeof NutriologaPlayaDelCarmenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_authenticated/crm': typeof AuthenticatedCrmRouteWithChildren
   '/_authenticated/crm/agenda': typeof AuthenticatedCrmAgendaRoute
@@ -112,6 +122,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/auth'
+    | '/nutriologa-playa-del-carmen'
     | '/sitemap.xml'
     | '/crm'
     | '/crm/agenda'
@@ -123,6 +134,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/auth'
+    | '/nutriologa-playa-del-carmen'
     | '/sitemap.xml'
     | '/crm/agenda'
     | '/crm/pacientes'
@@ -134,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/auth'
+    | '/nutriologa-playa-del-carmen'
     | '/sitemap.xml'
     | '/_authenticated/crm'
     | '/_authenticated/crm/agenda'
@@ -147,6 +160,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
+  NutriologaPlayaDelCarmenRoute: typeof NutriologaPlayaDelCarmenRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -157,6 +171,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nutriologa-playa-del-carmen': {
+      id: '/nutriologa-playa-del-carmen'
+      path: '/nutriologa-playa-del-carmen'
+      fullPath: '/nutriologa-playa-del-carmen'
+      preLoaderRoute: typeof NutriologaPlayaDelCarmenRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -285,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
+  NutriologaPlayaDelCarmenRoute: NutriologaPlayaDelCarmenRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport

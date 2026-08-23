@@ -51,6 +51,7 @@ export function Footer() {
           <div>
             <h3 className="font-display text-base text-olive">Navegación</h3>
             <ul className="mt-4 grid grid-cols-2 gap-y-2 text-sm">
+              <li><a href="/nutriologa-playa-del-carmen" className="text-foreground/80 hover:text-sage">Nutrióloga Playa del Carmen</a></li>
               <li><a href="#paquetes" className="text-foreground/80 hover:text-sage">Paquetes</a></li>
               <li><a href="#sobre-mi" className="text-foreground/80 hover:text-sage">Sobre mí</a></li>
               <li><a href="#talleres" className="text-foreground/80 hover:text-sage">Talleres</a></li>
@@ -59,6 +60,7 @@ export function Footer() {
               <li><a href="#ubicacion" className="text-foreground/80 hover:text-sage">Ubicación</a></li>
             </ul>
           </div>
+
         </div>
 
         <div className="mt-10 border-t border-border/60 pt-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-muted-foreground">
