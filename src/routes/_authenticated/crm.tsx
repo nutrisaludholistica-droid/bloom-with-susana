@@ -14,7 +14,7 @@ function CrmLayout() {
   async function signOut() {
     await supabase.auth.signOut();
     toast.success("Sesión cerrada");
-    navigate({ to: "/auth", search: {} });
+    navigate({ to: "/auth" });
   }
 
   return (
