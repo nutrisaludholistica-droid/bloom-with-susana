@@ -25,7 +25,7 @@ export function FinalCTA() {
           consciente y sostenible.
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base sm:text-lg text-cream/85 leading-relaxed">
-          Julio: primera consulta gratis para las primeras 10 personas. Presencial en
+          Agosto: primera consulta gratis para las primeras 10 personas. Presencial en
           Playa del Carmen o en línea.
         </p>
         <a
