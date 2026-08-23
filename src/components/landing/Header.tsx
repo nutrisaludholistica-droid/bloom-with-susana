@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
 
 const NAV = [
   { href: "#inicio", label: "Inicio" },
