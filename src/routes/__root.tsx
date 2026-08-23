@@ -80,14 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
+      { title: "LN Susana Wignall · Nutrición clínica consciente" },
       {
         name: "description",
         content:
-          "Acompañamiento nutricional personalizado en Playa del Carmen y en línea: recomposición corporal, salud digestiva y mejora de hábitos sin dietas extremas.",
+          "Sitio oficial de LN Susana Wignall: consulta de nutrición clínica, talleres y seguimiento profesional. Cédula 156228944.",
       },
       { name: "author", content: "LN Susana Wignall" },
-      { property: "og:title", content: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
+      { property: "og:site_name", content: "LN Susana Wignall" },
+      { property: "og:title", content: "LN Susana Wignall · Nutrición clínica consciente" },
       {
         property: "og:description",
         content:

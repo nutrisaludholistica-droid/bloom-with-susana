@@ -18,6 +18,13 @@ import { ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/crm/pacientes/$patientId/consulta")({
+  head: () => ({
+    meta: [
+      { title: "Nueva consulta — CRM interno" },
+      { name: "description", content: "Registro de consulta y notas SOAP, uso interno." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: NewConsultation,
 });
 

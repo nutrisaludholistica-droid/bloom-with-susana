@@ -50,6 +50,13 @@ import { es } from "date-fns/locale";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/crm/pacientes/$patientId")({
+  head: () => ({
+    meta: [
+      { title: "Expediente del paciente — CRM interno" },
+      { name: "description", content: "Expediente clínico completo del paciente, uso interno." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: PatientDetail,
 });
 
