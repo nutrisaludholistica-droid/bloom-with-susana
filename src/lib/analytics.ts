@@ -10,22 +10,25 @@ declare global {
   }
 }
 
+/** Deriva el nombre de sección a partir del event id (`whatsapp_click_hero` → `hero`). */
+function sectionFromEventId(eventId: string): string {
+  return eventId.replace(/^whatsapp_click_?/, "") || "generico";
+}
+
 export function trackWaClick(eventId: string, context: TrackContext = {}): void {
   if (typeof window === "undefined") return;
-  const payload = {
-    event: "whatsapp_click",
+  const params = {
     event_id: eventId,
+    section: sectionFromEventId(eventId),
+    page_path: window.location.pathname,
     ...context,
   };
   try {
     if (Array.isArray(window.dataLayer)) {
-      window.dataLayer.push(payload);
+      window.dataLayer.push({ event: "whatsapp_click", ...params });
     }
     if (typeof window.gtag === "function") {
-      window.gtag("event", "whatsapp_click", {
-        event_id: eventId,
-        ...context,
-      });
+      window.gtag("event", "whatsapp_click", params);
     }
   } catch {
     // no-op: nunca romper la navegación por analítica
