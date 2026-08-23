@@ -14,7 +14,12 @@ export const Route = createFileRoute("/auth")({
     const denied = s.denied ? 1 : undefined;
     return denied ? { denied } : {};
   },
-  head: () => ({ meta: [{ title: "Acceso CRM — LN Susana Wignall" }] }),
+  head: () => ({
+    meta: [
+      { title: "Acceso CRM — LN Susana Wignall" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: AuthPage,
 });
 
