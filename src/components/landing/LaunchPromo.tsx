@@ -7,11 +7,11 @@ export function LaunchPromo() {
       <div className="container-prose relative">
         <div className="flex flex-col items-center rounded-3xl bg-card px-6 py-10 text-center shadow-lg shadow-olive/5 sm:px-10 sm:py-14 border border-border/50">
           <span className="inline-flex items-center rounded-full border border-clay/20 bg-clay/10 px-3.5 py-1.5 text-xs text-clay">
-            Julio 2026
+            Agosto 2026
           </span>
 
           <h2 className="mt-5 font-display text-2xl sm:text-4xl text-olive leading-tight max-w-2xl">
-            Primera consulta sin costo — solo julio
+            Primera consulta sin costo — solo agosto
           </h2>
 
           <p className="mt-3 text-sm sm:text-base text-foreground/70 font-medium">
