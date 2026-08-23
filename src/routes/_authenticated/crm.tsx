@@ -5,6 +5,12 @@ import { LayoutDashboard, Users, CalendarDays, LogOut } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/crm")({
+  head: () => ({
+    meta: [
+      { title: "CRM — LN Susana Wignall" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: CrmLayout,
 });
 
