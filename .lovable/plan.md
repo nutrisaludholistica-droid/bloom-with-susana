@@ -1,50 +1,44 @@
-# Plan: llegar a 10/10 en SEO
+# Plan: SEO 10/10 — entrega acotada
 
-Revisé el sitio contra el checklist que enviaste. Ya está bien resuelto: robots.txt, sitemap enviado a Search Console, 1 solo H1, JSON-LD de MedicalBusiness + Person + FAQPage, WhatsApp visible arriba del fold y flotante, lazy load en imágenes secundarias.
+Nos enfocamos solo en la página que más impacto tendrá ahora: `/nutriologa-playa-del-carmen`. Dejamos el crecimiento a más páginas, precios y reseñas para después.
 
-Lo que falta para el 10 son 5 bloques.
+## 1. Correcciones técnicas rápidas (afectan todo el sitio)
+- **Canonical y og:url** en la home: agregar `<link rel="canonical" href="https://susanawignall.com/">` y `property="og:url" content="https://susanawignall.com/"`.
+- **Idioma**: cambiar `<html lang="en">` a `lang="es-MX"` en `src/routes/__root.tsx`.
+- **404 en español**: traducir el título, texto y botón de la página `NotFoundComponent`.
+- **og:image**: dejar el preview actual temporalmente; cuando tengas un asset social propio lo cambiamos.
 
-## 1. Indexación y canonical (rápido, alto impacto)
-- Agregar `<link rel="canonical">` y `og:url` autorreferenciales en la home (hoy no existen, riesgo de duplicado www / no-www).
-- Cambiar `<html lang="en">` a `lang="es-MX"`.
-- Traducir la página 404 al español y con enlace de WhatsApp.
-- `og:image` y `twitter:image` hoy apuntan a una captura de la preview. Reemplazarlos por una imagen propia y estable del dominio (retrato + nombre + "Nutrióloga en Playa del Carmen").
+## 2. Nueva página: `/nutriologa-playa-del-carmen`
+- Crear `src/routes/nutriologa-playa-del-carmen.tsx`.
+- `head()` con:
+  - Title: `Nutrióloga en Playa del Carmen · Susana Wignall` (50-60 caracteres).
+  - Description: ~155 caracteres con keyword principal.
+  - `og:title`, `og:description`, `og:url`, `og:type`, `canonical`.
+- Contenido propio y local:
+  - H1: `Nutrióloga en Playa del Carmen`.
+  - Subtítulo con CTA a WhatsApp.
+  - Breve explicación de la consulta presencial.
+  - Dirección real (Av. Paseo Central, Humana Works Center).
+  - Preguntas frecuentes específicas (3-5) para activar `FAQPage` en esta página.
+  - CTA final de WhatsApp.
+- JSON-LD: `MedicalBusiness` + `Service` + `FAQPage` + `BreadcrumbList`.
+- No inventamos precios ni reseñas.
 
-## 2. Páginas por servicio con URLs limpias (lo que más mueve la aguja)
-Hoy todo vive en una sola página, así que solo puedes rankear para una consulta. Propongo 4 páginas nuevas, cada una con su título, meta description, H1 y schema `Service`:
+## 3. Sitemap
+- Ampliar `src/routes/sitemap[.]xml.ts` para incluir `/nutriologa-playa-del-carmen`.
 
-- `/nutriologa-playa-del-carmen`
-- `/nutriologa-en-linea`
-- `/recomposicion-corporal`
-- `/salud-digestiva`
+## 4. Medición de clics
+- El sitio ya dispara eventos `whatsapp_click_*`. Conectar Google Analytics como connector para escucharlos. Pasos para crear el ID de medición:
+  1. Entra a [analytics.google.com](https://analytics.google.com).
+  2. Crea una **cuenta** y dentro una **propiedad** (por ejemplo "NutriSalud Holística").
+  3. Elige **Plataforma Web** e introduce `https://susanawignall.com`.
+  4. Al finalizar, copia el ID de medición que empieza con `G-` (p. ej. `G-ABC123XYZ`).
+  5. Pégamelo aquí y lo conecto como App connector en Lovable.
 
-Cada una: contenido real (para quién es, qué incluye, cómo es la primera consulta, precio o rango, FAQs propias), CTA de WhatsApp con mensaje precargado propio, y enlace desde la home. Se agregan al sitemap.
+## 5. No incluye este plan
+- Páginas `/nutriologa-en-linea`, `/recomposicion-corporal`, `/salud-digestiva` (para después).
+- Optimización de imágenes a WebP (se puede hacer en otro momento si no bloquea el build).
+- Review/AggregateRating (negocio nuevo, sin reseñas reales).
 
-## 3. Velocidad / Core Web Vitals
-- Convertir las imágenes grandes (hoy PNG de hasta 1086×1448) a WebP y servir tamaños responsivos con `srcset`.
-- La imagen del hero debe cargar con `fetchPriority="high"` y sin lazy (es el LCP); las demás quedan lazy.
-- Cargar el iframe de Google Maps solo al hacer scroll/clic (hoy bloquea recursos en móvil).
-- Medir con PageSpeed antes/después y ajustar.
-
-## 4. Datos estructurados que faltan
-- `Service` en cada página nueva.
-- `BreadcrumbList` en las páginas internas.
-- `AggregateRating` / `Review` **solo si** hay reseñas reales verificables (Google Business). Si no las hay, no se agrega: Google penaliza reseñas inventadas.
-
-## 5. Medición
-El código ya dispara eventos `whatsapp_click_*`, pero no hay ninguna herramienta escuchándolos. Falta pegar el ID de GA4 (`G-XXXXXXX`) para que se registren los clics y puedas ver qué sección convierte.
-
-## Lo que necesito de ti
-1. **ID de GA4** (o si prefieres que use otra analítica).
-2. **Reseñas reales**: ¿tienes perfil de Google Business con reseñas? Si sí, las usamos para `Review`.
-3. **Precios / rangos** de cada servicio, si quieres mostrarlos en las páginas nuevas (ayuda mucho a rankear y a filtrar pacientes).
-4. Confirmar los 4 temas de páginas nuevas o cambiarlos por los servicios que más quieras vender.
-
-## Detalles técnicos
-- Canonical en `links` de cada ruta hoja (nunca en `__root.tsx`, se duplicaría).
-- Páginas nuevas como archivos en `src/routes/*.tsx` con su propio `head()` (title 50-60 car., description 150-160 car.).
-- `src/routes/sitemap[.]xml.ts`: ampliar el array `entries` con las rutas nuevas.
-- Contenido de FAQs por página en archivos `*-faq-data.ts` para reusarlos en el JSON-LD.
-- Imágenes vía Lovable Assets en WebP; sin tocar el CRM ni la lógica de negocio.
-
-Puedo empezar por los bloques 1 y 3 (que no dependen de tus datos) y seguir con las páginas nuevas cuando confirmes.
+## Resultado esperado
+El sitio tendrá home + 1 página de servicio bien indexable, canonical correcto, JSON-LD duplicado por página, sitemap actualizado y GA4 listo para medir clics.
