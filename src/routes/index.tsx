@@ -35,6 +35,11 @@ export const Route = createFileRoute("/")({
         content:
           "Reconecta con tu cuerpo desde una nutrición consciente y sostenible. Consultas y paquetes en Playa del Carmen y en línea.",
       },
+      { property: "og:url", content: "https://susanawignall.com/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://susanawignall.com/" },
     ],
     scripts: [
       {
