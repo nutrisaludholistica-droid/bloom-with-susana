@@ -11,6 +11,13 @@ import { es } from "date-fns/locale";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/crm/")({
+  head: () => ({
+    meta: [
+      { title: "Panel del CRM — uso interno" },
+      { name: "description", content: "Resumen de citas y pacientes del consultorio." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: Dashboard,
 });
 

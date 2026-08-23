@@ -30,6 +30,13 @@ import { format } from "date-fns";
 import { es } from "date-fns/locale";
 
 export const Route = createFileRoute("/_authenticated/crm/pacientes")({
+  head: () => ({
+    meta: [
+      { title: "Pacientes — CRM interno" },
+      { name: "description", content: "Listado de pacientes del expediente clínico, uso interno." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: PatientsPage,
 });
 

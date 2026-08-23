@@ -34,6 +34,13 @@ import { Plus, CalendarDays } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/crm/agenda")({
+  head: () => ({
+    meta: [
+      { title: "Agenda de citas — CRM interno" },
+      { name: "description", content: "Calendario de citas del consultorio, uso interno." },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
   component: AgendaPage,
 });
 
