@@ -54,6 +54,7 @@ export function Workshops() {
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWaClick("whatsapp_click_workshops", { workshop: w.title })}
                     className="mt-3 inline-flex text-sm font-medium text-sage hover:text-olive"
                   >
                     Solicitar información →
