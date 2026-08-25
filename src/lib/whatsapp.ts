@@ -28,6 +28,12 @@ export const WA_MSG = {
     "Hola Susana, me gustaría más información para agendar una consulta.",
   footer:
     "Hola Susana, vengo del sitio web y quiero información para agendar una consulta.",
+  consultaNutricional:
+    "Hola Susana, quiero agendar una consulta nutricional. ¿Me compartes horarios y precio?",
+  enLinea:
+    "Hola Susana, quiero agendar una consulta de nutrición en línea. ¿Cómo funciona y qué horarios tienes?",
+  tanita:
+    "Hola Susana, me interesa el análisis de composición corporal con Tanita. ¿Cómo lo agendo?",
   generico:
     "Hola Susana, quiero más información para reservar.",
 } as const;
