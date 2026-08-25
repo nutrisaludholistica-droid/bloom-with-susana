@@ -80,15 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LN Susana Wignall · Nutrición clínica consciente" },
+      { title: "Nutrióloga Susana Wignall · Nutrición clínica" },
       {
         name: "description",
         content:
-          "Sitio oficial de LN Susana Wignall: consulta de nutrición clínica, talleres y seguimiento profesional. Cédula 156228944.",
+          "Nutrióloga Susana Wignall: consulta de nutrición clínica, talleres y seguimiento profesional en Playa del Carmen y en línea. Cédula 156228944.",
       },
-      { name: "author", content: "LN Susana Wignall" },
-      { property: "og:site_name", content: "LN Susana Wignall" },
-      { property: "og:title", content: "LN Susana Wignall · Nutrición clínica consciente" },
+      { name: "author", content: "Susana Wignall, Nutrióloga" },
+      { property: "og:site_name", content: "Nutrióloga Susana Wignall" },
+      { property: "og:title", content: "Nutrióloga Susana Wignall · Nutrición clínica" },
       {
         property: "og:description",
         content:
@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_MX" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
+      { name: "twitter:title", content: "Nutrióloga en Playa del Carmen y en línea — Susana Wignall" },
       { name: "twitter:description", content: "Nutrióloga en Playa del Carmen y en línea. Acompañamiento personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Cédula profesional 156228944." },
       { name: "google-site-verification", content: "vHBjtVrI93psm_AlDbLID0HsELH4UsR1Imv3X78tRtI" },
     ],
@@ -119,7 +119,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           "@id": "https://susanawignall.com/#website",
-          name: "LN Susana Wignall",
+          name: "Nutrióloga Susana Wignall",
+          alternateName: ["Susana Wignall Nutrición", "Susana Wignall"],
           url: "https://susanawignall.com/",
           inLanguage: "es-MX",
           publisher: { "@id": "https://susanawignall.com/#negocio" },

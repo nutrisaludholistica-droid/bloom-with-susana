@@ -11,7 +11,7 @@ export function Footer() {
               <span className="grid h-10 w-10 place-items-center rounded-full border border-sage/40 bg-sage/10 font-display text-sage">
                 SW
               </span>
-              <span className="font-display text-lg text-olive">LN Susana Wignall</span>
+              <span className="font-display text-lg text-olive">Susana Wignall · Nutrióloga</span>
             </div>
             <p className="mt-4 text-sm text-foreground/70 leading-relaxed max-w-sm">
               Acompañamiento nutricional personalizado en Playa del Carmen y en línea.
@@ -67,7 +67,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-border/60 pt-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} LN Susana Wignall. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} Susana Wignall, Nutrióloga. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4">
             <p>Hecho con cariño en Playa del Carmen.</p>
             <a href="/auth" className="hover:text-sage opacity-60 hover:opacity-100 transition">

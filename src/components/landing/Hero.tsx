@@ -65,7 +65,7 @@ export function Hero() {
             <source media="(max-width: 639px)" srcSet={heroMobileImg.url} />
             <img
               src={heroImg.url}
-              alt="LN Susana Wignall, nutrióloga en Playa del Carmen"
+              alt="Susana Wignall, nutrióloga en Playa del Carmen"
               width={577}
               height={1024}
               fetchPriority="high"

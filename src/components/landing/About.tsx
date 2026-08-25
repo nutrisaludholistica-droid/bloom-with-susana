@@ -27,7 +27,7 @@ export function About() {
             className="aspect-[4/5] w-full object-cover"
           />
           <p className="mt-4 text-[0.68rem] uppercase tracking-[0.2em] text-muted-foreground">
-            LN Susana Wignall · Céd. profesional 156228944
+            Susana Wignall · Nutrióloga · Céd. profesional 156228944
           </p>
         </div>
 

@@ -74,7 +74,8 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
           "@id": "https://susanawignall.com/#negocio",
-          name: "LN Susana Wignall — Nutrióloga",
+          name: "Nutrióloga Susana Wignall",
+          alternateName: ["Susana Wignall Nutrición", "LN Susana Wignall"],
           url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           image:
