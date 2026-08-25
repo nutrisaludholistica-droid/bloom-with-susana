@@ -34,7 +34,7 @@ export function About() {
         <div>
           <p className="eyebrow">Sobre mí</p>
           <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
-            Susana Wignall
+            Susana Wignall, nutrióloga clínica en Playa del Carmen
           </h2>
 
           <blockquote className="mt-8 border-l border-clay/50 pl-6 font-script text-2xl leading-snug text-clay sm:text-[1.75rem]">

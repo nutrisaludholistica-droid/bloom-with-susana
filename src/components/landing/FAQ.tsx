@@ -13,7 +13,7 @@ export function FAQ() {
         <div>
           <p className="eyebrow">Preguntas frecuentes</p>
           <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
-            Resolvamos tus dudas
+            Preguntas sobre nutrición en Playa del Carmen y en línea
           </h2>
           <p className="mt-6 text-sm leading-[1.9] text-foreground/70">
             ¿Tienes otra pregunta? Escríbeme y te respondo personalmente.
@@ -50,6 +50,17 @@ export function FAQ() {
                 {isOpen && (
                   <div className="pb-6 pr-8 text-sm leading-[1.9] text-foreground/70">
                     {f.a}
+                    {f.cta && (
+                      <a
+                        href={waUrl(WA_MSG[f.cta.msg])}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackWaClick(`whatsapp_click_faq_${f.cta!.msg}`)}
+                        className="mt-4 inline-flex items-center border-b border-olive/40 pb-1 text-[0.78rem] uppercase tracking-[0.14em] text-olive transition-colors hover:border-olive"
+                      >
+                        {f.cta.label} →
+                      </a>
+                    )}
                   </div>
                 )}
               </div>
