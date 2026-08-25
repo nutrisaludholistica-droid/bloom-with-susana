@@ -34,6 +34,16 @@ export const WA_MSG = {
     "Hola Susana, quiero agendar una consulta de nutrición en línea. ¿Cómo funciona y qué horarios tienes?",
   tanita:
     "Hola Susana, me interesa el análisis de composición corporal con Tanita. ¿Cómo lo agendo?",
+  faqRecomposicion:
+    "Hola Susana, quiero trabajar recomposición corporal (bajar grasa y ganar músculo). ¿Cómo empezamos?",
+  faqDigestiva:
+    "Hola Susana, tengo molestias digestivas (inflamación/colitis) y quiero mejorar mi salud digestiva. ¿Me ayudas?",
+  faqPrecio:
+    "Hola Susana, vi los precios en tu sitio y quiero agendar mi consulta. ¿Qué horarios tienes disponibles?",
+  faqPrimeraConsulta:
+    "Hola Susana, quiero agendar mi primera consulta de nutrición. ¿Qué necesito llevar y qué horarios tienes?",
+  faqAgenda:
+    "Hola Susana, quiero agendar mi consulta. ¿Me compartes los horarios disponibles?",
   generico:
     "Hola Susana, quiero más información para reservar.",
 } as const;
