@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { WA_MSG, waUrl } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
 import produceImg from "@/assets/produce.webp";
@@ -16,31 +15,33 @@ export function FinalCTA() {
           loading="lazy"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-olive/85" />
+        <div className="absolute inset-0 bg-olive/90" />
       </div>
 
-      <div className="container-prose text-center text-cream">
-        <h2 className="mx-auto max-w-3xl font-display text-3xl sm:text-4xl lg:text-5xl leading-tight">
-          Empieza a reconectar con tu cuerpo desde una nutrición personalizada,
-          consciente y sostenible.
+      <div className="container-prose">
+        <p className="text-[0.68rem] uppercase tracking-[0.34em] text-cream/60">
+          Agosto · Primera consulta sin costo
+        </p>
+        <h2 className="mt-7 max-w-3xl font-display text-3xl font-light leading-[1.15] text-cream sm:text-[3rem]">
+          Empieza a reconectar con tu cuerpo desde una nutrición{" "}
+          <span className="font-script text-[0.85em] tracking-normal text-cream/85">
+            consciente
+          </span>{" "}
+          y sostenible.
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base sm:text-lg text-cream/85 leading-relaxed">
-          Agosto: primera consulta gratis para las primeras 10 personas. Presencial en
-          Playa del Carmen o en línea.
+        <p className="mt-7 max-w-lg border-t border-cream/20 pt-6 text-[0.95rem] leading-[1.9] text-cream/75">
+          Presencial en Playa del Carmen o en línea. Te responderé por WhatsApp para
+          confirmar horario y modalidad.
         </p>
         <a
           href={waUrl(WA_MSG.finalCta)}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackWaClick("whatsapp_click_final_cta")}
-          className="group mt-9 inline-flex items-center justify-center gap-2 rounded-full bg-cream px-7 py-4 text-base font-medium text-olive hover:bg-background transition"
+          className="mt-9 inline-flex items-center justify-center bg-cream px-8 py-4 text-[0.72rem] uppercase tracking-[0.22em] text-olive transition-colors hover:bg-background"
         >
-          Quiero reservar mi consulta gratis
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          Reservar mi consulta
         </a>
-        <p className="mt-4 text-xs text-cream/60">
-          Te responderé por WhatsApp para confirmar horario y modalidad.
-        </p>
       </div>
     </section>
   );
