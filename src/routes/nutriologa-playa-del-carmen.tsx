@@ -253,7 +253,7 @@ function LocalNutritionPage() {
             eyebrow="Cómo trabajo"
             title="Un plan hecho para ti, no para todos"
           >
-            Cada paciente es distinto. Por eso mi enfoque combina valoración
+            Si estás buscando un nutriólogo o nutrióloga en Playa del Carmen, cada paciente es distinto. Por eso mi enfoque combina valoración
             clínica, antropometría segmentada y un plan de alimentación
             realista con tu rutina, gustos y presupuesto.
           </SectionHeading>
