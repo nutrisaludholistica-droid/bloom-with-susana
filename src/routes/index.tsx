@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-susana.webp.asset.json";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { LaunchPromo } from "@/components/landing/LaunchPromo";
@@ -39,6 +40,13 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://susanawignall.com/" },
+      // Precarga del elemento LCP (retrato del hero).
+      {
+        rel: "preload",
+        as: "image",
+        href: heroImg.url,
+        fetchPriority: "high",
+      },
     ],
     scripts: [
       {
@@ -51,7 +59,7 @@ export const Route = createFileRoute("/")({
           url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           image:
-            "https://susanawignall.com/__l5e/assets-v1/0905c724-9991-4344-a7b8-ae5620a0b7d8/about-susana-new.png",
+            "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
           logo: "https://susanawignall.com/favicon.ico",
           address: {
             "@type": "PostalAddress",

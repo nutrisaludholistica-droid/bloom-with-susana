@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { WA_MSG, waUrl } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
-import produceImg from "@/assets/produce.jpg";
+import produceImg from "@/assets/produce.webp";
 
 export function FinalCTA() {
   return (
@@ -11,8 +11,8 @@ export function FinalCTA() {
           src={produceImg}
           alt=""
           aria-hidden
-          width={1280}
-          height={960}
+          width={900}
+          height={900}
           loading="lazy"
           className="h-full w-full object-cover"
         />
