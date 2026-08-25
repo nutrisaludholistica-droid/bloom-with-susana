@@ -54,73 +54,92 @@
   --color-cream: var(--cream);
   --color-whatsapp: var(--whatsapp);
   --color-promo-bg: var(--promo-bg);
+  --color-plum: var(--plum);
+  --color-amber: var(--amber);
+  --color-grain: var(--grain);
 }
 
 :root {
   --radius: 0.25rem;
 
-  /* Crema cálida casi blanca / verde profundo */
-  --background: oklch(0.984 0.006 100);
-  --foreground: oklch(0.29 0.018 130);
+  /* Paleta: milpa · maíz azul · ámbar · grano · fondo */
+  --background: oklch(0.961 0.007 89);
+  --foreground: oklch(0.3 0.032 125);
 
-  --card: oklch(0.995 0.003 100);
-  --card-foreground: oklch(0.29 0.018 130);
-  --popover: oklch(0.995 0.003 100);
-  --popover-foreground: oklch(0.29 0.018 130);
+  --card: oklch(0.982 0.005 95);
+  --card-foreground: oklch(0.3 0.032 125);
+  --popover: oklch(0.982 0.005 95);
+  --popover-foreground: oklch(0.3 0.032 125);
 
-  /* Primary = verde salvia profundo */
-  --primary: oklch(0.45 0.026 132);
-  --primary-foreground: oklch(0.984 0.006 100);
+  /* Primary = milpa (verde profundo) */
+  --primary: oklch(0.45 0.057 125);
+  --primary-foreground: oklch(0.982 0.005 95);
 
-  --secondary: oklch(0.945 0.012 98);
-  --secondary-foreground: oklch(0.29 0.018 130);
+  --secondary: oklch(0.913 0.028 91);
+  --secondary-foreground: oklch(0.3 0.032 125);
 
-  --muted: oklch(0.955 0.008 98);
-  --muted-foreground: oklch(0.52 0.016 125);
+  --muted: oklch(0.937 0.017 90);
+  --muted-foreground: oklch(0.505 0.028 122);
 
-  /* Accent = terracota apagada */
-  --accent: oklch(0.63 0.075 44);
-  --accent-foreground: oklch(0.99 0.004 90);
+  /* Accent = ámbar */
+  --accent: oklch(0.755 0.118 85);
+  --accent-foreground: oklch(0.28 0.03 100);
 
   --destructive: oklch(0.577 0.18 27);
   --destructive-foreground: oklch(0.985 0.006 100);
 
-  --border: oklch(0.885 0.012 105);
-  --input: oklch(0.885 0.012 105);
-  --ring: oklch(0.45 0.026 132);
+  --border: oklch(0.878 0.024 91);
+  --input: oklch(0.878 0.024 91);
+  --ring: oklch(0.45 0.057 125);
 
   /* Tokens de identidad */
-  --sage: oklch(0.45 0.026 132);
-  --sage-soft: oklch(0.91 0.018 126);
-  --olive: oklch(0.31 0.02 132);
-  --clay: oklch(0.5 0.045 140);
-  --sand: oklch(0.945 0.012 95);
-  --cream: oklch(0.984 0.006 100);
+  --sage: oklch(0.45 0.057 125);
+  --sage-soft: oklch(0.9 0.03 118);
+  --olive: oklch(0.33 0.042 125);
+  --clay: oklch(0.464 0.048 337);
+  --sand: oklch(0.913 0.028 91);
+  --cream: oklch(0.982 0.005 95);
   --whatsapp: oklch(0.62 0.11 150);
-  --promo-bg: oklch(0.31 0.02 132);
+  --promo-bg: oklch(0.33 0.042 125);
+
+  /* Paleta nombrada */
+  --plum: oklch(0.464 0.048 337);
+  --amber: oklch(0.755 0.118 85);
+  --grain: oklch(0.913 0.028 91);
+
 
 }
 
 .dark {
-  --background: oklch(0.22 0.02 130);
-  --foreground: oklch(0.97 0.012 85);
-  --card: oklch(0.27 0.025 130);
-  --card-foreground: oklch(0.97 0.012 85);
-  --popover: oklch(0.27 0.025 130);
-  --popover-foreground: oklch(0.97 0.012 85);
-  --primary: oklch(0.7 0.07 150);
-  --primary-foreground: oklch(0.22 0.02 130);
-  --secondary: oklch(0.32 0.025 120);
-  --secondary-foreground: oklch(0.97 0.012 85);
-  --muted: oklch(0.32 0.025 120);
-  --muted-foreground: oklch(0.75 0.02 100);
-  --accent: oklch(0.7 0.09 45);
-  --accent-foreground: oklch(0.99 0.005 80);
+  --background: oklch(0.23 0.028 125);
+  --foreground: oklch(0.955 0.012 90);
+  --card: oklch(0.28 0.032 125);
+  --card-foreground: oklch(0.955 0.012 90);
+  --popover: oklch(0.28 0.032 125);
+  --popover-foreground: oklch(0.955 0.012 90);
+  --primary: oklch(0.72 0.075 122);
+  --primary-foreground: oklch(0.23 0.028 125);
+  --secondary: oklch(0.33 0.032 122);
+  --secondary-foreground: oklch(0.955 0.012 90);
+  --muted: oklch(0.33 0.032 122);
+  --muted-foreground: oklch(0.755 0.022 95);
+  --accent: oklch(0.78 0.115 85);
+  --accent-foreground: oklch(0.25 0.03 100);
   --destructive: oklch(0.65 0.18 27);
   --destructive-foreground: oklch(0.97 0.012 85);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.7 0.07 150);
+  --ring: oklch(0.72 0.075 122);
+
+  --sage: oklch(0.72 0.075 122);
+  --sage-soft: oklch(0.33 0.032 122);
+  --olive: oklch(0.9 0.02 100);
+  --clay: oklch(0.7 0.06 337);
+  --sand: oklch(0.33 0.032 122);
+  --cream: oklch(0.28 0.032 125);
+  --plum: oklch(0.7 0.06 337);
+  --amber: oklch(0.78 0.115 85);
+  --grain: oklch(0.33 0.032 122);
 }
 
 @layer base {

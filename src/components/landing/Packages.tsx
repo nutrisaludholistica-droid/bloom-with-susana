@@ -116,7 +116,7 @@ export function Packages() {
               }`}
             >
               {p.featured && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-clay px-3 py-1 text-xs font-medium text-accent-foreground shadow">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-clay px-3 py-1 text-xs font-medium text-cream shadow">
                   <Sparkles className="h-3.5 w-3.5" />
                   Más elegido
                 </span>
