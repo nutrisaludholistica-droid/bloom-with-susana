@@ -107,13 +107,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      // Tipografías sin bloquear el render: se cargan como "print" y se
+      // promueven a "all" al terminar la descarga (fallback de sistema con swap).
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap",
-      },
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap",
+        media: "print",
+        onLoad: "this.media='all'",
+      } as unknown as { rel: string; href: string },
     ],
     scripts: [
       {
+
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
