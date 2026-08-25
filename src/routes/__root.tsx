@@ -102,8 +102,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "google-site-verification", content: "vHBjtVrI93psm_AlDbLID0HsELH4UsR1Imv3X78tRtI" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Karla:wght@300;400;500&family=Nothing+You+Could+Do&display=swap",
+      },
       { rel: "stylesheet", href: appCss },
     ],
+
     scripts: [
       {
 
