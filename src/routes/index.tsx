@@ -18,7 +18,8 @@ import { FinalCTA } from "@/components/landing/FinalCTA";
 import { InternalLinks } from "@/components/landing/InternalLinks";
 import { Footer } from "@/components/landing/Footer";
 import { WhatsappFloat } from "@/components/landing/WhatsappFloat";
-import { FAQS } from "@/components/landing/faq-data";
+import { FAQS, faqAnswerText } from "@/components/landing/faq-data";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -72,7 +73,7 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalBusiness",
+          "@type": ["MedicalBusiness", "LocalBusiness"],
           "@id": "https://susanawignall.com/#negocio",
           name: "Nutrióloga Susana Wignall",
           alternateName: ["Susana Wignall Nutrición", "LN Susana Wignall"],
@@ -133,6 +134,25 @@ export const Route = createFileRoute("/")({
                   description:
                     "Evaluación completa con historia clínica, antropometría y bioimpedancia, presencial en Playa del Carmen o en línea.",
                   serviceType: "Consulta de nutrición",
+                  provider: { "@id": "https://susanawignall.com/#negocio" },
+                  areaServed: [
+                    { "@type": "City", name: "Playa del Carmen" },
+                    { "@type": "Country", name: "México" },
+                  ],
+                  availableChannel: [
+                    {
+                      "@type": "ServiceChannel",
+                      name: "Consulta presencial",
+                      servicePhone: "+52-984-279-9652",
+                      serviceUrl: waUrl(WA_MSG.faqPrimeraConsulta),
+                    },
+                    {
+                      "@type": "ServiceChannel",
+                      name: "Consulta en línea",
+                      serviceUrl: waUrl(WA_MSG.enLinea),
+                      availableLanguage: ["es", "en"],
+                    },
+                  ],
                 },
               },
               {
@@ -189,7 +209,9 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           "@id": "https://susanawignall.com/#susana",
           name: "Susana Wignall",
-          jobTitle: "Licenciada en Nutrición",
+          jobTitle: "Nutrióloga",
+          description:
+            "Nutrióloga clínica en Playa del Carmen y en línea, especializada en recomposición corporal y salud digestiva.",
           url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           worksFor: { "@id": "https://susanawignall.com/#negocio" },
@@ -228,7 +250,7 @@ export const Route = createFileRoute("/")({
             name: f.q,
             acceptedAnswer: {
               "@type": "Answer",
-              text: f.a,
+              text: faqAnswerText(f),
             },
           })),
         }),

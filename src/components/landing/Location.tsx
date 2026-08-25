@@ -17,7 +17,7 @@ export function Location() {
               Ubicación
             </span>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl text-olive">
-              Consulta presencial en Playa del Carmen
+              Consultorio de nutrición en Playa del Carmen
             </h2>
 
             <div className="mt-7 space-y-5">
