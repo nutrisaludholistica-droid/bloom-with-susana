@@ -37,3 +37,25 @@ export function trackWaClick(eventId: string, context: TrackContext = {}): void 
     // no-op: nunca romper la navegación por analítica
   }
 }
+
+export function trackSocialClick(platform: "instagram" | "facebook", account: "personal" | "maiz-sal"): void {
+  if (typeof window === "undefined") return;
+  initGA4();
+  const eventId = `social_click_${platform}_${account}`;
+  const params = {
+    event_id: eventId,
+    platform,
+    account,
+    page_path: window.location.pathname,
+  };
+  try {
+    if (Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({ event: "social_click", ...params });
+    }
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "social_click", params);
+    }
+  } catch {
+    // no-op
+  }
+}
