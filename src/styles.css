@@ -62,45 +62,51 @@
 :root {
   --radius: 0.25rem;
 
-  /* Crema cálida casi blanca / verde profundo */
-  --background: oklch(0.984 0.006 100);
-  --foreground: oklch(0.29 0.018 130);
+  /* Paleta: milpa · maíz azul · ámbar · grano · fondo */
+  --background: oklch(0.961 0.007 89);
+  --foreground: oklch(0.3 0.032 125);
 
-  --card: oklch(0.995 0.003 100);
-  --card-foreground: oklch(0.29 0.018 130);
-  --popover: oklch(0.995 0.003 100);
-  --popover-foreground: oklch(0.29 0.018 130);
+  --card: oklch(0.982 0.005 95);
+  --card-foreground: oklch(0.3 0.032 125);
+  --popover: oklch(0.982 0.005 95);
+  --popover-foreground: oklch(0.3 0.032 125);
 
-  /* Primary = verde salvia profundo */
-  --primary: oklch(0.45 0.026 132);
-  --primary-foreground: oklch(0.984 0.006 100);
+  /* Primary = milpa (verde profundo) */
+  --primary: oklch(0.45 0.057 125);
+  --primary-foreground: oklch(0.982 0.005 95);
 
-  --secondary: oklch(0.945 0.012 98);
-  --secondary-foreground: oklch(0.29 0.018 130);
+  --secondary: oklch(0.913 0.028 91);
+  --secondary-foreground: oklch(0.3 0.032 125);
 
-  --muted: oklch(0.955 0.008 98);
-  --muted-foreground: oklch(0.52 0.016 125);
+  --muted: oklch(0.937 0.017 90);
+  --muted-foreground: oklch(0.505 0.028 122);
 
-  /* Accent = terracota apagada */
-  --accent: oklch(0.63 0.075 44);
-  --accent-foreground: oklch(0.99 0.004 90);
+  /* Accent = ámbar */
+  --accent: oklch(0.755 0.118 85);
+  --accent-foreground: oklch(0.28 0.03 100);
 
   --destructive: oklch(0.577 0.18 27);
   --destructive-foreground: oklch(0.985 0.006 100);
 
-  --border: oklch(0.885 0.012 105);
-  --input: oklch(0.885 0.012 105);
-  --ring: oklch(0.45 0.026 132);
+  --border: oklch(0.878 0.024 91);
+  --input: oklch(0.878 0.024 91);
+  --ring: oklch(0.45 0.057 125);
 
   /* Tokens de identidad */
-  --sage: oklch(0.45 0.026 132);
-  --sage-soft: oklch(0.91 0.018 126);
-  --olive: oklch(0.31 0.02 132);
-  --clay: oklch(0.5 0.045 140);
-  --sand: oklch(0.945 0.012 95);
-  --cream: oklch(0.984 0.006 100);
+  --sage: oklch(0.45 0.057 125);
+  --sage-soft: oklch(0.9 0.03 118);
+  --olive: oklch(0.33 0.042 125);
+  --clay: oklch(0.464 0.048 337);
+  --sand: oklch(0.913 0.028 91);
+  --cream: oklch(0.982 0.005 95);
   --whatsapp: oklch(0.62 0.11 150);
-  --promo-bg: oklch(0.31 0.02 132);
+  --promo-bg: oklch(0.33 0.042 125);
+
+  /* Paleta nombrada */
+  --plum: oklch(0.464 0.048 337);
+  --amber: oklch(0.755 0.118 85);
+  --grain: oklch(0.913 0.028 91);
+
 
 }
 
