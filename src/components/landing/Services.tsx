@@ -25,9 +25,9 @@ export function Services() {
           <div>
             <p className="eyebrow">Servicios</p>
             <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
-              Un acompañamiento pensado para tu{" "}
+              Consulta con nutrióloga en Playa del Carmen o{" "}
               <span className="font-script text-clay text-[0.9em] tracking-normal">
-                vida real
+                en línea
               </span>
             </h2>
           </div>

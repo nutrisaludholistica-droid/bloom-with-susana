@@ -72,7 +72,7 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "MedicalBusiness",
+          "@type": ["MedicalBusiness", "LocalBusiness"],
           "@id": "https://susanawignall.com/#negocio",
           name: "Nutrióloga Susana Wignall",
           alternateName: ["Susana Wignall Nutrición", "LN Susana Wignall"],
@@ -189,7 +189,9 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           "@id": "https://susanawignall.com/#susana",
           name: "Susana Wignall",
-          jobTitle: "Licenciada en Nutrición",
+          jobTitle: "Nutrióloga",
+          description:
+            "Nutrióloga clínica en Playa del Carmen y en línea, especializada en recomposición corporal y salud digestiva.",
           url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           worksFor: { "@id": "https://susanawignall.com/#negocio" },
