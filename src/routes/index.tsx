@@ -134,6 +134,25 @@ export const Route = createFileRoute("/")({
                   description:
                     "Evaluación completa con historia clínica, antropometría y bioimpedancia, presencial en Playa del Carmen o en línea.",
                   serviceType: "Consulta de nutrición",
+                  provider: { "@id": "https://susanawignall.com/#negocio" },
+                  areaServed: [
+                    { "@type": "City", name: "Playa del Carmen" },
+                    { "@type": "Country", name: "México" },
+                  ],
+                  availableChannel: [
+                    {
+                      "@type": "ServiceChannel",
+                      name: "Consulta presencial",
+                      servicePhone: "+52-984-279-9652",
+                      serviceUrl: waUrl(WA_MSG.faqPrimeraConsulta),
+                    },
+                    {
+                      "@type": "ServiceChannel",
+                      name: "Consulta en línea",
+                      serviceUrl: waUrl(WA_MSG.enLinea),
+                      availableLanguage: ["es", "en"],
+                    },
+                  ],
                 },
               },
               {
