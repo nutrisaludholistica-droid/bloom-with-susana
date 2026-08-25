@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import heroImg from "@/assets/hero-susana.webp.asset.json";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { LaunchPromo } from "@/components/landing/LaunchPromo";
@@ -39,6 +40,14 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://susanawignall.com/" },
+      // Precarga del elemento LCP (retrato del hero).
+      {
+        rel: "preload",
+        as: "image",
+        href: heroImg.url,
+        type: "image/webp",
+        fetchPriority: "high",
+      },
     ],
     scripts: [
       {
