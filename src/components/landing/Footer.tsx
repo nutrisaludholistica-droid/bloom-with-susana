@@ -52,6 +52,9 @@ export function Footer() {
             <h3 className="font-display text-base text-olive">Navegación</h3>
             <ul className="mt-4 grid grid-cols-2 gap-y-2 text-sm">
               <li><a href="/nutriologa-playa-del-carmen" className="text-foreground/80 hover:text-sage">Nutrióloga Playa del Carmen</a></li>
+              <li><a href="/consulta-nutricional" className="text-foreground/80 hover:text-sage">Consulta nutricional</a></li>
+              <li><a href="/nutriologa-en-linea" className="text-foreground/80 hover:text-sage">Nutrióloga en línea</a></li>
+              <li><a href="/analisis-corporal-tanita" className="text-foreground/80 hover:text-sage">Composición corporal</a></li>
               <li><a href="#paquetes" className="text-foreground/80 hover:text-sage">Paquetes</a></li>
               <li><a href="#sobre-mi" className="text-foreground/80 hover:text-sage">Sobre mí</a></li>
               <li><a href="#talleres" className="text-foreground/80 hover:text-sage">Talleres</a></li>

@@ -11,7 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as NutriologaPlayaDelCarmenRouteImport } from './routes/nutriologa-playa-del-carmen'
+import { Route as NutriologaEnLineaRouteImport } from './routes/nutriologa-en-linea'
+import { Route as ConsultaNutricionalRouteImport } from './routes/consulta-nutricional'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AnalisisCorporalTanitaRouteImport } from './routes/analisis-corporal-tanita'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedCrmRouteImport } from './routes/_authenticated/crm'
@@ -32,9 +35,24 @@ const NutriologaPlayaDelCarmenRoute =
     path: '/nutriologa-playa-del-carmen',
     getParentRoute: () => rootRouteImport,
   } as any)
+const NutriologaEnLineaRoute = NutriologaEnLineaRouteImport.update({
+  id: '/nutriologa-en-linea',
+  path: '/nutriologa-en-linea',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultaNutricionalRoute = ConsultaNutricionalRouteImport.update({
+  id: '/consulta-nutricional',
+  path: '/consulta-nutricional',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/auth',
   path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalisisCorporalTanitaRoute = AnalisisCorporalTanitaRouteImport.update({
+  id: '/analisis-corporal-tanita',
+  path: '/analisis-corporal-tanita',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
@@ -82,7 +100,10 @@ const AuthenticatedCrmPacientesPatientIdConsultaRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analisis-corporal-tanita': typeof AnalisisCorporalTanitaRoute
   '/auth': typeof AuthRoute
+  '/consulta-nutricional': typeof ConsultaNutricionalRoute
+  '/nutriologa-en-linea': typeof NutriologaEnLineaRoute
   '/nutriologa-playa-del-carmen': typeof NutriologaPlayaDelCarmenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/crm': typeof AuthenticatedCrmRouteWithChildren
@@ -94,7 +115,10 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analisis-corporal-tanita': typeof AnalisisCorporalTanitaRoute
   '/auth': typeof AuthRoute
+  '/consulta-nutricional': typeof ConsultaNutricionalRoute
+  '/nutriologa-en-linea': typeof NutriologaEnLineaRoute
   '/nutriologa-playa-del-carmen': typeof NutriologaPlayaDelCarmenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/crm/agenda': typeof AuthenticatedCrmAgendaRoute
@@ -107,7 +131,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/analisis-corporal-tanita': typeof AnalisisCorporalTanitaRoute
   '/auth': typeof AuthRoute
+  '/consulta-nutricional': typeof ConsultaNutricionalRoute
+  '/nutriologa-en-linea': typeof NutriologaEnLineaRoute
   '/nutriologa-playa-del-carmen': typeof NutriologaPlayaDelCarmenRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/_authenticated/crm': typeof AuthenticatedCrmRouteWithChildren
@@ -121,7 +148,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/analisis-corporal-tanita'
     | '/auth'
+    | '/consulta-nutricional'
+    | '/nutriologa-en-linea'
     | '/nutriologa-playa-del-carmen'
     | '/sitemap.xml'
     | '/crm'
@@ -133,7 +163,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/analisis-corporal-tanita'
     | '/auth'
+    | '/consulta-nutricional'
+    | '/nutriologa-en-linea'
     | '/nutriologa-playa-del-carmen'
     | '/sitemap.xml'
     | '/crm/agenda'
@@ -145,7 +178,10 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/analisis-corporal-tanita'
     | '/auth'
+    | '/consulta-nutricional'
+    | '/nutriologa-en-linea'
     | '/nutriologa-playa-del-carmen'
     | '/sitemap.xml'
     | '/_authenticated/crm'
@@ -159,7 +195,10 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AnalisisCorporalTanitaRoute: typeof AnalisisCorporalTanitaRoute
   AuthRoute: typeof AuthRoute
+  ConsultaNutricionalRoute: typeof ConsultaNutricionalRoute
+  NutriologaEnLineaRoute: typeof NutriologaEnLineaRoute
   NutriologaPlayaDelCarmenRoute: typeof NutriologaPlayaDelCarmenRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -180,11 +219,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NutriologaPlayaDelCarmenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nutriologa-en-linea': {
+      id: '/nutriologa-en-linea'
+      path: '/nutriologa-en-linea'
+      fullPath: '/nutriologa-en-linea'
+      preLoaderRoute: typeof NutriologaEnLineaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consulta-nutricional': {
+      id: '/consulta-nutricional'
+      path: '/consulta-nutricional'
+      fullPath: '/consulta-nutricional'
+      preLoaderRoute: typeof ConsultaNutricionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analisis-corporal-tanita': {
+      id: '/analisis-corporal-tanita'
+      path: '/analisis-corporal-tanita'
+      fullPath: '/analisis-corporal-tanita'
+      preLoaderRoute: typeof AnalisisCorporalTanitaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -305,7 +365,10 @@ const AuthenticatedRouteRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AnalisisCorporalTanitaRoute: AnalisisCorporalTanitaRoute,
   AuthRoute: AuthRoute,
+  ConsultaNutricionalRoute: ConsultaNutricionalRoute,
+  NutriologaEnLineaRoute: NutriologaEnLineaRoute,
   NutriologaPlayaDelCarmenRoute: NutriologaPlayaDelCarmenRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

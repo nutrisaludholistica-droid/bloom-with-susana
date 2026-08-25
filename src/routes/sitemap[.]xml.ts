@@ -17,6 +17,9 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/nutriologa-playa-del-carmen", changefreq: "weekly", priority: "0.9" },
+          { path: "/consulta-nutricional", changefreq: "monthly", priority: "0.8" },
+          { path: "/nutriologa-en-linea", changefreq: "monthly", priority: "0.8" },
+          { path: "/analisis-corporal-tanita", changefreq: "monthly", priority: "0.7" },
         ];
 
 
