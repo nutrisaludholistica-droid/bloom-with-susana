@@ -57,48 +57,48 @@
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 0.25rem;
 
-  /* Warm cream background, deep olive foreground */
-  --background: oklch(0.985 0.012 85);
-  --foreground: oklch(0.28 0.035 130);
+  /* Crema cálida casi blanca / verde profundo */
+  --background: oklch(0.984 0.006 100);
+  --foreground: oklch(0.29 0.018 130);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.28 0.035 130);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.28 0.035 130);
+  --card: oklch(0.995 0.003 100);
+  --card-foreground: oklch(0.29 0.018 130);
+  --popover: oklch(0.995 0.003 100);
+  --popover-foreground: oklch(0.29 0.018 130);
 
-  /* Primary = sage green (botones principales) */
-  --primary: oklch(0.55 0.06 150);
-  --primary-foreground: oklch(0.985 0.012 85);
+  /* Primary = verde salvia profundo */
+  --primary: oklch(0.45 0.026 132);
+  --primary-foreground: oklch(0.984 0.006 100);
 
-  /* Secondary = sand / beige neutral */
-  --secondary: oklch(0.94 0.018 80);
-  --secondary-foreground: oklch(0.28 0.035 130);
+  --secondary: oklch(0.945 0.012 98);
+  --secondary-foreground: oklch(0.29 0.018 130);
 
-  --muted: oklch(0.95 0.012 80);
-  --muted-foreground: oklch(0.45 0.022 120);
+  --muted: oklch(0.955 0.008 98);
+  --muted-foreground: oklch(0.52 0.016 125);
 
-  /* Accent = terracotta suave */
-  --accent: oklch(0.72 0.09 45);
-  --accent-foreground: oklch(0.99 0.005 80);
+  /* Accent = terracota apagada */
+  --accent: oklch(0.63 0.075 44);
+  --accent-foreground: oklch(0.99 0.004 90);
 
   --destructive: oklch(0.577 0.18 27);
-  --destructive-foreground: oklch(0.985 0.012 85);
+  --destructive-foreground: oklch(0.985 0.006 100);
 
-  --border: oklch(0.9 0.018 90);
-  --input: oklch(0.9 0.018 90);
-  --ring: oklch(0.55 0.06 150);
+  --border: oklch(0.885 0.012 105);
+  --input: oklch(0.885 0.012 105);
+  --ring: oklch(0.45 0.026 132);
 
-  /* Named wellness tokens */
-  --sage: oklch(0.55 0.06 150);
-  --sage-soft: oklch(0.88 0.035 145);
-  --olive: oklch(0.32 0.04 130);
-  --clay: oklch(0.65 0.1 40);
-  --sand: oklch(0.92 0.025 80);
-  --cream: oklch(0.985 0.012 85);
-  --whatsapp: oklch(0.7 0.16 145);
-  --promo-bg: oklch(0.3214 0.0668 155.5587);
+  /* Tokens de identidad */
+  --sage: oklch(0.45 0.026 132);
+  --sage-soft: oklch(0.91 0.018 126);
+  --olive: oklch(0.31 0.02 132);
+  --clay: oklch(0.6 0.075 44);
+  --sand: oklch(0.945 0.012 95);
+  --cream: oklch(0.984 0.006 100);
+  --whatsapp: oklch(0.62 0.11 150);
+  --promo-bg: oklch(0.31 0.02 132);
+
 }
 
 .dark {
