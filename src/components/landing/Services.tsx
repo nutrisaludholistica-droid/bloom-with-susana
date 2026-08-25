@@ -56,6 +56,30 @@ export function Services() {
             </article>
           ))}
         </div>
+
+        <div className="mt-10 grid gap-8 border-b border-border pb-10 sm:grid-cols-2">
+          <div>
+            <p className="eyebrow">Consulta inicial</p>
+            <p className="mt-3 font-display text-3xl font-light text-olive sm:text-4xl">
+              $1,200 <span className="text-base">MXN</span>
+            </p>
+            <p className="mt-3 max-w-sm text-sm leading-[1.9] text-foreground/70">
+              Historia clínica completa, antropometría y bioimpedancia de 8 electrodos,
+              más tu plan nutricional personalizado.
+            </p>
+          </div>
+          <div className="sm:pl-10">
+            <p className="eyebrow">Consulta de seguimiento</p>
+            <p className="mt-3 font-display text-3xl font-light text-olive sm:text-4xl">
+              $1,000 <span className="text-base">MXN</span>
+            </p>
+            <p className="mt-3 max-w-sm text-sm leading-[1.9] text-foreground/70">
+              Revisión de avances y mediciones, ajuste del plan y acompañamiento de
+              hábitos. Presencial en Playa del Carmen o en línea.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
   );
