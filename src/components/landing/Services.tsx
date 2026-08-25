@@ -19,19 +19,19 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section id="servicios" className="py-20 sm:py-28">
+    <section id="servicios" className="bg-eggplant py-20 text-cream sm:py-28">
       <div className="container-prose">
-        <div className="grid gap-8 border-b border-border pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="grid gap-8 border-b border-cream/20 pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="eyebrow">Servicios</p>
-            <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
+            <p className="eyebrow text-cream/70">Servicios</p>
+            <h2 className="mt-5 font-display text-3xl font-light leading-tight text-cream sm:text-[2.6rem]">
               Consulta con nutrióloga en Playa del Carmen o{" "}
-              <span className="font-script text-eggplant text-[0.9em] tracking-normal">
+              <span className="font-script text-amber text-[0.9em] tracking-normal">
                 en línea
               </span>
             </h2>
           </div>
-          <p className="text-sm leading-[1.9] text-foreground/70 lg:pl-10">
+          <p className="text-sm leading-[1.9] text-cream/80 lg:pl-10">
             Cada proceso empieza con una lectura completa de tu historia: hábitos,
             digestión, energía y composición corporal. Desde ahí construimos algo
             que puedas sostener.
@@ -42,38 +42,38 @@ export function Services() {
           {SERVICES.map(({ title, desc }, i) => (
             <article
               key={title}
-              className="border-b border-border py-9 sm:py-11 sm:odd:border-r sm:odd:pr-10 sm:even:pl-10"
+              className="border-b border-cream/15 py-9 sm:py-11 sm:odd:border-r sm:odd:pr-10 sm:even:pl-10"
             >
-              <span className="font-display text-xs tracking-[0.3em] text-eggplant">
+              <span className="font-display text-xs tracking-[0.3em] text-amber">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 font-display text-xl font-light leading-snug text-olive sm:text-2xl">
+              <h3 className="mt-4 font-display text-xl font-light leading-snug text-cream sm:text-2xl">
                 {title}
               </h3>
-              <p className="mt-4 max-w-md text-sm leading-[1.9] text-foreground/70">
+              <p className="mt-4 max-w-md text-sm leading-[1.9] text-cream/75">
                 {desc}
               </p>
             </article>
           ))}
         </div>
 
-        <div className="mt-10 grid gap-8 border-b border-border pb-10 sm:grid-cols-2">
+        <div className="mt-10 grid gap-8 border-b border-cream/20 pb-10 sm:grid-cols-2">
           <div>
-            <p className="eyebrow">Consulta inicial</p>
-            <p className="mt-3 font-display text-3xl font-light text-olive sm:text-4xl">
+            <p className="eyebrow text-cream/70">Consulta inicial</p>
+            <p className="mt-3 font-display text-3xl font-light text-cream sm:text-4xl">
               $1,200 <span className="text-base">MXN</span>
             </p>
-            <p className="mt-3 max-w-sm text-sm leading-[1.9] text-foreground/70">
+            <p className="mt-3 max-w-sm text-sm leading-[1.9] text-cream/75">
               Historia clínica completa, antropometría y bioimpedancia de 8 electrodos,
               más tu plan nutricional personalizado.
             </p>
           </div>
           <div className="sm:pl-10">
-            <p className="eyebrow">Consulta de seguimiento</p>
-            <p className="mt-3 font-display text-3xl font-light text-olive sm:text-4xl">
+            <p className="eyebrow text-cream/70">Consulta de seguimiento</p>
+            <p className="mt-3 font-display text-3xl font-light text-cream sm:text-4xl">
               $1,000 <span className="text-base">MXN</span>
             </p>
-            <p className="mt-3 max-w-sm text-sm leading-[1.9] text-foreground/70">
+            <p className="mt-3 max-w-sm text-sm leading-[1.9] text-cream/75">
               Revisión de avances y mediciones, ajuste del plan y acompañamiento de
               hábitos. Presencial en Playa del Carmen o en línea.
             </p>
