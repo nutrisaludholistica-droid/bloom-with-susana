@@ -3,43 +3,41 @@ import { trackWaClick } from "@/lib/analytics";
 
 export function LaunchPromo() {
   return (
-    <section className="relative overflow-hidden bg-background py-14 sm:py-16">
-      <div className="container-prose relative">
-        <div className="flex flex-col items-center rounded-3xl bg-card px-6 py-10 text-center shadow-lg shadow-olive/5 sm:px-10 sm:py-14 border border-border/50">
-          <span className="inline-flex items-center rounded-full border border-clay/20 bg-clay/10 px-3.5 py-1.5 text-xs text-clay">
-            Agosto 2026
-          </span>
+    <section className="py-16 sm:py-20">
+      <div className="container-prose">
+        <div className="grid gap-8 border-y border-olive/20 py-12 sm:py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
+          <div>
+            <p className="eyebrow">Agosto 2026 · 10 lugares</p>
+            <h2 className="mt-5 font-display text-2xl font-light leading-tight text-olive sm:text-[2.4rem]">
+              Primera consulta{" "}
+              <span className="font-script text-clay text-[0.95em] tracking-normal">
+                sin costo
+              </span>
+            </h2>
+            <p className="mt-5 max-w-xl text-[0.95rem] leading-[1.9] text-foreground/70">
+              Es tu oportunidad de conocerme, hablar de tus objetivos y recibir
+              orientación nutricional personalizada — sin compromiso.
+            </p>
+          </div>
 
-          <h2 className="mt-5 font-display text-2xl sm:text-4xl text-olive leading-tight max-w-2xl">
-            Primera consulta sin costo — solo agosto
-          </h2>
-
-          <p className="mt-3 text-sm sm:text-base text-foreground/70 font-medium">
-            Válido para las primeras 10 personas. Solo este mes.
-          </p>
-
-          <p className="mt-4 max-w-xl text-sm sm:text-base text-foreground/60 leading-relaxed">
-            Es tu oportunidad de conocerme, hablar de tus objetivos y recibir
-            orientación nutricional personalizada — sin costo.
-          </p>
-
-          <p className="mt-6 text-sm text-muted-foreground">
-            Lugares disponibles: 10 de 10
-          </p>
-
-          <a
-            href={waUrl(WA_MSG.promoGratis)}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackWaClick("whatsapp_click_promo")}
-            className="mt-7 group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition"
-          >
-            Apartar mi lugar por WhatsApp →
-          </a>
-
-          <p className="mt-3 text-xs text-muted-foreground">
-            Consulta presencial en Playa del Carmen o en línea · Sin costo, sin compromiso
-          </p>
+          <div className="lg:border-l lg:border-olive/15 lg:pl-14">
+            <p className="font-display text-5xl font-extralight text-olive">10/10</p>
+            <p className="mt-2 text-[0.68rem] uppercase tracking-[0.2em] text-muted-foreground">
+              Lugares disponibles
+            </p>
+            <a
+              href={waUrl(WA_MSG.promoGratis)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWaClick("whatsapp_click_promo")}
+              className="mt-7 inline-flex items-center justify-center bg-olive px-8 py-4 text-[0.72rem] uppercase tracking-[0.22em] text-cream transition-colors hover:bg-primary"
+            >
+              Apartar mi lugar
+            </a>
+            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+              Presencial en Playa del Carmen o en línea · Sin costo
+            </p>
+          </div>
         </div>
       </div>
     </section>
