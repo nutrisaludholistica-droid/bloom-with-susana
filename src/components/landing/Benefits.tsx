@@ -16,7 +16,7 @@ export function Benefits() {
           <p className="eyebrow">Para ti</p>
           <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
             Si sientes que avanzas, pero no terminas de ver{" "}
-            <span className="font-script text-clay text-[0.9em] tracking-normal">
+            <span className="font-script text-eggplant text-[0.9em] tracking-normal">
               resultados
             </span>
           </h2>

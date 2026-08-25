@@ -13,7 +13,7 @@ export function Hero() {
           <h1 className="mt-7 font-display text-[2.4rem] font-light leading-[1.08] tracking-tight text-olive sm:text-[3.2rem] lg:text-[3.8rem]">
             Nutrióloga en Playa del Carmen
             <br className="hidden sm:block" />{" "}
-            <span className="font-script text-clay text-[0.72em] tracking-normal">
+            <span className="font-script text-eggplant text-[0.72em] tracking-normal">
               y en línea
             </span>{" "}
             — Susana Wignall

@@ -55,6 +55,7 @@
   --color-whatsapp: var(--whatsapp);
   --color-promo-bg: var(--promo-bg);
   --color-plum: var(--plum);
+  --color-eggplant: var(--eggplant);
   --color-amber: var(--amber);
   --color-grain: var(--grain);
 }
@@ -104,8 +105,10 @@
 
   /* Paleta nombrada */
   --plum: oklch(0.464 0.048 337);
+  --eggplant: oklch(0.38 0.06 335);
   --amber: oklch(0.755 0.118 85);
   --grain: oklch(0.913 0.028 91);
+
 
 
 }
@@ -138,6 +141,7 @@
   --sand: oklch(0.33 0.032 122);
   --cream: oklch(0.28 0.032 125);
   --plum: oklch(0.7 0.06 337);
+  --eggplant: oklch(0.55 0.075 335);
   --amber: oklch(0.78 0.115 85);
   --grain: oklch(0.33 0.032 122);
 }
