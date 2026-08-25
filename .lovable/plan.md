@@ -1,55 +1,64 @@
-# SEO: datos estructurados, encabezados y FAQ long-tail
+# Estudio de keywords real y plan para ser #1 en "nutrióloga"
 
-Objetivo: reforzar la señal "nutrióloga + Playa del Carmen + en línea" en Google y convertir la sección de preguntas frecuentes en un motor de clics a WhatsApp.
+## Lo que dicen los datos reales (Semrush, base México)
 
-## 1. Datos estructurados
+| Keyword | Volumen | Dificultad | Lectura |
+|---|---|---|---|
+| nutrióloga | 49,500/mes | 41/100 | Enorme demanda, pero es nacional y genérica: la ocupan directorios y grandes portales |
+| nutriólogo playa del carmen | 390/mes | 26/100 | Ganable. Ojo: la variante masculina tiene 4x más búsquedas que la femenina |
+| nutrióloga en línea | 390/mes | 18/100 | Fácil y con intención de compra alta (CPC $0.63) |
+| nutrióloga cerca de mí | 320/mes | 21/100 | Se gana con Perfil de Empresa de Google + señales locales |
+| nutrióloga playa del carmen | 90/mes | 19/100 | Fácil, tu keyword ancla |
+| nutriólogo cerca de mí | 2,400/mes | — | Alto volumen, se captura con presencia local fuerte |
+| consulta nutricional / consulta de nutrición | 720 + 390/mes | — | Ya tienes página para esto |
+| consultorio de nutrición | 1,300/mes | — | Oportunidad de contenido local |
 
-La home ya incluye un bloque `MedicalBusiness` con dirección, geo, horarios, catálogo de servicios y precios. Lo que falta y se agregará:
+Conclusión honesta: "nutrióloga" a secas (49.5K/mes) no se gana con una landing local; se gana acumulando autoridad temática. La ruta realista para ser #1 es dominar primero el racimo local + en línea (dificultad 18–26, casi sin competencia, como intuyes) y desde ahí escalar a los términos genéricos de alto volumen.
 
-- Añadir `LocalBusiness` al `@type` (`["MedicalBusiness", "LocalBusiness"]`) para que Google lo interprete también como negocio local.
-- Añadir `Physician`/`Person` reforzado: `jobTitle: "Nutrióloga"`, `knowsAbout` (recomposición corporal, salud digestiva, nutrición clínica) y cédula profesional.
-- Añadir `sameAs` con redes sociales (necesito los enlaces, ver pregunta al final).
-- Mantener un solo `FAQPage` en la home, regenerado a partir de las nuevas preguntas.
-- Añadir `makesOffer` con las modalidades presencial y en línea vía `serviceType` + `availableChannel` (URL de WhatsApp).
+## Estrategia en 3 anillos
 
-## 2. H1 y H2
+**Anillo 1 — Local (ganar en 4–8 semanas)**
+- `/` → nutrióloga en Playa del Carmen y en línea
+- `/nutriologa-playa-del-carmen` → nutrióloga/nutriólogo en Playa del Carmen (incluir la variante masculina en el cuerpo, es donde está el volumen)
+- Nueva `/nutriologa-cerca-de-mi` no hace falta: se resuelve con datos estructurados + Perfil de Empresa de Google
 
-- Hero H1: pasar a "Nutrióloga en Playa del Carmen y en línea" como frase principal, con el mensaje de transformación como subtítulo, para que la keyword abra el encabezado sin sonar forzado.
-- Ajustar H2 de secciones clave para incluir contexto de búsqueda natural:
-  - Servicios: "Consulta con nutrióloga en Playa del Carmen o en línea"
-  - Cómo trabajamos: "Acompañamiento nutricional paso a paso"
-  - Sobre mí: "Susana Wignall, nutrióloga clínica en Playa del Carmen"
-  - Ubicación: "Consultorio de nutrición en Playa del Carmen"
-- Se conserva un único H1 en la home; el resto quedan como H2 con la jerarquía visual actual (sin cambios de diseño).
+**Anillo 2 — Servicio e intención (2–3 meses)**
+- `/nutriologa-en-linea` → nutrióloga en línea (dificultad 18, la más fácil con intención comercial)
+- `/consulta-nutricional` → consulta nutricional / consulta de nutrición / cuánto cuesta
+- `/analisis-corporal-tanita` → bioimpedancia y composición corporal
 
-## 3. Preguntas frecuentes reescritas
+**Anillo 3 — Autoridad temática hacia "nutrióloga" (3–9 meses)**
+Páginas nuevas long-tail, una por intención, que alimentan la autoridad del término maestro:
+- nutrióloga para recomposición corporal
+- nutrición para salud digestiva (inflamación, colitis, SII)
+- nutrióloga para pérdida de grasa sin dietas restrictivas
+- qué hace una nutrióloga y en qué se diferencia de un nutricionista
 
-Nuevo set orientado a long-tail y a la conversión, cada respuesta cierra con una invitación clara a escribir por WhatsApp:
+## Lo que implemento en este cambio
 
-- ¿Trabajas como nutrióloga para recomposición corporal?
-- ¿Puedes ayudarme con nutrición para salud digestiva (inflamación, colitis, SII)?
-- ¿Atiendes en línea si no vivo en Playa del Carmen?
-- ¿Cuánto cuesta la consulta con nutrióloga en Playa del Carmen?
-- ¿Qué incluye la primera consulta de nutrición?
-- ¿Qué es la bioimpedancia de 8 electrodos y para qué sirve?
-- ¿Necesito experiencia previa con dietas o ejercicio?
-- ¿Cómo funciona el seguimiento por WhatsApp?
-- ¿Cómo agendo mi consulta?
+1. **Datos estructurados**: añadir `LocalBusiness` al `@type` del bloque `MedicalBusiness` de la home, `jobTitle: "Nutrióloga"` en el `Person`, y `availableChannel` con la URL de WhatsApp en los servicios (presencial y en línea).
+2. **H1/H2**: H1 del hero abre con "Nutrióloga en Playa del Carmen y en línea" y el mensaje de transformación pasa a subtítulo. H2 ajustados en Servicios, Sobre mí, Ubicación y Cómo trabajamos para incluir la keyword de forma natural, sin cambiar diseño.
+3. **FAQ reescrita a long-tail**, con enlace inline a WhatsApp y mensaje pre-cargado por tema, rastreado en GA4:
+   - ¿Trabajas como nutrióloga para recomposición corporal?
+   - ¿Puedes ayudarme con nutrición para salud digestiva?
+   - ¿Atiendes en línea si no vivo en Playa del Carmen?
+   - ¿Cuánto cuesta la consulta con nutrióloga en Playa del Carmen?
+   - ¿Qué incluye la primera consulta?
+   - ¿Qué es la bioimpedancia de 8 electrodos?
+   - ¿Cómo funciona el seguimiento por WhatsApp?
+   - ¿Cómo agendo mi consulta?
+   Se elimina "¿Se muestran precios en la landing?" porque contradice los precios ya publicados.
+4. **Sitemap**: `lastmod` actualizado a la fecha de este cambio.
+5. **Search Console**: reviso indexación y título de la home y estado del sitemap; te reporto el estado real (Google puede tardar días en refrescar el título).
 
-Se elimina la pregunta actual "¿Se muestran precios en la landing?" porque ya contradice los precios publicados ($1,200 inicial / $1,000 seguimiento).
+## Lo que depende de ti (mueve más que el código)
 
-Además: cada respuesta con intención comercial incluirá un enlace inline a WhatsApp con mensaje pre-cargado según el tema (recomposición, digestivo, en línea), rastreado con GA4.
-
-## 4. Verificación en Search Console
-
-Después de aplicar los cambios reviso en Search Console: estado de indexación y título de la home, y el estado del sitemap con `lastmod`. Si la propiedad no está conectada o hay varias, te pediré elegir. Google puede tardar días en refrescar el título; te reporto el estado real, no una promesa.
+- Perfil de Empresa de Google con categoría "Nutricionista", nombre "Nutrióloga Susana Wignall", fotos y reseñas. En búsquedas locales esto pesa más que la landing.
+- Reseñas: 10–15 reseñas reales mueven "nutrióloga cerca de mí" más que cualquier ajuste técnico.
+- Nombre idéntico en Instagram, Facebook, Doctoralia y Perfil de Empresa.
 
 ## Notas técnicas
 
-- Archivos: `src/routes/index.tsx` (JSON-LD), `src/components/landing/Hero.tsx`, `Services.tsx`, `About.tsx`, `Location.tsx`, `HowItWorks.tsx` (H2), `faq-data.ts` (nuevas FAQ con enlaces), `FAQ.tsx` (soporte de enlace inline), `src/lib/whatsapp.ts` (mensajes nuevos).
-- El `lastmod` del sitemap se actualiza a la fecha de este cambio.
-- Sin cambios en paleta, tipografía ni layout.
+Archivos a tocar: `src/routes/index.tsx` (JSON-LD), `Hero.tsx`, `Services.tsx`, `About.tsx`, `Location.tsx`, `HowItWorks.tsx`, `faq-data.ts`, `FAQ.tsx`, `src/lib/whatsapp.ts`, `src/routes/sitemap[.]xml.ts`. Sin cambios de paleta, tipografía ni layout. Las páginas del Anillo 3 son fase siguiente, no entran aquí.
 
-## Una pregunta
-
-Para `sameAs` necesito tus enlaces de Instagram/Facebook y tu número de cédula profesional si quieres incluirlo en los datos estructurados; si no me los das, omito esos campos.
+Fuente de los datos de keywords: Semrush (base México).
