@@ -1,6 +1,8 @@
 // Lightweight WhatsApp click tracking. Dispara en dataLayer (GTM) y gtag (GA4)
 // si están presentes en `window`. Silencioso en SSR y cuando no hay tracker.
 
+import { initGA4 } from "./ga4";
+
 type TrackContext = Record<string, string | number | boolean | undefined>;
 
 declare global {
@@ -17,6 +19,7 @@ function sectionFromEventId(eventId: string): string {
 
 export function trackWaClick(eventId: string, context: TrackContext = {}): void {
   if (typeof window === "undefined") return;
+  initGA4();
   const params = {
     event_id: eventId,
     section: sectionFromEventId(eventId),

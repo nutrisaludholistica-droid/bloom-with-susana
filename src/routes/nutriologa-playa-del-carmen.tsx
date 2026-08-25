@@ -6,11 +6,13 @@ import { trackWaClick } from "@/lib/analytics";
 
 const pageUrl = "https://susanawignall.com/nutriologa-playa-del-carmen";
 const businessName = "LN Susana Wignall";
+const businessImage =
+  "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp";
 const address = {
-  street: "Calle 38 entre 20 Av. y 25 Av.",
+  street: "Av. Paseo Central, Humana Works Center, Fracc. La Gran Plaza, Riviera 2",
   locality: "Playa del Carmen",
   region: "Quintana Roo",
-  postalCode: "77710",
+  postalCode: "77723",
   country: "MX",
 };
 
@@ -69,8 +71,8 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
           description:
             "Nutrióloga en Playa del Carmen. Acompañamiento personalizado para bajar de peso, salud digestiva y hábitos sostenibles.",
           url: "https://susanawignall.com/",
-          logo: "https://susanawignall.com/favicon.ico",
-          medicalSpecialty: "Nutrition",
+          image: businessImage,
+          medicalSpecialty: "DietNutrition",
 
           address: {
             "@type": "PostalAddress",
@@ -90,8 +92,8 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
           },
           geo: {
             "@type": "GeoCoordinates",
-            latitude: "20.6296",
-            longitude: "-87.0739",
+            latitude: 20.6296,
+            longitude: -87.0739,
           },
           openingHoursSpecification: [
             {
@@ -103,6 +105,9 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
           ],
           telephone: "+52-984-279-9652",
           priceRange: "$$",
+          currenciesAccepted: "MXN",
+          availableLanguage: ["es", "en"],
+          founder: { "@id": "https://susanawignall.com/#susana" },
         }),
       },
       {
@@ -113,6 +118,8 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
           "@id": "https://susanawignall.com/#susana",
           name: "Susana Wignall",
           jobTitle: "Licenciada en Nutrición",
+          url: "https://susanawignall.com/",
+          telephone: "+52-984-279-9652",
           worksFor: { "@id": "https://susanawignall.com/#negocio" },
 
           description:
@@ -122,10 +129,23 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
             name: "Cédula Profesional",
             value: "156228944",
           },
-          sameAs: [
-            "https://www.susanawignall.com",
-            "https://www.facebook.com/susana.wignall",
+          hasCredential: {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "Cédula Profesional",
+            recognizedBy: {
+              "@type": "Organization",
+              name: "SEP México",
+            },
+            identifier: "156228944",
+          },
+          knowsAbout: [
+            "Nutrición clínica",
+            "Recomposición corporal",
+            "Salud digestiva",
+            "Microbiota intestinal",
+            "Hábitos alimenticios sostenibles",
           ],
+          sameAs: ["https://www.facebook.com/susana.wignall"],
         }),
       },
       {
