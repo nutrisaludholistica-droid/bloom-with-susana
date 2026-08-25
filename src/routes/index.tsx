@@ -73,8 +73,6 @@ export const Route = createFileRoute("/")({
           telephone: "+52-984-279-9652",
           image:
             "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
-          image:
-            "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
           address: {
             "@type": "PostalAddress",
             streetAddress:
