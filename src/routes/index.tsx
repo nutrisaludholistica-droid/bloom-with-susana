@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
           url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           image:
-            "https://susanawignall.com/__l5e/assets-v1/0905c724-9991-4344-a7b8-ae5620a0b7d8/about-susana-new.png",
+            "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
           logo: "https://susanawignall.com/favicon.ico",
           address: {
             "@type": "PostalAddress",
