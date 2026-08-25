@@ -20,6 +20,7 @@ import { Footer } from "@/components/landing/Footer";
 import { WhatsappFloat } from "@/components/landing/WhatsappFloat";
 import { FAQS, faqAnswerText } from "@/components/landing/faq-data";
 import { WA_MSG, waUrl } from "@/lib/whatsapp";
+import { SOCIAL, businessSameAs } from "@/lib/social";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -199,7 +200,20 @@ export const Route = createFileRoute("/")({
               },
             ],
           },
-          sameAs: ["https://www.facebook.com/susana.wignall"],
+          sameAs: businessSameAs(),
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://susanawignall.com/#maiz-y-sal",
+          name: "Maíz y Sal · Best Bio PDC",
+          alternateName: ["Best Bio PDC", "Maíz y Sal"],
+          url: SOCIAL.maizSal.instagram,
+          sameAs: [SOCIAL.maizSal.instagram, SOCIAL.maizSal.facebook],
+          department: { "@id": "https://susanawignall.com/#negocio" },
         }),
       },
       {
@@ -236,7 +250,7 @@ export const Route = createFileRoute("/")({
             "Microbiota intestinal",
             "Hábitos alimenticios sostenibles",
           ],
-          sameAs: ["https://www.facebook.com/susana.wignall"],
+          sameAs: [SOCIAL.nutrilogas.facebook],
         }),
       },
 
