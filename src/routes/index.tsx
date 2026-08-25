@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-susana.webp.asset.json";
+import heroMobileImg from "@/assets/hero-susana-mobile.webp.asset.json";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { LaunchPromo } from "@/components/landing/LaunchPromo";
@@ -37,6 +38,16 @@ export const Route = createFileRoute("/")({
           "Reconecta con tu cuerpo desde una nutrición consciente y sostenible. Consultas y paquetes en Playa del Carmen y en línea.",
       },
       { property: "og:url", content: "https://susanawignall.com/" },
+      {
+        property: "og:image",
+        content:
+          "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
+      },
     ],
     links: [
       { rel: "canonical", href: "https://susanawignall.com/" },
@@ -45,6 +56,8 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: heroImg.url,
+        imageSrcSet: `${heroMobileImg.url} 384w, ${heroImg.url} 577w`,
+        imageSizes: "(max-width: 639px) 88vw, 45vw",
         fetchPriority: "high",
       },
     ],
@@ -60,7 +73,8 @@ export const Route = createFileRoute("/")({
           telephone: "+52-984-279-9652",
           image:
             "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
-          logo: "https://susanawignall.com/favicon.ico",
+          image:
+            "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp",
           address: {
             "@type": "PostalAddress",
             streetAddress:
@@ -80,8 +94,8 @@ export const Route = createFileRoute("/")({
           },
           geo: {
             "@type": "GeoCoordinates",
-            latitude: "20.6296",
-            longitude: "-87.0739",
+            latitude: 20.6296,
+            longitude: -87.0739,
           },
           openingHoursSpecification: [
             {
@@ -96,7 +110,7 @@ export const Route = createFileRoute("/")({
           availableLanguage: ["es", "en"],
           description:
             "Acompañamiento nutricional personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Consultas presenciales en Playa del Carmen y en línea.",
-          medicalSpecialty: "Nutrition",
+          medicalSpecialty: "DietNutrition",
           founder: { "@id": "https://susanawignall.com/#susana" },
           employee: { "@id": "https://susanawignall.com/#susana" },
           hasOfferCatalog: {
@@ -105,6 +119,8 @@ export const Route = createFileRoute("/")({
             itemListElement: [
               {
                 "@type": "Offer",
+                priceCurrency: "MXN",
+                availability: "https://schema.org/InStock",
                 itemOffered: {
                   "@type": "Service",
                   name: "Consulta nutricional inicial",
@@ -115,6 +131,8 @@ export const Route = createFileRoute("/")({
               },
               {
                 "@type": "Offer",
+                priceCurrency: "MXN",
+                availability: "https://schema.org/InStock",
                 itemOffered: {
                   "@type": "Service",
                   name: "Consulta de seguimiento",
@@ -125,6 +143,8 @@ export const Route = createFileRoute("/")({
               },
               {
                 "@type": "Offer",
+                priceCurrency: "MXN",
+                availability: "https://schema.org/InStock",
                 itemOffered: {
                   "@type": "Service",
                   name: "Paquete de acompañamiento nutricional",
@@ -135,6 +155,8 @@ export const Route = createFileRoute("/")({
               },
               {
                 "@type": "Offer",
+                priceCurrency: "MXN",
+                availability: "https://schema.org/InStock",
                 itemOffered: {
                   "@type": "Service",
                   name: "Talleres de nutrición",
@@ -145,10 +167,7 @@ export const Route = createFileRoute("/")({
               },
             ],
           },
-          sameAs: [
-            "https://www.susanawignall.com",
-            "https://www.facebook.com/susana.wignall",
-          ],
+          sameAs: ["https://www.facebook.com/susana.wignall"],
         }),
       },
       {
@@ -183,10 +202,7 @@ export const Route = createFileRoute("/")({
             "Microbiota intestinal",
             "Hábitos alimenticios sostenibles",
           ],
-          sameAs: [
-            "https://www.susanawignall.com",
-            "https://www.facebook.com/susana.wignall",
-          ],
+          sameAs: ["https://www.facebook.com/susana.wignall"],
         }),
       },
 

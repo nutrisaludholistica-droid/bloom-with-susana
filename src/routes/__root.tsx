@@ -100,22 +100,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "LN Susana Wignall — Nutrióloga en Playa del Carmen y en línea" },
       { name: "twitter:description", content: "Nutrióloga en Playa del Carmen y en línea. Acompañamiento personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Cédula profesional 156228944." },
       { name: "google-site-verification", content: "vHBjtVrI93psm_AlDbLID0HsELH4UsR1Imv3X78tRtI" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3838481e-5531-4020-9b26-1079b5ca9e7a/id-preview-bbdf0914--cfd46fa8-db71-400f-b280-bec75a7f8a03.lovable.app-1781407374175.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3838481e-5531-4020-9b26-1079b5ca9e7a/id-preview-bbdf0914--cfd46fa8-db71-400f-b280-bec75a7f8a03.lovable.app-1781407374175.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      // Tipografías sin bloquear el render: se cargan como "print" y se
-      // promueven a "all" tras la hidratación (fallback de sistema con swap).
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap",
-        media: "print",
-        "data-webfonts": "true",
-      },
-
     ],
     scripts: [
       {
@@ -155,37 +142,28 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-/** Activa la hoja de tipografías web una vez hidratado (no bloquea el render). */
-function WebFonts() {
-  useEffect(() => {
-    document
-      .querySelectorAll<HTMLLinkElement>('link[data-webfonts="true"]')
-      .forEach((link) => {
-        if (link.media !== "all") link.media = "all";
-      });
-  }, []);
-  return null;
-}
-
 /** Carga gtag.js (diferido) y envía page_view en cada cambio de ruta del SPA. */
 function GoogleAnalytics() {
   const router = useRouter();
 
   useEffect(() => {
-    // Diferimos gtag.js para no competir con la primera pintura (LCP).
+    // Diferimos gtag.js para no competir con la primera pintura (LCP) en móvil.
     let cancelled = false;
     const start = () => {
       if (cancelled) return;
       initGA4();
     };
+    const startOnInteraction = () => start();
+    window.addEventListener("pointerdown", startOnInteraction, { once: true, passive: true });
+    window.addEventListener("keydown", startOnInteraction, { once: true });
     const idle = (
       window as unknown as {
         requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
       }
     ).requestIdleCallback;
     const timer = idle
-      ? idle(start, { timeout: 5000 })
-      : window.setTimeout(start, 3000);
+      ? idle(start, { timeout: 9000 })
+      : window.setTimeout(start, 9000);
 
     let last = window.location.pathname + window.location.search;
     const unsubscribe = router.subscribe("onResolved", () => {
@@ -197,6 +175,8 @@ function GoogleAnalytics() {
     });
     return () => {
       cancelled = true;
+      window.removeEventListener("pointerdown", startOnInteraction);
+      window.removeEventListener("keydown", startOnInteraction);
       if (!idle) window.clearTimeout(timer);
       unsubscribe();
     };
@@ -212,7 +192,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <WebFonts />
       <GoogleAnalytics />
 
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
