@@ -13,7 +13,7 @@ export function LaunchPromo() {
             </p>
             <h2 className="mt-5 font-display text-2xl font-light leading-tight text-olive sm:text-[2.4rem]">
               Primera consulta{" "}
-              <span className="font-script text-clay text-[0.95em] tracking-normal">
+              <span className="font-script text-eggplant text-[0.95em] tracking-normal">
                 sin costo
               </span>
             </h2>
