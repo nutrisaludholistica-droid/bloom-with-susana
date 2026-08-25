@@ -5,6 +5,7 @@ import { trackWaClick } from "@/lib/analytics";
 type Pkg = {
   name: string;
   tagline: string;
+  price: string;
   desc: string;
   forWho: string;
   outcome: string;
@@ -20,6 +21,7 @@ const PACKAGES: Pkg[] = [
   {
     name: "Básico",
     tagline: "3 meses",
+    price: "$4,000 MXN",
     desc: "Acompañamiento inicial para comenzar con estructura, seguimiento y educación nutricional.",
     forWho:
       "Para ti si quieres empezar con orden, aprender a comer mejor y tener seguimiento cercano sin comprometerte a un programa largo.",
@@ -29,7 +31,6 @@ const PACKAGES: Pkg[] = [
       "1 consulta al mes",
       "Modalidad en línea o presencial",
       "Seguimiento por WhatsApp 2 veces por semana",
-      "1 taller al mes",
       "Plan nutricional personalizado",
       "Apoyo mediante app Avena Health",
       "Bioimpedancia de 8 elementos",
@@ -41,6 +42,7 @@ const PACKAGES: Pkg[] = [
   {
     name: "Transformación",
     tagline: "6 meses",
+    price: "$7,500 MXN",
     desc: "Acompañamiento más completo para integrar hábitos, compras saludables y cocina práctica.",
     forWho:
       "Para ti si buscas recomposición corporal real y quieres que tus compras y tu cocina también cambien, no solo tu plan.",
@@ -64,6 +66,7 @@ const PACKAGES: Pkg[] = [
   {
     name: "Reconexión",
     tagline: "9 meses",
+    price: "$10,000 MXN",
     desc: "Programa integral para profundizar en hábitos, cocina saludable, salud digestiva y autonomía nutricional.",
     forWho:
       "Para ti si quieres transformación profunda: salud digestiva, microbiota, autonomía en la cocina y hábitos para toda la vida.",
@@ -71,7 +74,6 @@ const PACKAGES: Pkg[] = [
       "Autonomía nutricional completa, mejor digestión y microbiota, y una relación distinta con la comida.",
     includes: [
       "Todo lo del paquete Transformación",
-      "Taller de elaboración de fermentos",
       "2 visitas al supermercado",
       "4 clases de cocina saludable a domicilio",
       "Plan personalizado",
@@ -127,6 +129,9 @@ export function Packages() {
                 <h3 className="mt-1 font-display text-2xl sm:text-3xl text-olive">
                   {p.name}
                 </h3>
+                <p className="mt-2 font-display text-3xl font-light text-olive">
+                  {p.price}
+                </p>
                 <p className="mt-3 text-sm text-foreground/75 leading-relaxed">
                   {p.desc}
                 </p>
@@ -184,8 +189,8 @@ export function Packages() {
         </div>
 
         <p className="mt-8 mx-auto max-w-2xl text-center text-sm text-muted-foreground leading-relaxed">
-          Los precios y paquetes se confirman por WhatsApp según tus objetivos,
-          modalidad y nivel de acompañamiento. Puedes escribir sin compromiso.
+          Precios en pesos mexicanos por programa completo. Puedes escribir por
+          WhatsApp para revisar modalidad, fechas de inicio y formas de pago.
         </p>
       </div>
     </section>
