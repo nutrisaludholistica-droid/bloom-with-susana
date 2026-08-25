@@ -17,7 +17,7 @@ function Wordmark() {
   return (
     <span className="flex min-w-0 items-baseline gap-1.5">
       <span className="font-script text-lg leading-none text-clay">nutrición</span>
-      <span className="font-display text-[0.75rem] uppercase tracking-[0.18em] text-olive sm:text-[0.85rem] sm:tracking-[0.22em] md:text-[0.9rem] md:tracking-[0.25em] lg:text-base lg:tracking-[0.3em]">
+      <span className="whitespace-nowrap font-display text-[0.75rem] uppercase tracking-[0.18em] text-olive sm:text-[0.85rem] sm:tracking-[0.22em] md:text-[0.9rem] md:tracking-[0.25em] lg:text-base lg:tracking-[0.3em]">
         Susana Wignall
       </span>
     </span>
