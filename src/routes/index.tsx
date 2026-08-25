@@ -283,7 +283,7 @@ function LandingPage() {
         <Benefits />
         <Services />
         <LaunchPromo />
-        <HowItWorks />
+        <div className="h-1 bg-eggplant" aria-hidden="true" />
         <Packages />
         <TrustBlock />
         <About />
