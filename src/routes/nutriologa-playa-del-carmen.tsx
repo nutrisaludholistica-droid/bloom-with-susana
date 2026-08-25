@@ -3,6 +3,7 @@ import { ServiceHeader } from "@/components/landing/ServiceHeader";
 import { Footer } from "@/components/landing/Footer";
 import { WA_MSG, waUrl } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
+import { SOCIAL } from "@/lib/social";
 
 const pageUrl = "https://susanawignall.com/nutriologa-playa-del-carmen";
 const businessName = "Nutrióloga Susana Wignall";
@@ -145,7 +146,20 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
             "Microbiota intestinal",
             "Hábitos alimenticios sostenibles",
           ],
-          sameAs: ["https://www.facebook.com/susana.wignall"],
+          sameAs: [SOCIAL.nutrilogas.facebook],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://susanawignall.com/#maiz-y-sal",
+          name: "Maíz y Sal · Best Bio PDC",
+          alternateName: ["Best Bio PDC", "Maíz y Sal"],
+          url: SOCIAL.maizSal.instagram,
+          sameAs: [SOCIAL.maizSal.instagram, SOCIAL.maizSal.facebook],
+          department: { "@id": "https://susanawignall.com/#negocio" },
         }),
       },
       {
