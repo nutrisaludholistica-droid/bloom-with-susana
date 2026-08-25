@@ -124,6 +124,7 @@ export const Route = createFileRoute("/")({
               {
                 "@type": "Offer",
                 priceCurrency: "MXN",
+                price: "1200",
                 availability: "https://schema.org/InStock",
                 itemOffered: {
                   "@type": "Service",
@@ -136,6 +137,7 @@ export const Route = createFileRoute("/")({
               {
                 "@type": "Offer",
                 priceCurrency: "MXN",
+                price: "1000",
                 availability: "https://schema.org/InStock",
                 itemOffered: {
                   "@type": "Service",
@@ -148,6 +150,11 @@ export const Route = createFileRoute("/")({
               {
                 "@type": "Offer",
                 priceCurrency: "MXN",
+                priceSpecification: [
+                  { "@type": "UnitPriceSpecification", name: "Básico · 3 meses", price: "4000", priceCurrency: "MXN" },
+                  { "@type": "UnitPriceSpecification", name: "Transformación · 6 meses", price: "7500", priceCurrency: "MXN" },
+                  { "@type": "UnitPriceSpecification", name: "Reconexión · 9 meses", price: "10000", priceCurrency: "MXN" },
+                ],
                 availability: "https://schema.org/InStock",
                 itemOffered: {
                   "@type": "Service",

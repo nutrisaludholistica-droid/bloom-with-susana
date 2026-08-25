@@ -58,7 +58,7 @@ export function Footer() {
               <li><a href="#paquetes" className="text-foreground/80 hover:text-sage">Paquetes</a></li>
               <li><a href="#sobre-mi" className="text-foreground/80 hover:text-sage">Sobre mí</a></li>
               <li><a href="#talleres" className="text-foreground/80 hover:text-sage">Talleres</a></li>
-              <li><a href="#testimonios" className="text-foreground/80 hover:text-sage">Testimonios</a></li>
+              <li><a href="#acompanamiento" className="text-foreground/80 hover:text-sage">Acompañamiento</a></li>
               <li><a href="#faqs" className="text-foreground/80 hover:text-sage">FAQs</a></li>
               <li><a href="#ubicacion" className="text-foreground/80 hover:text-sage">Ubicación</a></li>
             </ul>

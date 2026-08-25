@@ -8,7 +8,7 @@ const NAV = [
   { href: "#paquetes", label: "Paquetes" },
   { href: "#sobre-mi", label: "Sobre mí" },
   { href: "#talleres", label: "Talleres" },
-  { href: "#testimonios", label: "Testimonios" },
+  { href: "#acompanamiento", label: "Acompañamiento" },
   { href: "#faqs", label: "FAQs" },
   { href: "#ubicacion", label: "Ubicación" },
 ];
