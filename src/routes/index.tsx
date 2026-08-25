@@ -9,8 +9,6 @@ import { Services } from "@/components/landing/Services";
 import { Packages } from "@/components/landing/Packages";
 import { TrustBlock } from "@/components/landing/TrustBlock";
 import { About } from "@/components/landing/About";
-import { TrustBlock } from "@/components/landing/TrustBlock";
-import { About } from "@/components/landing/About";
 import { Workshops } from "@/components/landing/Workshops";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ } from "@/components/landing/FAQ";
