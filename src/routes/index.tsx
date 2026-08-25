@@ -6,7 +6,6 @@ import { Hero } from "@/components/landing/Hero";
 import { LaunchPromo } from "@/components/landing/LaunchPromo";
 import { Benefits } from "@/components/landing/Benefits";
 import { Services } from "@/components/landing/Services";
-import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Packages } from "@/components/landing/Packages";
 import { TrustBlock } from "@/components/landing/TrustBlock";
 import { About } from "@/components/landing/About";
@@ -284,7 +283,7 @@ function LandingPage() {
         <Benefits />
         <Services />
         <LaunchPromo />
-        <HowItWorks />
+        <div className="h-1 bg-eggplant" aria-hidden="true" />
         <Packages />
         <TrustBlock />
         <About />
