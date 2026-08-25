@@ -54,6 +54,9 @@
   --color-cream: var(--cream);
   --color-whatsapp: var(--whatsapp);
   --color-promo-bg: var(--promo-bg);
+  --color-plum: var(--plum);
+  --color-amber: var(--amber);
+  --color-grain: var(--grain);
 }
 
 :root {
