@@ -26,7 +26,7 @@ export function Services() {
             <p className="eyebrow">Servicios</p>
             <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
               Consulta con nutrióloga en Playa del Carmen o{" "}
-              <span className="font-script text-clay text-[0.9em] tracking-normal">
+              <span className="font-script text-eggplant text-[0.9em] tracking-normal">
                 en línea
               </span>
             </h2>
@@ -44,7 +44,7 @@ export function Services() {
               key={title}
               className="border-b border-border py-9 sm:py-11 sm:odd:border-r sm:odd:pr-10 sm:even:pl-10"
             >
-              <span className="font-display text-xs tracking-[0.3em] text-clay">
+              <span className="font-display text-xs tracking-[0.3em] text-eggplant">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 font-display text-xl font-light leading-snug text-olive sm:text-2xl">

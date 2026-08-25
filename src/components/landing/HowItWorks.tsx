@@ -24,7 +24,7 @@ export function HowItWorks() {
           <p className="eyebrow">Cómo empezar</p>
           <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
             ¿Qué pasa cuando escribes por{" "}
-            <span className="font-script text-olive text-[0.9em] tracking-normal">
+            <span className="font-script text-eggplant text-[0.9em] tracking-normal">
               WhatsApp
             </span>
             ?
@@ -41,7 +41,7 @@ export function HowItWorks() {
               key={s.title}
               className="border-t border-olive/15 py-8 md:border-r md:pr-8 md:last:border-r-0 md:not-first:pl-8"
             >
-              <span className="font-display text-[0.7rem] tracking-[0.3em] text-clay">
+              <span className="font-display text-[0.7rem] tracking-[0.3em] text-eggplant">
                 0{i + 1}
               </span>
               <h3 className="mt-4 font-display text-lg font-light text-olive">
