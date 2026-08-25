@@ -64,12 +64,14 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
+          "@id": "https://susanawignall.com/#negocio",
           name: businessName,
           description:
             "Nutrióloga en Playa del Carmen. Acompañamiento personalizado para bajar de peso, salud digestiva y hábitos sostenibles.",
-          url: pageUrl,
+          url: "https://susanawignall.com/",
           logo: "https://susanawignall.com/favicon.ico",
           medicalSpecialty: "Nutrition",
+
           address: {
             "@type": "PostalAddress",
             streetAddress: address.street,
@@ -108,12 +110,11 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://susanawignall.com/#susana",
           name: "Susana Wignall",
           jobTitle: "Licenciada en Nutrición",
-          worksFor: {
-            "@type": "MedicalBusiness",
-            name: businessName,
-          },
+          worksFor: { "@id": "https://susanawignall.com/#negocio" },
+
           description:
             "Nutrióloga en Playa del Carmen con enfoque en acompañamiento personalizado, recomposición corporal y salud digestiva.",
           identifier: {
