@@ -7,7 +7,10 @@ export function LaunchPromo() {
       <div className="container-prose">
         <div className="grid gap-8 border-y border-olive/20 py-12 sm:py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16">
           <div>
-            <p className="eyebrow">Agosto 2026 · 10 lugares</p>
+            <p className="eyebrow flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-amber" aria-hidden="true" />
+              Agosto 2026 · 10 lugares
+            </p>
             <h2 className="mt-5 font-display text-2xl font-light leading-tight text-olive sm:text-[2.4rem]">
               Primera consulta{" "}
               <span className="font-script text-clay text-[0.95em] tracking-normal">
