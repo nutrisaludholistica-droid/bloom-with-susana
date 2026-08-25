@@ -12,7 +12,7 @@ import { WA_MSG } from "@/lib/whatsapp";
 const pageUrl = "https://susanawignall.com/consulta-nutricional";
 const title = "Consulta nutricional en Playa del Carmen y en línea";
 const description =
-  "Consulta nutricional con LN Susana Wignall: historia clínica, análisis de composición corporal y plan personalizado. Presencial en Playa del Carmen o en línea.";
+  "Consulta nutricional con la nutrióloga Susana Wignall: historia clínica, análisis de composición corporal y plan personalizado. Presencial en Playa del Carmen o en línea.";
 
 const blocks: SeoBlock[] = [
   {

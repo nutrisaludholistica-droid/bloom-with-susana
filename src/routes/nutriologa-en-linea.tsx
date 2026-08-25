@@ -12,7 +12,7 @@ import { WA_MSG } from "@/lib/whatsapp";
 const pageUrl = "https://susanawignall.com/nutriologa-en-linea";
 const title = "Nutrióloga en línea para todo México";
 const description =
-  "Consulta de nutrición en línea por videollamada con LN Susana Wignall. Plan personalizado, seguimiento cercano y expediente digital. Cédula profesional 156228944.";
+  "Consulta de nutrición en línea por videollamada con la nutrióloga Susana Wignall. Plan personalizado, seguimiento cercano y expediente digital. Cédula profesional 156228944.";
 
 const blocks: SeoBlock[] = [
   {

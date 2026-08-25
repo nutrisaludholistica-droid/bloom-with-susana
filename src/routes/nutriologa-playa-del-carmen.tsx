@@ -5,7 +5,7 @@ import { WA_MSG, waUrl } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
 
 const pageUrl = "https://susanawignall.com/nutriologa-playa-del-carmen";
-const businessName = "LN Susana Wignall";
+const businessName = "Nutrióloga Susana Wignall";
 const businessImage =
   "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp";
 const address = {
