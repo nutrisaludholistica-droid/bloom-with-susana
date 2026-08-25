@@ -17,7 +17,7 @@ function Wordmark() {
   return (
     <span className="flex min-w-0 items-baseline gap-1.5">
       <span className="font-script text-lg leading-none text-clay">nutrición</span>
-      <span className="truncate font-display text-[0.95rem] uppercase tracking-[0.3em] text-olive sm:text-base">
+      <span className="font-display text-[0.75rem] uppercase tracking-[0.18em] text-olive sm:text-[0.85rem] sm:tracking-[0.22em] md:text-[0.9rem] md:tracking-[0.25em] lg:text-base lg:tracking-[0.3em]">
         Susana Wignall
       </span>
     </span>
@@ -55,7 +55,7 @@ export function Header() {
           <Wordmark />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-5">
           {NAV.map((item) => (
             <a
               key={item.href}
@@ -65,12 +65,6 @@ export function Header() {
               {item.label}
             </a>
           ))}
-          <a
-            href="/crm"
-            className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground hover:text-olive transition-colors"
-          >
-            CRM
-          </a>
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -96,35 +90,28 @@ export function Header() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background/97 backdrop-blur-md">
           <nav className="container-prose flex flex-col py-6">
-            {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/70 py-3.5 text-xs uppercase tracking-[0.2em] text-foreground/80"
-              >
-                {item.label}
-              </a>
-            ))}
+          {NAV.map((item) => (
             <a
-              href="/crm"
+              key={item.href}
+              href={item.href}
               onClick={() => setOpen(false)}
-              className="border-b border-border/70 py-3.5 text-xs uppercase tracking-[0.2em] text-muted-foreground"
+              className="border-b border-border/70 py-3.5 text-xs uppercase tracking-[0.2em] text-foreground/80"
             >
-              Acceso CRM
+              {item.label}
             </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                trackWaClick("whatsapp_click_header_mobile");
-                setOpen(false);
-              }}
-              className="mt-6 inline-flex items-center justify-center bg-olive px-5 py-4 text-xs uppercase tracking-[0.2em] text-cream"
-            >
-              Agendar por WhatsApp
-            </a>
+          ))}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              trackWaClick("whatsapp_click_header_mobile");
+              setOpen(false);
+            }}
+            className="mt-6 inline-flex items-center justify-center bg-olive px-5 py-4 text-xs uppercase tracking-[0.2em] text-cream"
+          >
+            Agendar por WhatsApp
+          </a>
           </nav>
         </div>
       )}
