@@ -1,51 +1,50 @@
-const ITEMS = [
+const STEPS = [
   {
-    quote:
-      "Me sentí acompañada en todo el proceso. Aprendí a comer mejor sin sentir que estaba a dieta.",
-    label: "Paciente · Acompañamiento de hábitos",
+    title: "Primera consulta",
+    desc: "Historia clínica completa: antecedentes, digestión, energía, sueño, actividad física y relación con la comida. Medición antropométrica y bioimpedancia de 8 electrodos.",
   },
   {
-    quote:
-      "Llegué sintiéndome estancada y con poca energía. Con el acompañamiento pude organizar mejor mis comidas, mejorar mis hábitos y sentirme más constante.",
-    label: "Paciente · Recomposición corporal",
+    title: "Tu plan",
+    desc: "Un plan nutricional construido con tus horarios, presupuesto y gustos reales — no una dieta genérica. Con alternativas para que puedas sostenerlo.",
   },
   {
-    quote:
-      "Buscaba recomposición corporal y mejora de hábitos. Con seguimiento personalizado y cambios progresivos logró mayor adherencia, mejor digestión y avances sostenibles.",
-    label: "Caso de transformación",
+    title: "Seguimiento",
+    desc: "Revisiones periódicas para ajustar el plan según tus avances y mediciones, con acompañamiento cercano por WhatsApp entre consultas.",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section id="testimonios" className="py-20 sm:py-28">
+    <section id="acompanamiento" className="py-20 sm:py-28">
       <div className="container-prose">
         <div className="border-b border-border pb-10">
-          <p className="eyebrow">Casos reales</p>
+          <p className="eyebrow">Cómo trabajamos</p>
           <h2 className="mt-5 max-w-2xl font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
-            Casos y experiencias de acompañamiento
+            Así es el acompañamiento, paso a paso
           </h2>
-          <p className="mt-4 text-xs text-muted-foreground">
-            Testimonios reales en proceso de actualización.
+          <p className="mt-4 max-w-xl text-sm leading-[1.9] text-foreground/70">
+            La consulta acaba de abrir en Playa del Carmen, así que prefiero
+            contarte con transparencia cómo trabajo en lugar de mostrarte
+            testimonios. Los publicaré cuando mis pacientes quieran compartirlos.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3">
-          {ITEMS.map((t, i) => (
-            <figure
-              key={i}
-              className="flex flex-col border-b border-border py-10 md:border-r md:px-8 md:last:border-r-0 md:first:pl-0"
+          {STEPS.map((s, i) => (
+            <article
+              key={s.title}
+              className="flex flex-col border-b border-border py-10 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0"
             >
-              <span className="font-script text-3xl leading-none text-clay/70" aria-hidden>
-                “
+              <span className="font-display text-xs tracking-[0.3em] text-clay">
+                {String(i + 1).padStart(2, "0")}
               </span>
-              <blockquote className="mt-4 flex-1 text-[0.95rem] leading-[1.9] text-foreground/80">
-                {t.quote}
-              </blockquote>
-              <figcaption className="mt-7 text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-                {t.label}
-              </figcaption>
-            </figure>
+              <h3 className="mt-4 font-display text-xl font-light leading-snug text-olive">
+                {s.title}
+              </h3>
+              <p className="mt-4 text-[0.95rem] leading-[1.9] text-foreground/75">
+                {s.desc}
+              </p>
+            </article>
           ))}
         </div>
       </div>
