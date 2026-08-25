@@ -1,5 +1,5 @@
 import { MapPin, Gift } from "lucide-react";
-import heroImg from "@/assets/hero-image.png.asset.json";
+import heroImg from "@/assets/hero-susana.webp.asset.json";
 import { WA_MSG, waUrl } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
 
@@ -75,6 +75,8 @@ export function Hero() {
               alt="LN Susana Wignall, nutrióloga en Playa del Carmen"
               width={577}
               height={1024}
+              fetchPriority="high"
+              decoding="async"
               className="aspect-[4/5] sm:aspect-[5/6] lg:aspect-[4/5] w-full object-cover"
             />
           </div>
