@@ -46,11 +46,13 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
+          "@id": "https://susanawignall.com/#negocio",
           name: "LN Susana Wignall — Nutrióloga",
-          url: "https://susanawignall.com",
+          url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           image:
             "https://susanawignall.com/__l5e/assets-v1/0905c724-9991-4344-a7b8-ae5620a0b7d8/about-susana-new.png",
+          logo: "https://susanawignall.com/favicon.ico",
           address: {
             "@type": "PostalAddress",
             streetAddress:
@@ -60,16 +62,85 @@ export const Route = createFileRoute("/")({
             postalCode: "77723",
             addressCountry: "MX",
           },
+          areaServed: {
+            "@type": "City",
+            name: "Playa del Carmen",
+            containedInPlace: {
+              "@type": "State",
+              name: "Quintana Roo",
+            },
+          },
           geo: {
             "@type": "GeoCoordinates",
-            latitude: 20.6296,
-            longitude: -87.0739,
+            latitude: "20.6296",
+            longitude: "-87.0739",
           },
-          openingHours: "Mo-Fr 09:00-18:00",
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+          ],
           priceRange: "$$",
+          currenciesAccepted: "MXN",
+          availableLanguage: ["es", "en"],
           description:
             "Acompañamiento nutricional personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Consultas presenciales en Playa del Carmen y en línea.",
           medicalSpecialty: "Nutrition",
+          founder: { "@id": "https://susanawignall.com/#susana" },
+          employee: { "@id": "https://susanawignall.com/#susana" },
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Servicios de nutrición",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Consulta nutricional inicial",
+                  description:
+                    "Evaluación completa con historia clínica, antropometría y bioimpedancia, presencial en Playa del Carmen o en línea.",
+                  serviceType: "Consulta de nutrición",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Consulta de seguimiento",
+                  description:
+                    "Revisión de avances, ajuste del plan de alimentación y acompañamiento de hábitos.",
+                  serviceType: "Seguimiento nutricional",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Paquete de acompañamiento nutricional",
+                  description:
+                    "Programa de varias sesiones enfocado en recomposición corporal y salud digestiva.",
+                  serviceType: "Programa de nutrición",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Talleres de nutrición",
+                  description:
+                    "Talleres grupales y para empresas sobre alimentación consciente y hábitos sostenibles.",
+                  serviceType: "Taller de educación nutricional",
+                },
+              },
+            ],
+          },
+          sameAs: [
+            "https://www.susanawignall.com",
+            "https://www.facebook.com/susana.wignall",
+          ],
         }),
       },
       {
@@ -77,13 +148,16 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": "https://susanawignall.com/#susana",
           name: "Susana Wignall",
-          jobTitle: "Nutrióloga",
-          url: "https://susanawignall.com",
+          jobTitle: "Licenciada en Nutrición",
+          url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
-          worksFor: {
-            "@type": "MedicalBusiness",
-            name: "LN Susana Wignall — Nutrióloga",
+          worksFor: { "@id": "https://susanawignall.com/#negocio" },
+          identifier: {
+            "@type": "PropertyValue",
+            name: "Cédula Profesional",
+            value: "156228944",
           },
           hasCredential: {
             "@type": "EducationalOccupationalCredential",
@@ -101,8 +175,13 @@ export const Route = createFileRoute("/")({
             "Microbiota intestinal",
             "Hábitos alimenticios sostenibles",
           ],
+          sameAs: [
+            "https://www.susanawignall.com",
+            "https://www.facebook.com/susana.wignall",
+          ],
         }),
       },
+
       {
         type: "application/ld+json",
         children: JSON.stringify({
