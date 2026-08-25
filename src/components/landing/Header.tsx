@@ -13,6 +13,17 @@ const NAV = [
   { href: "#ubicacion", label: "Ubicación" },
 ];
 
+function Wordmark() {
+  return (
+    <span className="flex min-w-0 items-baseline gap-1.5">
+      <span className="font-script text-lg leading-none text-clay">nutrición</span>
+      <span className="truncate font-display text-[0.95rem] uppercase tracking-[0.3em] text-olive sm:text-base">
+        Susana Wignall
+      </span>
+    </span>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -35,40 +46,28 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border/60"
-          : "bg-background/40 backdrop-blur-sm"
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
+          : "bg-transparent"
       }`}
     >
-      <div className="container-prose grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 lg:py-4">
-        <a
-          href="#inicio"
-          className="flex min-w-0 items-center gap-3"
-          onClick={() => setOpen(false)}
-        >
-          <span
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-sage/40 bg-sage/10 font-display text-sage text-base"
-            aria-hidden
-          >
-            SW
-          </span>
-          <span className="truncate font-display text-base sm:text-lg text-olive">
-            &nbsp;Susana Wignall
-          </span>
+      <div className="container-prose grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-4 lg:py-5">
+        <a href="#inicio" className="min-w-0" onClick={() => setOpen(false)}>
+          <Wordmark />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-7">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm text-foreground/80 hover:text-foreground hover:bg-sage/10 transition-colors"
+              className="text-[0.7rem] uppercase tracking-[0.18em] text-foreground/70 hover:text-olive transition-colors"
             >
               {item.label}
             </a>
           ))}
           <a
             href="/crm"
-            className="ml-2 inline-flex items-center rounded-full border border-sage/50 px-4 py-2 text-sm font-medium text-olive hover:bg-sage/10 transition"
+            className="text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground hover:text-olive transition-colors"
           >
             CRM
           </a>
@@ -77,16 +76,16 @@ export function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackWaClick("whatsapp_click_header")}
-            className="ml-1 inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition"
+            className="border border-olive px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.2em] text-olive hover:bg-olive hover:text-cream transition-colors"
           >
-            Reservar
+            Agendar
           </a>
         </nav>
 
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden grid h-10 w-10 place-items-center rounded-full border border-border bg-background/80 text-foreground"
+          className="lg:hidden grid h-10 w-10 place-items-center border border-border text-foreground"
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
         >
@@ -95,14 +94,14 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
-          <nav className="container-prose flex flex-col py-4">
+        <div className="lg:hidden border-t border-border bg-background/97 backdrop-blur-md">
+          <nav className="container-prose flex flex-col py-6">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-3 text-base text-foreground/90 hover:bg-sage/10"
+                className="border-b border-border/70 py-3.5 text-xs uppercase tracking-[0.2em] text-foreground/80"
               >
                 {item.label}
               </a>
@@ -110,7 +109,7 @@ export function Header() {
             <a
               href="/crm"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex items-center justify-center rounded-full border border-sage/50 px-5 py-3 text-base font-medium text-olive"
+              className="border-b border-border/70 py-3.5 text-xs uppercase tracking-[0.2em] text-muted-foreground"
             >
               Acceso CRM
             </a>
@@ -122,9 +121,9 @@ export function Header() {
                 trackWaClick("whatsapp_click_header_mobile");
                 setOpen(false);
               }}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-base font-medium text-primary-foreground"
+              className="mt-6 inline-flex items-center justify-center bg-olive px-5 py-4 text-xs uppercase tracking-[0.2em] text-cream"
             >
-              Reservar por WhatsApp
+              Agendar por WhatsApp
             </a>
           </nav>
         </div>
