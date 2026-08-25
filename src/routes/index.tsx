@@ -18,7 +18,8 @@ import { FinalCTA } from "@/components/landing/FinalCTA";
 import { InternalLinks } from "@/components/landing/InternalLinks";
 import { Footer } from "@/components/landing/Footer";
 import { WhatsappFloat } from "@/components/landing/WhatsappFloat";
-import { FAQS } from "@/components/landing/faq-data";
+import { FAQS, faqAnswerText } from "@/components/landing/faq-data";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -230,7 +231,7 @@ export const Route = createFileRoute("/")({
             name: f.q,
             acceptedAnswer: {
               "@type": "Answer",
-              text: f.a,
+              text: faqAnswerText(f),
             },
           })),
         }),
