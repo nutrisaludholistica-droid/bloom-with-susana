@@ -103,6 +103,7 @@ export function Footer() {
               <li><a href="#acompanamiento" className="text-foreground/80 hover:text-sage">Acompañamiento</a></li>
               <li><a href="#faqs" className="text-foreground/80 hover:text-sage">FAQs</a></li>
               <li><a href="#ubicacion" className="text-foreground/80 hover:text-sage">Ubicación</a></li>
+              <li><a href="/auth" className="text-foreground/80 hover:text-sage">Acceso CRM</a></li>
             </ul>
           </div>
 
@@ -110,12 +111,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border/60 pt-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Susana Wignall, Nutrióloga. Todos los derechos reservados.</p>
-          <div className="flex items-center gap-4">
-            <p>Hecho con cariño en Playa del Carmen.</p>
-            <a href="/auth" className="hover:text-sage opacity-60 hover:opacity-100 transition">
-              Acceso CRM
-            </a>
-          </div>
+          <p>Hecho con cariño en Playa del Carmen.</p>
         </div>
       </div>
     </footer>
