@@ -14,12 +14,13 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
+        const lastmod = "2026-08-25";
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/nutriologa-playa-del-carmen", changefreq: "weekly", priority: "0.9" },
-          { path: "/consulta-nutricional", changefreq: "monthly", priority: "0.8" },
-          { path: "/nutriologa-en-linea", changefreq: "monthly", priority: "0.8" },
-          { path: "/analisis-corporal-tanita", changefreq: "monthly", priority: "0.7" },
+          { path: "/", lastmod, changefreq: "weekly", priority: "1.0" },
+          { path: "/nutriologa-playa-del-carmen", lastmod, changefreq: "weekly", priority: "0.9" },
+          { path: "/consulta-nutricional", lastmod, changefreq: "monthly", priority: "0.8" },
+          { path: "/nutriologa-en-linea", lastmod, changefreq: "monthly", priority: "0.8" },
+          { path: "/analisis-corporal-tanita", lastmod, changefreq: "monthly", priority: "0.7" },
         ];
 
 
