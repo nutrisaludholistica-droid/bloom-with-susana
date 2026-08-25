@@ -155,24 +155,56 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-/** Carga gtag.js y envía page_view en cada cambio de ruta del SPA. */
+/** Activa la hoja de tipografías web una vez hidratado (no bloquea el render). */
+function WebFonts() {
+  useEffect(() => {
+    document
+      .querySelectorAll<HTMLLinkElement>('link[data-webfonts="true"]')
+      .forEach((link) => {
+        if (link.media !== "all") link.media = "all";
+      });
+  }, []);
+  return null;
+}
+
+/** Carga gtag.js (diferido) y envía page_view en cada cambio de ruta del SPA. */
 function GoogleAnalytics() {
   const router = useRouter();
 
   useEffect(() => {
-    initGA4();
+    // Diferimos gtag.js para no competir con la primera pintura (LCP).
+    let cancelled = false;
+    const start = () => {
+      if (cancelled) return;
+      initGA4();
+    };
+    const idle = (
+      window as unknown as {
+        requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      }
+    ).requestIdleCallback;
+    const timer = idle
+      ? idle(start, { timeout: 5000 })
+      : window.setTimeout(start, 3000);
+
     let last = window.location.pathname + window.location.search;
     const unsubscribe = router.subscribe("onResolved", () => {
       const current = window.location.pathname + window.location.search;
       if (current === last) return;
       last = current;
+      initGA4();
       trackPageView(current);
     });
-    return unsubscribe;
+    return () => {
+      cancelled = true;
+      if (!idle) window.clearTimeout(timer);
+      unsubscribe();
+    };
   }, [router]);
 
   return null;
 }
+
 
 
 function RootComponent() {
