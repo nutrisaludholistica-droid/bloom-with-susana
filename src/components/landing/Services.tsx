@@ -1,23 +1,17 @@
-import { Salad, Dumbbell, Sprout, Compass } from "lucide-react";
-
 const SERVICES = [
   {
-    icon: Salad,
     title: "Consulta nutricional personalizada",
     desc: "Evaluación, objetivos, hábitos, estilo de vida y un plan adaptado a cada persona.",
   },
   {
-    icon: Dumbbell,
     title: "Recomposición corporal",
     desc: "Acompañamiento para mejorar composición corporal, reducir grasa, ganar estructura y avanzar de forma sostenible.",
   },
   {
-    icon: Sprout,
     title: "Salud digestiva",
     desc: "Estrategias nutricionales para mejorar bienestar digestivo, energía y calidad de vida.",
   },
   {
-    icon: Compass,
     title: "Acompañamiento de hábitos",
     desc: "Educación nutricional y seguimiento para crear cambios reales y sostenibles.",
   },
@@ -25,30 +19,40 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section id="servicios" className="py-20 sm:py-24">
+    <section id="servicios" className="py-20 sm:py-28">
       <div className="container-prose">
-        <div className="flex flex-col items-start sm:items-center sm:text-center max-w-2xl sm:mx-auto">
-          <span className="text-xs uppercase tracking-[0.18em] text-sage font-medium">
-            Servicios
-          </span>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl text-olive">
-            Un acompañamiento pensado para tu vida real
-          </h2>
+        <div className="grid gap-8 border-b border-border pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="eyebrow">Servicios</p>
+            <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
+              Un acompañamiento pensado para tu{" "}
+              <span className="font-script text-clay text-[0.9em] tracking-normal">
+                vida real
+              </span>
+            </h2>
+          </div>
+          <p className="text-sm leading-[1.9] text-foreground/70 lg:pl-10">
+            Cada proceso empieza con una lectura completa de tu historia: hábitos,
+            digestión, energía y composición corporal. Desde ahí construimos algo
+            que puedas sostener.
+          </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map(({ icon: Icon, title, desc }) => (
+        <div className="grid sm:grid-cols-2">
+          {SERVICES.map(({ title, desc }, i) => (
             <article
               key={title}
-              className="group rounded-3xl border border-border/70 bg-card p-6 transition hover:border-sage/40 hover:shadow-md hover:shadow-olive/5"
+              className="border-b border-border py-9 sm:py-11 sm:odd:border-r sm:odd:pr-10 sm:even:pl-10"
             >
-              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-sage/12 text-sage transition group-hover:bg-sage group-hover:text-primary-foreground">
-                <Icon className="h-6 w-6" />
+              <span className="font-display text-xs tracking-[0.3em] text-clay">
+                {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-5 font-display text-xl text-olive leading-snug">
+              <h3 className="mt-4 font-display text-xl font-light leading-snug text-olive sm:text-2xl">
                 {title}
               </h3>
-              <p className="mt-3 text-sm text-foreground/75 leading-relaxed">{desc}</p>
+              <p className="mt-4 max-w-md text-sm leading-[1.9] text-foreground/70">
+                {desc}
+              </p>
             </article>
           ))}
         </div>
