@@ -1,37 +1,67 @@
-# Revisión y corrección del marcado Schema.org
+# Plan para recuperar rendimiento móvil y dejar Schema.org limpio
 
-Objetivo: dejar los bloques JSON-LD sin errores ni advertencias en Google Rich Results Test / Validador de Schema.org.
+Objetivo: subir el rendimiento móvil lo más cerca posible de 100 sin sacrificar la conversión de la landing, y corregir el marcado Schema.org para que no genere advertencias evitables.
 
-## Hallazgos verificados en el código
+## Diagnóstico confirmado
 
-Bloques actuales: `WebSite` (raíz), `MedicalBusiness` + `Person` + `FAQPage` (home) y `MedicalBusiness` + `Person` + `FAQPage` + `BreadcrumbList` (página local de Playa del Carmen).
+Según la captura, Google PageSpeed marca:
 
-Problemas detectados:
+- Rendimiento móvil: 63
+- FCP alto
+- LCP alto
+- Accesibilidad, buenas prácticas y SEO ya están en verde
 
-1. `medicalSpecialty: "Nutrition"` no es un valor válido del enumerado de Schema.org (en home y página local). El valor correcto es `DietNutrition`.
-2. `logo: "https://susanawignall.com/favicon.ico"` apunta a un archivo que no existe en `public/` y además `.ico` no es un formato aceptado por Google para logo/imagen. Genera advertencia de imagen no accesible.
-3. `geo.latitude` / `geo.longitude` están como texto ("20.6296"); deben ser números.
-4. La `MedicalBusiness` de la página local no incluye `image`, que Google marca como campo recomendado faltante para negocios locales.
-5. Los `Offer` del `hasOfferCatalog` no llevan `priceCurrency` ni indicación de precio, lo que produce advertencias de campos recomendados en las ofertas.
-6. `sameAs` incluye el propio dominio del sitio (`https://www.susanawignall.com`), que no aporta y puede señalarse como referencia circular; conviene dejar solo perfiles externos reales.
-7. La `Person` de la home y la de la página local no están descritas de forma idéntica (una tiene `hasCredential` y `knowsAbout`, la otra no), lo que puede dar señales inconsistentes para el mismo `@id`.
+En el código actual verifiqué estos puntos relevantes:
 
-## Cambios propuestos
+- La home carga la imagen principal desde un asset CDN (`hero-susana.webp.asset.json`) y además la precarga en `src/routes/index.tsx`.
+- La imagen del hero tiene `fetchPriority="high"`, pero se está pintando dentro de un layout con decoraciones, sombras, bordes y blur de fondo.
+- Google Fonts se cargan desde Google Fonts en `src/routes/__root.tsx`; aunque están diferidas, siguen agregando solicitudes externas.
+- Google Analytics está diferido, pero existe en la raíz y debe mantenerse sin competir con el primer render.
+- Las imágenes locales `produce.webp` y `workshops.webp` son ligeras; el problema principal parece estar en el primer viewport, no en imágenes inferiores.
+- El marcado Schema.org actual tiene detalles mejorables: `medicalSpecialty` usa `Nutrition`, `logo` apunta a `favicon.ico`, coordenadas como texto y datos inconsistentes entre la home y la página local.
 
-- Corregir `medicalSpecialty` a la URL del enumerado válido en ambas páginas.
-- Reemplazar `logo` por una imagen real del proyecto (usar el mismo WebP absoluto que ya se usa en `image`) y añadir `image` a la `MedicalBusiness` de la página local.
-- Convertir `latitude`/`longitude` a números.
-- Añadir `priceCurrency: "MXN"` y `availability` a cada `Offer` del catálogo de servicios.
-- Limpiar `sameAs`, dejando únicamente el perfil de Facebook.
-- Homogeneizar la `Person` (mismos campos base: `url`, `telephone`, `identifier`, `hasCredential`) en home y página local.
-- Mantener `FAQPage` y `BreadcrumbList` tal como están (válidos; las FAQ ya no muestran resultados enriquecidos pero no generan error).
+## Cambios propuestos de rendimiento
+
+1. **Reducir el costo visual del primer viewport**
+   - Quitar o simplificar los blur grandes del hero en móvil.
+   - Reducir sombras y capas decorativas alrededor de la imagen principal.
+   - Mantener el diseño premium, pero con menos trabajo de pintura para Chrome móvil.
+
+2. **Optimizar la imagen LCP real**
+   - Revisar el asset final usado por `hero-susana.webp.asset.json` y generar una versión más pequeña para móvil si el CDN está sirviendo una imagen demasiado grande.
+   - Usar `srcSet`/`sizes` o una variante móvil para evitar descargar una imagen mayor a la necesaria.
+   - Mantener `fetchPriority="high"` solo en la imagen que realmente sea LCP.
+
+3. **Evitar que fuentes externas afecten la primera pintura**
+   - Cambiar la experiencia inicial a fuentes del sistema o cargar Fraunces/Inter todavía más tarde.
+   - Conservar la estética, pero priorizar FCP/LCP móvil.
+
+4. **Reducir JavaScript inicial de la home**
+   - Revisar componentes debajo del fold y diferir lo que no sea visible al inicio.
+   - Mantener WhatsApp y CTA activos inmediatamente.
+   - Evitar cargar lógica de secciones inferiores antes de que el hero pinte.
+
+5. **Revisar el mapa**
+   - Confirmar que el iframe de Google Maps está lazy y no aparece antes de tiempo.
+   - Si PageSpeed lo penaliza, reemplazarlo por un placeholder visual con carga al tocar “Ver ubicación”, manteniendo la intención original de tener mapa embebido.
+
+## Cambios propuestos de Schema.org
+
+- Cambiar `medicalSpecialty` a un valor válido (`DietNutrition`).
+- Reemplazar `logo` por una imagen válida en formato aceptado por Google o quitarlo si no hay logo real todavía.
+- Convertir `latitude` y `longitude` a números.
+- Añadir `image` a la entidad local donde falta.
+- Homologar la entidad `Person` entre home y página local.
+- Mantener `FAQPage` y `BreadcrumbList` válidos.
 
 ## Verificación
 
-- Extraer los bloques JSON-LD del HTML servido y validarlos con un script local (parseo JSON + comprobación de tipos, `@id` y campos requeridos por Google para LocalBusiness, Person y FAQPage).
-- Confirmar que las URLs de imagen/logo responden 200.
-- Después de publicar, revisar en Rich Results Test la home y `/nutriologa-playa-del-carmen` para confirmar cero errores.
+- Medir la home localmente con Lighthouse móvil después de los cambios.
+- Verificar que el hero conserva diseño y CTA visible en móvil.
+- Confirmar que no hay errores de consola.
+- Validar que los JSON-LD sean JSON correcto y que las URLs de imágenes respondan correctamente.
+- Después de publicar, volver a correr PageSpeed/Rich Results Test en la URL pública.
 
-## Detalle técnico
+## Nota importante
 
-Archivos a editar: `src/routes/index.tsx`, `src/routes/nutriologa-playa-del-carmen.tsx` (bloques `scripts` de `head()`), y `src/routes/__root.tsx` solo si se ajusta el `publisher`/`WebSite`. Sin cambios en componentes ni en el CRM.
+PageSpeed mide la versión publicada y puede variar entre corridas. Para que Google refleje los cambios, habrá que publicar después de aplicar la optimización y volver a correr el test sobre `https://susanawignall.com`.
