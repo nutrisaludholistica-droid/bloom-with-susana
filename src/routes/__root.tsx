@@ -142,12 +142,11 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-/** Carga gtag.js (diferido) y envía page_view en cada cambio de ruta del SPA. */
+/** Carga gtag.js tras interacción real para no competir con el LCP móvil. */
 function GoogleAnalytics() {
   const router = useRouter();
 
   useEffect(() => {
-    // Diferimos gtag.js para no competir con la primera pintura (LCP) en móvil.
     let cancelled = false;
     const start = () => {
       if (cancelled) return;
@@ -156,15 +155,6 @@ function GoogleAnalytics() {
     const startOnInteraction = () => start();
     window.addEventListener("pointerdown", startOnInteraction, { once: true, passive: true });
     window.addEventListener("keydown", startOnInteraction, { once: true });
-    const idle = (
-      window as unknown as {
-        requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
-      }
-    ).requestIdleCallback;
-    const timer = idle
-      ? idle(start, { timeout: 9000 })
-      : window.setTimeout(start, 9000);
-
     let last = window.location.pathname + window.location.search;
     const unsubscribe = router.subscribe("onResolved", () => {
       const current = window.location.pathname + window.location.search;
@@ -177,7 +167,6 @@ function GoogleAnalytics() {
       cancelled = true;
       window.removeEventListener("pointerdown", startOnInteraction);
       window.removeEventListener("keydown", startOnInteraction);
-      if (!idle) window.clearTimeout(timer);
       unsubscribe();
     };
   }, [router]);

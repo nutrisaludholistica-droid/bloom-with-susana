@@ -51,13 +51,18 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "https://susanawignall.com/" },
-      // Precarga del elemento LCP (retrato del hero).
+      {
+        rel: "preload",
+        as: "image",
+        href: heroMobileImg.url,
+        media: "(max-width: 639px)",
+        fetchPriority: "high",
+      },
       {
         rel: "preload",
         as: "image",
         href: heroImg.url,
-        imageSrcSet: `${heroMobileImg.url} 384w, ${heroImg.url} 577w`,
-        imageSizes: "(max-width: 639px) 88vw, 45vw",
+        media: "(min-width: 640px)",
         fetchPriority: "high",
       },
     ],
