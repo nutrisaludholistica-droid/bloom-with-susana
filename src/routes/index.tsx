@@ -15,6 +15,7 @@ import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ } from "@/components/landing/FAQ";
 import { Location } from "@/components/landing/Location";
 import { FinalCTA } from "@/components/landing/FinalCTA";
+import { InternalLinks } from "@/components/landing/InternalLinks";
 import { Footer } from "@/components/landing/Footer";
 import { WhatsappFloat } from "@/components/landing/WhatsappFloat";
 import { FAQS } from "@/components/landing/faq-data";
@@ -247,6 +248,7 @@ function LandingPage() {
         <Testimonials />
         <FAQ />
         <Location />
+        <InternalLinks />
         <FinalCTA />
       </main>
       <Footer />
