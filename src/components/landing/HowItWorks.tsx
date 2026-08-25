@@ -24,7 +24,7 @@ export function HowItWorks() {
           <p className="eyebrow">Cómo empezar</p>
           <h2 className="mt-5 font-display text-3xl font-light leading-tight text-olive sm:text-[2.6rem]">
             ¿Qué pasa cuando escribes por{" "}
-            <span className="font-script text-clay text-[0.9em] tracking-normal">
+            <span className="font-script text-olive text-[0.9em] tracking-normal">
               WhatsApp
             </span>
             ?
