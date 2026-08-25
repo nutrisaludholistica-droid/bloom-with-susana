@@ -1,33 +1,31 @@
-# Jerarquía visual + mejoras SEO
+# Cambios del documento: precios, talleres y testimonios
 
-## Parte 1 — Jerarquía visual (hero y secciones)
+## 1. Precios visibles (nuevo)
 
-Objetivo: que se sienta editorial y profesional, no genérico. Sin cambiar contenido ni colores.
+- Consulta inicial: **$1,200 MXN** · Consulta de seguimiento: **$1,000 MXN** — se muestran en la sección de Servicios.
+- Paquetes de acompañamiento con precio en la tarjeta:
+  - Básico · 3 meses — **$4,000 MXN**
+  - Transformación · 6 meses — **$7,500 MXN**
+  - Reconexión · 9 meses — **$10,000 MXN**
+- Se retira el texto "los precios se confirman por WhatsApp" y se sustituye por una nota corta (precios en MXN, pago por mes o por programa según acuerdo).
+- Los mismos precios se agregan al marcado estructurado de las ofertas (`priceCurrency: MXN` + `price`), lo que ayuda en resultados de búsqueda.
 
-- **Hero:** un solo bloque de aire arriba (más respiro superior en desktop), H1 más grande y con líneas más apretadas, y el acento manuscrito ligeramente mayor y mejor alineado a la línea base. El párrafo de apoyo pasa a un tamaño más pequeño y gris más suave para que el título domine claramente.
-- **Fila de credenciales del hero:** valores (Agosto, Cédula, FECII) en tamaño uniforme con etiquetas realmente secundarias, separadores verticales finos en desktop en vez de solo una línea superior.
-- **Botones:** misma altura y peso tipográfico en ambos, con el secundario más callado (borde más tenue, sin fondo).
-- **Ritmo entre secciones:** una sola escala de espaciado vertical para todas las secciones de la home (más aire en desktop, más compacto en móvil) para que dejen de sentirse "apiladas" con medidas distintas.
-- **Títulos de sección:** una escala consistente — eyebrow pequeño en mayúsculas, H2 grande y ligero, línea introductoria corta. Se aplica igual en Beneficios, Servicios, Paquetes, Sobre mí, Talleres, Testimonios, FAQ y CTA final.
-- **Contraste:** subir un poco el contraste del texto de cuerpo sobre crema (accesibilidad) y bajar el de los detalles decorativos, para una jerarquía de tres niveles clara.
+## 2. Quitar los talleres de los paquetes
 
-## Parte 2 — SEO
+- Se elimina "1 taller al mes" del paquete Básico y "Taller de elaboración de fermentos" del paquete Reconexión.
+- Los talleres siguen existiendo como sección propia e independiente de la página (no se toca).
 
-Basado en los hallazgos actuales del escáner:
+## 3. Testimonios: no inventar
 
-1. **Direcciones contradictorias (impacto local real):** la página `/nutriologa-playa-del-carmen` usa una dirección distinta a la de la home y su marcado. Se unifica a la dirección de la home (Hea'n Clinic, Av. Paseo Central, Humana Works Center), tanto en el texto visible como en el `MedicalBusiness`, y el iframe de mapa apunta al mismo lugar en vez de una vista genérica de la ciudad.
-2. **Imagen de previsualización social:** hoy es un placeholder de plataforma. Se crea una imagen de marca 1200x630 y se usa como `og:image`/`twitter:image` en la home y en la página local.
-3. **Metadatos propios en rutas internas:** `og:title`/`og:description` específicos para `/auth` (manteniendo `noindex`).
-4. **Sitemap:** añadir `lastmod` a las entradas para señalar frescura.
+Como la práctica acaba de abrir y no hay casos reales, se retira la sección de testimonios inventados. En su lugar queda un bloque honesto y útil: cómo es el acompañamiento (qué incluye la primera consulta, qué se mide, cómo es el seguimiento) sin afirmaciones de resultados ni testimonios. También se quita el `Casos reales` como encabezado. Cuando tengas pacientes con permiso para citarlos, los agregamos con nombre o inicial y fecha.
 
-Nota: las previsualizaciones sociales tardan en actualizarse porque las redes guardan en caché la última versión que leyeron.
+## 4. Mejoras visuales pendientes de confirmar
+
+En el documento marcaste dos capturas con "no se ve más, mejorarlo" y "me gusta pero casi no se entiende, mejora visual", pero las imágenes vienen incrustadas y no puedo abrirlas desde aquí. Dime a qué secciones se refieren (por ejemplo: promoción de lanzamiento, "¿Qué pasa cuando escribes por WhatsApp?", beneficios, bloque de confianza) y en la misma entrega les subo contraste y tamaño de texto para que se lean bien en móvil.
 
 ## Detalles técnicos
 
-- Espaciado y escalas tipográficas centralizadas en `src/styles.css` (utilidades de sección y de encabezado) y aplicadas en `src/components/landing/*` — sin colores hardcodeados, solo tokens.
-- SEO en `src/routes/index.tsx`, `src/routes/nutriologa-playa-del-carmen.tsx`, `src/routes/__root.tsx`, `src/routes/auth.tsx` y `src/routes/sitemap[.]xml.ts`.
-- Al terminar, se revisa la home renderizada en móvil y escritorio y se marcan como corregidos los hallazgos SEO atendidos.
-
-## Lo que necesito de ti (opcional, mejora el resultado)
-
-Dirección exacta con número, horarios definitivos y teléfono público, si quieres que queden idénticos en toda la web y en el marcado.
+- `src/components/landing/Packages.tsx`: campo `price` por paquete, se quitan los ítems de taller.
+- `src/components/landing/Services.tsx`: precios de consulta inicial y seguimiento.
+- `src/components/landing/Testimonials.tsx`: se reemplaza por un bloque de "cómo trabajamos" sin testimonios ficticios (o se elimina de `src/routes/index.tsx` si prefieres no tener nada ahí).
+- `src/routes/index.tsx`: precios en el `hasOfferCatalog` del marcado `MedicalBusiness`.
