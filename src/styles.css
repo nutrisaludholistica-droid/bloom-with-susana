@@ -48,6 +48,7 @@
 
   --color-sage: var(--sage);
   --color-sage-soft: var(--sage-soft);
+  --color-sage-light: var(--sage-light);
   --color-olive: var(--olive);
   --color-clay: var(--clay);
   --color-sand: var(--sand);
@@ -56,6 +57,7 @@
   --color-promo-bg: var(--promo-bg);
   --color-plum: var(--plum);
   --color-eggplant: var(--eggplant);
+  --color-eggplant-deep: var(--eggplant-deep);
   --color-amber: var(--amber);
   --color-grain: var(--grain);
 }
@@ -95,19 +97,22 @@
 
   /* Tokens de identidad */
   --sage: oklch(0.45 0.057 125);
-  --sage-soft: oklch(0.9 0.03 118);
+  --sage-soft: oklch(0.92 0.022 118);
+  --sage-light: oklch(0.78 0.05 130);
   --olive: oklch(0.33 0.042 125);
-  --clay: oklch(0.464 0.048 337);
-  --sand: oklch(0.913 0.028 91);
-  --cream: oklch(0.982 0.005 95);
+  /* Un solo berenjena clarito: clay/plum unificados */
+  --clay: oklch(0.58 0.04 335);
+  --sand: oklch(0.923 0.014 95);
+  --cream: oklch(0.975 0.004 95);
   --whatsapp: oklch(0.62 0.11 150);
   --promo-bg: oklch(0.33 0.042 125);
 
   /* Paleta nombrada */
-  --plum: oklch(0.464 0.048 337);
-  --eggplant: oklch(0.52 0.055 335);
+  --plum: oklch(0.58 0.04 335);
+  --eggplant: oklch(0.58 0.04 335);
+  --eggplant-deep: oklch(0.46 0.05 335);
   --amber: oklch(0.755 0.118 85);
-  --grain: oklch(0.913 0.028 91);
+  --grain: oklch(0.923 0.014 95);
 
 
 
@@ -136,12 +141,14 @@
 
   --sage: oklch(0.72 0.075 122);
   --sage-soft: oklch(0.33 0.032 122);
+  --sage-light: oklch(0.8 0.05 130);
   --olive: oklch(0.9 0.02 100);
-  --clay: oklch(0.7 0.06 337);
+  --clay: oklch(0.72 0.05 335);
   --sand: oklch(0.33 0.032 122);
-  --cream: oklch(0.28 0.032 125);
-  --plum: oklch(0.7 0.06 337);
-  --eggplant: oklch(0.62 0.075 335);
+  --cream: oklch(0.94 0.004 95);
+  --plum: oklch(0.72 0.05 335);
+  --eggplant: oklch(0.72 0.05 335);
+  --eggplant-deep: oklch(0.56 0.055 335);
   --amber: oklch(0.78 0.115 85);
   --grain: oklch(0.33 0.032 122);
 }
