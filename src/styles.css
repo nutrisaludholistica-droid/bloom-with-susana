@@ -66,22 +66,22 @@
   --radius: 0.25rem;
 
   /* Paleta: milpa · maíz azul · ámbar · grano · fondo */
-  --background: oklch(0.961 0.007 89);
+  --background: oklch(0.965 0.004 95);
   --foreground: oklch(0.3 0.032 125);
 
-  --card: oklch(0.982 0.005 95);
+  --card: oklch(0.982 0.004 95);
   --card-foreground: oklch(0.3 0.032 125);
-  --popover: oklch(0.982 0.005 95);
+  --popover: oklch(0.982 0.004 95);
   --popover-foreground: oklch(0.3 0.032 125);
 
   /* Primary = milpa (verde profundo) */
   --primary: oklch(0.45 0.057 125);
   --primary-foreground: oklch(0.982 0.005 95);
 
-  --secondary: oklch(0.913 0.028 91);
+  --secondary: oklch(0.923 0.014 95);
   --secondary-foreground: oklch(0.3 0.032 125);
 
-  --muted: oklch(0.937 0.017 90);
+  --muted: oklch(0.945 0.008 95);
   --muted-foreground: oklch(0.505 0.028 122);
 
   /* Accent = ámbar */

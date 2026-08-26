@@ -19,7 +19,7 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section id="servicios" className="bg-eggplant py-20 text-cream sm:py-28">
+    <section id="servicios" className="bg-eggplant-deep py-20 text-cream sm:py-28">
       <div className="container-prose">
         <div className="grid gap-8 border-b border-cream/20 pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
@@ -44,7 +44,7 @@ export function Services() {
               key={title}
               className="border-b border-cream/15 py-9 sm:py-11 sm:odd:border-r sm:odd:pr-10 sm:even:pl-10"
             >
-              <span className="font-display text-xs tracking-[0.3em] text-amber">
+              <span className="font-display text-xs tracking-[0.3em] text-sage-light">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 font-display text-xl font-light leading-snug text-cream sm:text-2xl">
