@@ -12,7 +12,7 @@ import { WA_MSG } from "@/lib/whatsapp";
 const pageUrl = "https://susanawignall.com/consulta-nutricional";
 const title = "Consulta nutricional en Playa del Carmen y en línea";
 const description =
-  "Consulta nutricional con la nutrióloga Susana Wignall: historia clínica, análisis de composición corporal y plan personalizado. Presencial en Playa del Carmen o en línea.";
+  "Consulta nutricional con Susana Wignall, nutrióloga y chef: historia de salud, análisis de composición corporal y plan personalizado. Presencial en Playa del Carmen o en línea.";
 
 const blocks: SeoBlock[] = [
   {
@@ -21,7 +21,7 @@ const blocks: SeoBlock[] = [
       "La primera consulta dura entre 50 y 60 minutos. No se trata de entregarte una dieta genérica, sino de entender tu historia, tus horarios, tus gustos y tu contexto para construir un plan que puedas sostener.",
     ],
     bullets: [
-      "Historia clínica y nutricional completa",
+      "Historia de salud y nutricional completa",
       "Evaluación antropométrica y análisis de composición corporal",
       "Revisión de estudios de laboratorio si los tienes",
       "Registro de alergias e intolerancias alimentarias",
@@ -60,7 +60,7 @@ const faqs: SeoFaq[] = [
   {
     question: "¿Cuánto dura la primera consulta nutricional?",
     answer:
-      "Entre 50 y 60 minutos. Incluye historia clínica, mediciones, análisis de composición corporal y la explicación de tu plan de alimentación.",
+      "Entre 50 y 60 minutos. Incluye historia de salud, mediciones, análisis de composición corporal y la explicación de tu plan de alimentación.",
   },
   {
     question: "¿Qué debo llevar a mi primera consulta?",
@@ -103,7 +103,7 @@ export const Route = createFileRoute("/consulta-nutricional")({
             name: "Consulta nutricional personalizada",
             description,
             pageUrl,
-            serviceType: "Consulta de nutrición clínica",
+            serviceType: "Consulta de nutrición personalizada",
           }),
         ),
       },

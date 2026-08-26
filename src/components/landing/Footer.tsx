@@ -14,7 +14,7 @@ export function Footer() {
               <span className="grid h-10 w-10 place-items-center rounded-full border border-sage/40 bg-sage/10 font-display text-sage">
                 SW
               </span>
-              <span className="font-display text-lg text-olive">Susana Wignall · Nutrióloga</span>
+              <span className="font-display text-lg text-olive">Susana Wignall · Nutrióloga y chef</span>
             </div>
             <p className="mt-4 text-sm text-foreground/70 leading-relaxed max-w-sm">
               Acompañamiento nutricional personalizado en Playa del Carmen y en línea.
@@ -44,7 +44,7 @@ export function Footer() {
                   href={`tel:+52${PHONE_CLINIC.replace(/\s/g, "")}`}
                   className="text-foreground/80 hover:text-sage"
                 >
-                  Clínica · {PHONE_CLINIC}
+                  Consultorio · {PHONE_CLINIC}
                 </a>
               </li>
               <li className="text-foreground/70">Playa del Carmen, Quintana Roo</li>

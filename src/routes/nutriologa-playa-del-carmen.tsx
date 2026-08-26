@@ -31,7 +31,7 @@ const localFaqs = [
   {
     question: "¿Qué incluye la primera consulta?",
     answer:
-      "Historia clínica, evaluación antropométrica, análisis de hábitos alimentarios, objetivos nutricionales y un plan personalizado de alimentación.",
+      "Historia de salud, evaluación antropométrica, análisis de hábitos alimentarios, objetivos nutricionales y un plan personalizado de alimentación.",
   },
   {
     question: "¿Con qué frecuencia debo tener seguimiento?",
@@ -140,7 +140,7 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
             identifier: "156228944",
           },
           knowsAbout: [
-            "Nutrición clínica",
+            "Cocina saludable",
             "Recomposición corporal",
             "Salud digestiva",
             "Microbiota intestinal",
@@ -268,7 +268,7 @@ function LocalNutritionPage() {
             title="Un plan hecho para ti, no para todos"
           >
             Si estás buscando un nutriólogo o nutrióloga en Playa del Carmen, cada paciente es distinto. Por eso mi enfoque combina valoración
-            clínica, antropometría segmentada y un plan de alimentación
+            nutricional, antropometría segmentada y un plan de alimentación
             realista con tu rutina, gustos y presupuesto.
           </SectionHeading>
 

@@ -8,10 +8,10 @@ export function Hero() {
     <section id="inicio" className="pt-32 pb-16 sm:pt-40 sm:pb-24">
       <div className="container-prose grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
-          <p className="eyebrow">Nutrición clínica · Playa del Carmen y en línea</p>
+          <p className="eyebrow">Nutrióloga y chef · Playa del Carmen y en línea</p>
 
           <h1 className="mt-7 font-display text-[2.4rem] font-light leading-[1.08] tracking-tight text-olive sm:text-[3.2rem] lg:text-[3.8rem]">
-            Susana Wignall, nutrióloga en Playa del Carmen
+            Susana Wignall, nutrióloga y chef en Playa del Carmen
             <br className="hidden sm:block" />{" "}
             <span className="font-script text-eggplant text-[0.72em] tracking-normal">
               y en línea
@@ -64,7 +64,7 @@ export function Hero() {
             <source media="(max-width: 639px)" srcSet={heroMobileImg.url} />
             <img
               src={heroImg.url}
-              alt="Susana Wignall, nutrióloga en Playa del Carmen"
+              alt="Susana Wignall, nutrióloga y chef en Playa del Carmen"
               width={577}
               height={1024}
               fetchPriority="high"
