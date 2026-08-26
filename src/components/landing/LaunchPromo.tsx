@@ -19,7 +19,7 @@ export function LaunchPromo() {
             </h2>
             <p className="mt-5 max-w-xl text-[0.95rem] leading-[1.9] text-foreground/70">
               Es tu oportunidad de conocerme, hablar de tus objetivos y recibir
-              orientación nutricional personalizada — sin compromiso.
+              orientación nutricional personalizada, sin compromiso.
             </p>
           </div>
 

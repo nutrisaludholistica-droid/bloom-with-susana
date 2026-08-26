@@ -16,13 +16,13 @@ export function Hero() {
             <span className="font-script text-eggplant text-[0.72em] tracking-normal">
               y en línea
             </span>{" "}
-            — Susana Wignall
+            Susana Wignall
           </h1>
 
           <div className="mt-8 max-w-md border-t border-border pt-7">
             <p className="text-[0.98rem] leading-[1.85] text-foreground/75">
               Acompañamiento personalizado para mejorar tu composición corporal,
-              salud digestiva y calidad de vida — sin dietas extremas.
+              salud digestiva y calidad de vida, sin dietas extremas.
             </p>
           </div>
 
