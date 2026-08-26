@@ -1,4 +1,7 @@
 import aboutImg from "@/assets/about-susana.webp.asset.json";
+import { WA_MSG, waUrl } from "@/lib/whatsapp";
+import { trackWaClick } from "@/lib/analytics";
+
 
 const FORMATION = [
   "Primer lugar en la FECII 2024",
