@@ -11,12 +11,11 @@ export function Hero() {
           <p className="eyebrow">Nutrición clínica · Playa del Carmen y en línea</p>
 
           <h1 className="mt-7 font-display text-[2.4rem] font-light leading-[1.08] tracking-tight text-olive sm:text-[3.2rem] lg:text-[3.8rem]">
-            Nutrióloga en Playa del Carmen
+            Susana Wignall, nutrióloga en Playa del Carmen
             <br className="hidden sm:block" />{" "}
             <span className="font-script text-eggplant text-[0.72em] tracking-normal">
               y en línea
-            </span>{" "}
-            Susana Wignall
+            </span>
           </h1>
 
           <div className="mt-8 max-w-md border-t border-border pt-7">
