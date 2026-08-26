@@ -1,20 +1,22 @@
-# Unificar el berenjena claro en todo el diseño
+# Unificar berenjena claro, reforzar el verde y suavizar los fondos
 
-Hoy hay dos morados distintos conviviendo: el berenjena claro (`--eggplant`, usado en el fondo de Servicios, la banda decorativa, el badge "Más elegido" y los acentos manuscritos) y un ciruela más apagado y oscuro (`--clay`, usado en eyebrows, comillas de "Sobre mí", el "nutrición" del header, iconos de FAQ y las páginas SEO). El resultado se siente inconsistente y en algunos puntos más pesado de lo deseado.
+Hoy hay dos morados distintos conviviendo (berenjena claro `--eggplant` y ciruela apagado `--clay`), y el contraste principal usa un blanco crema cálido (`--cream`). La usuaria quiere: un solo berenjena clarito, el verde milpa con más protagonismo, y tonos bajos en general, cambiando el crema por algo más gris-blanco.
 
 ## Qué se va a hacer
 
-1. Unificar la familia morada en un solo tono berenjena claro, y usarlo en todos los lugares donde hoy aparece `clay` o `plum`, para que el sitio tenga un único acento morado coherente.
-2. Bajar un poco más la intensidad general: subir la luminosidad del berenjena y reducir ligeramente la saturación, de modo que el conjunto quede en tonos bajos y suaves (nada saturado ni oscuro).
-3. Para el fondo de la sección de Servicios (donde el berenjena cubre gran superficie con texto crema encima), usar una variante ligeramente más profunda del mismo tono para que el texto crema siga siendo perfectamente legible, sin romper la unidad de color.
-4. Revisar los usos sobre fondo crema (eyebrows, números de sección, comillas, iconos, badge) para confirmar que el nuevo tono más claro sigue teniendo contraste suficiente y ajustar sólo donde haga falta.
-5. Aplicar la misma lógica en modo oscuro (CRM) para que ambos temas queden alineados.
+1. **Un solo berenjena claro:** unificar `--clay` y `--plum` al tono berenjena más claro y menos saturado (aprox. `oklch(0.58 0.04 335)`), de modo que todo el sitio use un único acento morado consistente (eyebrows, comillas, "nutrición" del header, iconos, acentos manuscritos, páginas SEO).
+2. **Verde milpa como color de peso:** mantener el verde como primary y aumentar su presencia en acentos de sección donde hoy domina el morado (por ejemplo: números de sección y detalles en Servicios, bordes o marcas decorativas), para que la identidad verde-berenjena quede equilibrada.
+3. **Fondos más neutros y bajos:** llevar `--cream` (y el fondo general) de un crema cálido hacia un blanco grisáceo suave (menos saturación amarillenta, manteniendo luminosidad alta) para que la página se sienta más serena y moderna, y el berenjena destaque con elegancia.
+4. **Sección de Servicios:** sobre el fondo berenjena, usar texto blanco grisáceo suave en lugar de crema cálido, y ámbar sólo en micro-acentos; el berenjena de fondo se aclara un poco más cuidando el contraste del texto.
+5. **Revisión de contraste:** verificar legibilidad del nuevo berenjena claro sobre fondo claro (eyebrows, badge "Más elegido") y ajustar solo donde sea necesario.
+6. **Modo oscuro (CRM):** aplicar la misma lógica de unificación y suavidad para que ambos temas queden alineados.
 
 ## Detalle técnico
 
 - Archivo principal: `src/styles.css`.
-  - Aclarar `--eggplant` (aprox. `oklch(0.58 0.045 335)`) y añadir/ajustar una variante de superficie más profunda para fondos amplios (aprox. `oklch(0.46 0.05 335)`), expuesta como token en `@theme inline`.
-  - Alinear `--clay` y `--plum` al nuevo berenjena para eliminar los dos morados distintos.
-  - Coherencia equivalente en el bloque `.dark`.
-- `src/components/landing/Services.tsx`: usar el token de superficie berenjena para el fondo de la sección.
-- No se cambia estructura, copy ni lógica: sólo color y presentación.
+  - Ajustar `--cream`, `--background` y tokens afines hacia blanco grisáceo de baja saturación.
+  - Unificar `--clay`/`--plum` con `--eggplant` aclarado; añadir una variante de superficie berenjena algo más profunda para fondos amplios, expuesta en `@theme inline`.
+  - Ajustes equivalentes en el bloque `.dark`.
+- `src/components/landing/Services.tsx`: fondo con el token de superficie berenjena y numeración/acentos en verde suave donde convenga.
+- Posibles retoques puntuales de acento en `Benefits.tsx`, `Packages.tsx`, `About.tsx` sólo si el contraste lo requiere.
+- Sin cambios de estructura, copy ni lógica: sólo color y presentación.
