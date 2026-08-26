@@ -13,12 +13,14 @@ El bloque actual mete todo (foto, historia larga, formación y botón) en dos co
   |                   |  historia en 4 párrafos, en 2 columnas
   |  Céd. 156228944   |  cierre en verde milpa
   ------------------------------------------------
-  |  FORMACIÓN Y LOGROS: 10 items en 2 o 3 columnas |
+  |   FORMACIÓN Y LOGROS: centrada, ancho equilibrado |
+  |   10 items en 2 columnas simétricas             |
   ------------------------------------------------
   |  RECUADRO CTA grande, borde berenjena marcado   |
   |  "Agendemos tu consulta" + botón berenjena      |
 ```
 
+- Se corrige el hueco en blanco de la captura: hoy "Formación y logros" queda aplastada a la derecha porque vive dentro de la columna del texto. Se saca de esa columna y se coloca centrada como franja propia, con columnas simétricas, para que ya no quede media pantalla vacía.
 - La sección deja de estar contenida en el ancho estrecho: se extiende al ancho completo con una banda de fondo suave, y el contenido respira con más aire.
 - La foto se mantiene a la izquierda con su cédula profesional debajo, pero más grande y alineada al inicio del texto.
 - La historia se reparte en dos columnas de lectura en escritorio (una sola en móvil) para que no se vea como un muro de texto.
