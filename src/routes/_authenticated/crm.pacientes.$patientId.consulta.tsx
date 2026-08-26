@@ -20,7 +20,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/_authenticated/crm/pacientes/$patientId/consulta")({
   head: () => ({
     meta: [
-      { title: "Nueva consulta — CRM interno" },
+      { title: "Nueva consulta en el CRM interno" },
       { name: "description", content: "Registro de consulta y notas SOAP, uso interno." },
       { name: "robots", content: "noindex, nofollow" },
     ],
@@ -173,10 +173,10 @@ function NewConsultation() {
           <CardTitle className="font-display">Notas SOAP</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <Soap name="soap_subjective" label="S — Subjetivo (lo que refiere el paciente)" />
-          <Soap name="soap_objective" label="O — Objetivo (mediciones, observaciones)" />
-          <Soap name="soap_assessment" label="A — Análisis / diagnóstico nutricional" />
-          <Soap name="soap_plan" label="P — Plan (intervención, plan alimentario)" />
+          <Soap name="soap_subjective" label="S: Subjetivo (lo que refiere el paciente)" />
+          <Soap name="soap_objective" label="O: Objetivo (mediciones, observaciones)" />
+          <Soap name="soap_assessment" label="A: Análisis / diagnóstico nutricional" />
+          <Soap name="soap_plan" label="P: Plan (intervención, plan alimentario)" />
         </CardContent>
       </Card>
 

@@ -13,7 +13,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/_authenticated/crm/")({
   head: () => ({
     meta: [
-      { title: "Panel del CRM — uso interno" },
+      { title: "Panel del CRM interno" },
       { name: "description", content: "Resumen de citas y pacientes del consultorio." },
       { name: "robots", content: "noindex, nofollow" },
     ],
