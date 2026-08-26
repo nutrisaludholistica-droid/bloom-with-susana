@@ -282,13 +282,14 @@ function LandingPage() {
         <Hero />
         <Benefits />
         <Services />
+        <About />
         <LaunchPromo />
         <div className="h-1 bg-eggplant" aria-hidden="true" />
         <Packages />
         <TrustBlock />
-        <About />
         <Workshops />
         <Testimonials />
+
         <FAQ />
         <Location />
         <InternalLinks />
