@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — LN Susana Wignall
+ * Design system de Susana Wignall
  * Wellness premium: salvia, crema, terracota, oliva oscuro, blanco cálido.
  * All colors in oklch. Tokens are mapped via @theme inline so Tailwind
  * utilities (bg-primary, text-foreground, etc.) resolve to live values.

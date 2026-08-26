@@ -52,7 +52,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/_authenticated/crm/pacientes/$patientId")({
   head: () => ({
     meta: [
-      { title: "Expediente del paciente — CRM interno" },
+      { title: "Expediente del paciente en el CRM interno" },
       { name: "description", content: "Expediente clínico completo del paciente, uso interno." },
       { name: "robots", content: "noindex, nofollow" },
     ],
@@ -161,16 +161,16 @@ function PatientDetail() {
         <MiniStat label="Última consulta">
           {data.consultations[0]
             ? format(new Date(data.consultations[0].consulted_at), "d MMM yyyy", { locale: es })
-            : "—"}
+            : "n/d"}
         </MiniStat>
         <MiniStat label="Peso actual">
-          {lastAnthro?.weight_kg ? `${lastAnthro.weight_kg} kg` : "—"}
+          {lastAnthro?.weight_kg ? `${lastAnthro.weight_kg} kg` : "n/d"}
         </MiniStat>
         <MiniStat label="IMC">
-          {lastAnthro?.bmi ?? "—"}
+          {lastAnthro?.bmi ?? "n/d"}
         </MiniStat>
         <MiniStat label="% grasa (Tanita)">
-          {lastBio?.body_fat_pct ? `${lastBio.body_fat_pct}%` : "—"}
+          {lastBio?.body_fat_pct ? `${lastBio.body_fat_pct}%` : "n/d"}
         </MiniStat>
       </div>
 
@@ -253,10 +253,10 @@ function ConsultationsTab({
               {c.reason && <p className="text-sm text-muted-foreground">{c.reason}</p>}
             </CardHeader>
             <CardContent className="space-y-3 text-sm">
-              {c.soap_subjective && <SoapBlock label="S — Subjetivo" text={c.soap_subjective} />}
-              {c.soap_objective && <SoapBlock label="O — Objetivo" text={c.soap_objective} />}
-              {c.soap_assessment && <SoapBlock label="A — Análisis" text={c.soap_assessment} />}
-              {c.soap_plan && <SoapBlock label="P — Plan" text={c.soap_plan} />}
+              {c.soap_subjective && <SoapBlock label="S: Subjetivo" text={c.soap_subjective} />}
+              {c.soap_objective && <SoapBlock label="O: Objetivo" text={c.soap_objective} />}
+              {c.soap_assessment && <SoapBlock label="A: Análisis" text={c.soap_assessment} />}
+              {c.soap_plan && <SoapBlock label="P: Plan" text={c.soap_plan} />}
               {(a || b) && (
                 <div className="rounded-md bg-secondary/40 p-3 text-xs grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {a?.weight_kg && <Metric label="Peso" v={`${a.weight_kg} kg`} />}
@@ -340,12 +340,12 @@ function AnthroTab({ anthro, bio }: { anthro: any[]; bio: any[] }) {
                     <td className="py-2 pr-3">
                       {format(new Date(a.measured_at), "d MMM yyyy", { locale: es })}
                     </td>
-                    <td className="text-right pr-3">{a.weight_kg ?? "—"}</td>
-                    <td className="text-right pr-3">{a.height_cm ?? "—"}</td>
-                    <td className="text-right pr-3">{a.bmi ?? "—"}</td>
-                    <td className="text-right pr-3">{a.waist_cm ?? "—"}</td>
-                    <td className="text-right pr-3">{a.hip_cm ?? "—"}</td>
-                    <td className="text-right pr-3">{a.arm_cm ?? "—"}</td>
+                    <td className="text-right pr-3">{a.weight_kg ?? "n/d"}</td>
+                    <td className="text-right pr-3">{a.height_cm ?? "n/d"}</td>
+                    <td className="text-right pr-3">{a.bmi ?? "n/d"}</td>
+                    <td className="text-right pr-3">{a.waist_cm ?? "n/d"}</td>
+                    <td className="text-right pr-3">{a.hip_cm ?? "n/d"}</td>
+                    <td className="text-right pr-3">{a.arm_cm ?? "n/d"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -378,12 +378,12 @@ function AnthroTab({ anthro, bio }: { anthro: any[]; bio: any[] }) {
                     <td className="py-2 pr-3">
                       {format(new Date(b.measured_at), "d MMM yyyy", { locale: es })}
                     </td>
-                    <td className="text-right pr-3">{b.body_fat_pct ?? "—"}</td>
-                    <td className="text-right pr-3">{b.muscle_mass_kg ?? "—"}</td>
-                    <td className="text-right pr-3">{b.total_body_water_pct ?? "—"}</td>
-                    <td className="text-right pr-3">{b.visceral_fat ?? "—"}</td>
-                    <td className="text-right pr-3">{b.bmr_kcal ?? "—"}</td>
-                    <td className="text-right pr-3">{b.metabolic_age ?? "—"}</td>
+                    <td className="text-right pr-3">{b.body_fat_pct ?? "n/d"}</td>
+                    <td className="text-right pr-3">{b.muscle_mass_kg ?? "n/d"}</td>
+                    <td className="text-right pr-3">{b.total_body_water_pct ?? "n/d"}</td>
+                    <td className="text-right pr-3">{b.visceral_fat ?? "n/d"}</td>
+                    <td className="text-right pr-3">{b.bmr_kcal ?? "n/d"}</td>
+                    <td className="text-right pr-3">{b.metabolic_age ?? "n/d"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -730,16 +730,16 @@ function DataTab({ patient }: { patient: any }) {
           v={
             patient.birth_date
               ? format(new Date(patient.birth_date), "d MMM yyyy", { locale: es })
-              : "—"
+              : "n/d"
           }
         />
-        <Info label="Sexo" v={patient.sex ?? "—"} />
-        <Info label="Teléfono" v={patient.phone ?? "—"} />
-        <Info label="Correo" v={patient.email ?? "—"} />
-        <Info label="Ocupación" v={patient.occupation ?? "—"} />
-        <Info label="Dirección" v={patient.address ?? "—"} />
-        <Info label="Contacto de emergencia" v={patient.emergency_contact_name ?? "—"} />
-        <Info label="Tel. emergencia" v={patient.emergency_contact_phone ?? "—"} />
+        <Info label="Sexo" v={patient.sex ?? "n/d"} />
+        <Info label="Teléfono" v={patient.phone ?? "n/d"} />
+        <Info label="Correo" v={patient.email ?? "n/d"} />
+        <Info label="Ocupación" v={patient.occupation ?? "n/d"} />
+        <Info label="Dirección" v={patient.address ?? "n/d"} />
+        <Info label="Contacto de emergencia" v={patient.emergency_contact_name ?? "n/d"} />
+        <Info label="Tel. emergencia" v={patient.emergency_contact_phone ?? "n/d"} />
         <Info
           label="Alta"
           v={format(new Date(patient.created_at), "d MMM yyyy", { locale: es })}

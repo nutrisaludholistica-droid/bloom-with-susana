@@ -7,7 +7,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/_authenticated/crm")({
   head: () => ({
     meta: [
-      { title: "CRM — LN Susana Wignall" },
+      { title: "CRM interno de Susana Wignall" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

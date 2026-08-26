@@ -24,7 +24,7 @@ import { SOCIAL, businessSameAs } from "@/lib/social";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nutrióloga en Playa del Carmen y en línea — Susana Wignall" },
+      { title: "Susana Wignall, nutrióloga en Playa del Carmen y en línea" },
       {
         name: "description",
         content:
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Nutrióloga en Playa del Carmen y en línea — Susana Wignall",
+        content: "Susana Wignall, nutrióloga en Playa del Carmen y en línea",
       },
       {
         property: "og:description",

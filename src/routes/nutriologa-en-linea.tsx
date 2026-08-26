@@ -31,7 +31,7 @@ const blocks: SeoBlock[] = [
   {
     heading: "¿Funciona igual que la consulta presencial?",
     paragraphs: [
-      "Sí, con una diferencia: las mediciones corporales las tomas tú con indicaciones precisas que te doy paso a paso, o las traes de un estudio local. El resto —historia clínica, análisis de hábitos, diseño del plan y ajustes— es idéntico.",
+      "Sí, con una diferencia: las mediciones corporales las tomas tú con indicaciones precisas que te doy paso a paso, o las traes de un estudio local. El resto (historia clínica, análisis de hábitos, diseño del plan y ajustes) es idéntico.",
       "Si estás en Playa del Carmen y prefieres el análisis de composición corporal con equipo profesional, la consulta presencial es la mejor opción.",
     ],
   },

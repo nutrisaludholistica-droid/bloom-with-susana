@@ -5,7 +5,7 @@ const STEPS = [
   },
   {
     title: "Tu plan",
-    desc: "Un plan nutricional construido con tus horarios, presupuesto y gustos reales — no una dieta genérica. Con alternativas para que puedas sostenerlo.",
+    desc: "Un plan nutricional construido con tus horarios, presupuesto y gustos reales, no una dieta genérica. Con alternativas para que puedas sostenerlo.",
   },
   {
     title: "Seguimiento",
