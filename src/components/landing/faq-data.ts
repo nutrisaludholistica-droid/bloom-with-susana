@@ -26,12 +26,12 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "¿Cuánto cuesta la consulta con nutrióloga en Playa del Carmen?",
-    a: "La consulta inicial es de $1,200 MXN e incluye historia de salud, antropometría, bioimpedancia y plan personalizado. El seguimiento es de $1,000 MXN. Los paquetes de acompañamiento van de $4,000 (3 meses) a $10,000 MXN (9 meses)."
+    a: "La consulta inicial es de $1,200 MXN e incluye historia de salud, antropometría, bioimpedancia y plan personalizado. El seguimiento es de $1,000 MXN. Los paquetes de acompañamiento van de $4,000 (3 meses) a $10,000 MXN (9 meses).",
     cta: { label: "Ver disponibilidad y agendar", msg: "faqPrecio" },
   },
   {
     q: "¿Qué incluye la primera consulta de nutrición?",
-    a: "Historia clínica completa, revisión de hábitos y antecedentes, mediciones antropométricas, análisis de composición corporal con bioimpedancia de 8 electrodos y tu plan de alimentación personalizado en la app Avena Health. Dura alrededor de 60 minutos.",
+    a: "Historia de salud completa, revisión de hábitos y antecedentes, mediciones antropométricas, análisis de composición corporal con bioimpedancia de 8 electrodos y tu plan de alimentación personalizado en la app Avena Health. Dura alrededor de 60 minutos.",
     cta: { label: "Agendar mi primera consulta", msg: "faqPrimeraConsulta" },
   },
   {
@@ -53,7 +53,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "¿Cómo agendo mi consulta?",
-    a: "Escríbeme por WhatsApp al +52 984 279 9652 y te comparto horarios disponibles para consulta presencial en Playa del Carmen o en línea. También puedes llamar a la clínica al 984 367 7627.",
+    a: "Escríbeme por WhatsApp al +52 984 279 9652 y te comparto horarios disponibles para consulta presencial en Playa del Carmen o en línea. También puedes llamar al consultorio al 984 367 7627.",
     cta: { label: "Agendar por WhatsApp", msg: "faqAgenda" },
   },
 ];

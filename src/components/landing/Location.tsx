@@ -40,7 +40,7 @@ export function Location() {
                   <Phone className="h-5 w-5" />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-sm text-muted-foreground">Teléfono de la clínica</p>
+                  <p className="text-sm text-muted-foreground">Teléfono del consultorio</p>
                   <a
                     href={`tel:+52${PHONE_CLINIC.replace(/\s/g, "")}`}
                     className="font-display text-lg text-olive hover:text-sage"

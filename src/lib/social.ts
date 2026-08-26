@@ -4,7 +4,7 @@
 export const SOCIAL = {
   nutrilogas: {
     facebook: "https://www.facebook.com/share/19acVYT2HV/",
-    label: "Susana Wignall · Nutrióloga",
+    label: "Susana Wignall · Nutrióloga y chef",
   },
   maizSal: {
     instagram: "https://www.instagram.com/best_bio_pdc",
