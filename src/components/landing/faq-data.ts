@@ -21,12 +21,12 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "¿Atiendes en línea si no vivo en Playa del Carmen?",
-    a: "Sí. La consulta en línea es por videollamada y funciona igual que la presencial: historia clínica completa, plan personalizado en la app Avena Health y seguimiento por WhatsApp. Para las mediciones te guío paso a paso.",
+    a: "Sí. La consulta en línea es por videollamada y funciona igual que la presencial: historia de salud completa, plan personalizado en la app Avena Health y seguimiento por WhatsApp. Para las mediciones te guío paso a paso.",
     cta: { label: "Agendar consulta en línea", msg: "enLinea" },
   },
   {
     q: "¿Cuánto cuesta la consulta con nutrióloga en Playa del Carmen?",
-    a: "La consulta inicial es de $1,200 MXN e incluye historia clínica, antropometría, bioimpedancia y plan personalizado. El seguimiento es de $1,000 MXN. Los paquetes de acompañamiento van de $4,000 (3 meses) a $10,000 MXN (9 meses).",
+    a: "La consulta inicial es de $1,200 MXN e incluye historia de salud, antropometría, bioimpedancia y plan personalizado. El seguimiento es de $1,000 MXN. Los paquetes de acompañamiento van de $4,000 (3 meses) a $10,000 MXN (9 meses)."
     cta: { label: "Ver disponibilidad y agendar", msg: "faqPrecio" },
   },
   {

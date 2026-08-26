@@ -64,7 +64,7 @@ export function Services() {
               $1,200 <span className="text-base">MXN</span>
             </p>
             <p className="mt-3 max-w-sm text-sm leading-[1.9] text-cream/75">
-              Historia clínica completa, antropometría y bioimpedancia de 8 electrodos,
+              Historia de salud completa, antropometría y bioimpedancia de 8 electrodos,
               más tu plan nutricional personalizado.
             </p>
           </div>

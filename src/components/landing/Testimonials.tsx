@@ -1,7 +1,7 @@
 const STEPS = [
   {
     title: "Primera consulta",
-    desc: "Historia clínica completa: antecedentes, digestión, energía, sueño, actividad física y relación con la comida. Medición antropométrica y bioimpedancia de 8 electrodos.",
+    desc: "Historia de salud completa: antecedentes, digestión, energía, sueño, actividad física y relación con la comida. Medición antropométrica y bioimpedancia de 8 electrodos.",
   },
   {
     title: "Tu plan",

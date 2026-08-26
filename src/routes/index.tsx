@@ -24,15 +24,15 @@ import { SOCIAL, businessSameAs } from "@/lib/social";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Susana Wignall, nutrióloga en Playa del Carmen y en línea" },
+      { title: "Susana Wignall, nutrióloga y chef en Playa del Carmen y en línea" },
       {
         name: "description",
         content:
-          "Agenda tu consulta con Susana Wignall: planes de recomposición corporal, salud digestiva y hábitos sostenibles, presencial en Playa del Carmen o en línea.",
+          "Agenda tu consulta con Susana Wignall, nutrióloga y chef: planes de recomposición corporal, salud digestiva y hábitos sostenibles, presencial en Playa del Carmen o en línea.",
       },
       {
         property: "og:title",
-        content: "Susana Wignall, nutrióloga en Playa del Carmen y en línea",
+        content: "Susana Wignall, nutrióloga y chef en Playa del Carmen y en línea",
       },
       {
         property: "og:description",
@@ -132,7 +132,7 @@ export const Route = createFileRoute("/")({
                   "@type": "Service",
                   name: "Consulta nutricional inicial",
                   description:
-                    "Evaluación completa con historia clínica, antropometría y bioimpedancia, presencial en Playa del Carmen o en línea.",
+                    "Evaluación completa con historia de salud, antropometría y bioimpedancia, presencial en Playa del Carmen o en línea.",
                   serviceType: "Consulta de nutrición",
                   provider: { "@id": "https://susanawignall.com/#negocio" },
                   areaServed: [
@@ -222,9 +222,9 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           "@id": "https://susanawignall.com/#susana",
           name: "Susana Wignall",
-          jobTitle: "Nutrióloga",
+          jobTitle: "Nutrióloga y chef",
           description:
-            "Nutrióloga clínica en Playa del Carmen y en línea, especializada en recomposición corporal y salud digestiva.",
+            "Nutrióloga y chef en Playa del Carmen y en línea, especializada en recomposición corporal y salud digestiva.",
           url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           worksFor: { "@id": "https://susanawignall.com/#negocio" },
@@ -243,7 +243,7 @@ export const Route = createFileRoute("/")({
             identifier: "156228944",
           },
           knowsAbout: [
-            "Nutrición clínica",
+            "Cocina saludable",
             "Recomposición corporal",
             "Salud digestiva",
             "Microbiota intestinal",

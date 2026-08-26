@@ -80,15 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nutrióloga Susana Wignall · Nutrición clínica" },
+      { title: "Nutrióloga y chef Susana Wignall · Playa del Carmen y en línea" },
       {
         name: "description",
         content:
-          "Nutrióloga Susana Wignall: consulta de nutrición clínica, talleres y seguimiento profesional en Playa del Carmen y en línea. Cédula 156228944.",
+          "Susana Wignall, nutrióloga y chef en Playa del Carmen y en línea. Acompañamiento personalizado en recomposición corporal, salud digestiva y hábitos sostenibles. Cédula 156228944.",
       },
       { name: "author", content: "Susana Wignall, Nutrióloga" },
       { property: "og:site_name", content: "Nutrióloga Susana Wignall" },
-      { property: "og:title", content: "Nutrióloga Susana Wignall · Nutrición clínica" },
+      { property: "og:title", content: "Nutrióloga y chef Susana Wignall · Playa del Carmen y en línea" },
       {
         property: "og:description",
         content:
