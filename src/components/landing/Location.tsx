@@ -1,11 +1,9 @@
 import { MapPin, Phone, ExternalLink } from "lucide-react";
 import { PHONE_CLINIC } from "@/lib/whatsapp";
 
-const ADDRESS_QUERY = encodeURIComponent(
-  "Humana Works Center, Av. Paseo Central, Playa del Carmen, Quintana Roo 77723",
-);
-const MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${ADDRESS_QUERY}`;
-const EMBED_URL = `https://www.google.com/maps?q=${ADDRESS_QUERY}&output=embed`;
+const MAPS_URL = "https://maps.app.goo.gl/zGHMo1Fk4cwcMbUJ6";
+const EMBED_URL =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15000!2d-87.0813174!3d20.6461296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e430033b9dfa5%3A0x1fe54cbff17fb929!2sNutri%C3%B2loga%20Susana%20Wignall!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx";
 
 export function Location() {
   return (
@@ -28,9 +26,8 @@ export function Location() {
                 <div className="min-w-0">
                   <p className="font-display text-lg text-olive">Hea’n Clinic</p>
                   <p className="mt-1 text-sm text-foreground/75 leading-relaxed">
-                    Av. Paseo Central, Humana Works Center, Col. Fracc. La Gran Plaza,
-                    Riviera 2, interior edificio, entre Av. Chemuyil y calle Xpu-Ha,
-                    C.P. 77723, Playa del Carmen, Quintana Roo, México.
+                    Humana Work Center, Av. Paseo Central esq. Av. Chemuyil,
+                    Col. El Pedregal, C.P. 77712, Playa del Carmen, Quintana Roo, México.
                   </p>
                 </div>
               </div>

@@ -10,10 +10,10 @@ const businessName = "Nutrióloga Susana Wignall";
 const businessImage =
   "https://susanawignall.com/__l5e/assets-v1/0f8ba910-0670-4533-92d6-c9bf93294a53/about-susana.webp";
 const address = {
-  street: "Av. Paseo Central, Humana Works Center, Fracc. La Gran Plaza, Riviera 2",
+  street: "Humana Work Center, Av. Paseo Central esq. Av. Chemuyil, Col. El Pedregal",
   locality: "Playa del Carmen",
   region: "Quintana Roo",
-  postalCode: "77723",
+  postalCode: "77712",
   country: "MX",
 };
 
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
       {
         property: "og:description",
         content:
-          "Acompañamiento nutricional personalizado en Playa del Carmen y en línea. Primera consulta sin costo en agosto.",
+          "Acompañamiento nutricional personalizado en Playa del Carmen y en línea. Consulta informativa en línea gratis.",
       },
       { property: "og:url", content: pageUrl },
     ],
@@ -93,8 +93,8 @@ export const Route = createFileRoute("/nutriologa-playa-del-carmen")({
           },
           geo: {
             "@type": "GeoCoordinates",
-            latitude: 20.6296,
-            longitude: -87.0739,
+            latitude: 20.6461296,
+            longitude: -87.0813174,
           },
           openingHoursSpecification: [
             {
@@ -254,7 +254,7 @@ function LocalNutritionPage() {
                   Agendar mi consulta
                 </a>
                 <span className="text-sm text-muted-foreground">
-                  🎁 Agosto: primera consulta sin costo · Solo 10 lugares
+                  🎁 Consulta informativa en línea gratis · Solo 10 lugares
                 </span>
               </div>
             </div>
@@ -353,7 +353,7 @@ function LocalNutritionPage() {
               <div className="overflow-hidden rounded-2xl border border-border shadow-sm">
                 <iframe
                   title="Ubicación de consulta en Playa del Carmen"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15000!2d-87.0739!3d20.6296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e4339d19b1557%3A0x8f0f1c0b5c0b5c0b!2sPlaya%20del%20Carmen%2C%20Quintana%20Roo!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15000!2d-87.0813174!3d20.6461296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f4e430033b9dfa5%3A0x1fe54cbff17fb929!2sNutri%C3%B2loga%20Susana%20Wignall!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
                   width="100%"
                   height="360"
                   style={{ border: 0 }}
@@ -397,8 +397,8 @@ function LocalNutritionPage() {
               Empieza tu acompañamiento nutricional
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base/relaxed opacity-90">
-              Reserva tu primera consulta en Playa del Carmen o en línea.
-              En agosto es sin costo para las primeras 10 personas.
+              Reserva tu consulta informativa en línea.
+              Es gratis y está disponible para las primeras 10 personas.
             </p>
             <div className="mt-8">
               <a

@@ -8,6 +8,15 @@ export const Route = createFileRoute("/_authenticated/crm")({
   head: () => ({
     meta: [
       { title: "CRM interno de Susana Wignall" },
+      {
+        name: "description",
+        content: "CRM interno de Susana Wignall. Acceso privado para el equipo del consultorio.",
+      },
+      { property: "og:title", content: "CRM interno de Susana Wignall" },
+      {
+        property: "og:description",
+        content: "CRM interno de Susana Wignall. Acceso privado para el equipo del consultorio.",
+      },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -34,7 +43,7 @@ function CrmLayout() {
             <div>
               <div className="font-display text-base leading-tight">CRM Clínico</div>
               <div className="text-xs text-muted-foreground leading-tight">
-                LN Susana Wignall · Céd. 156228944
+                Susana Wignall · Céd. 156228944
               </div>
             </div>
           </Link>

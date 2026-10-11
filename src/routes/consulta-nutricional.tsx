@@ -128,7 +128,7 @@ function ConsultaNutricionalPage() {
       eyebrow="Consulta nutricional"
       h1="Consulta nutricional en Playa del Carmen y en línea"
       intro="Una valoración completa y un plan de alimentación hecho a tu medida, con seguimiento real. Presencial en Playa del Carmen o por videollamada desde cualquier parte de México."
-      badge="🎁 Agosto: primera consulta sin costo · Solo 10 lugares"
+      badge="🎁 Consulta informativa en línea gratis · Solo 10 lugares"
       ctaLabel="Agendar mi consulta"
       ctaMessage={WA_MSG.consultaNutricional}
       eventId="whatsapp_click_consulta"

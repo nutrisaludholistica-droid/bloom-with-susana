@@ -19,7 +19,12 @@ export const Route = createFileRoute("/auth")({
       { title: "Acceso al CRM clínico de Susana Wignall" },
       {
         name: "description",
-        content: "Acceso privado al CRM clínico de LN Susana Wignall. Uso exclusivo del consultorio.",
+        content: "Acceso privado al CRM clínico de Susana Wignall. Uso exclusivo del consultorio.",
+      },
+      { property: "og:title", content: "Acceso al CRM clínico de Susana Wignall" },
+      {
+        property: "og:description",
+        content: "Acceso privado al CRM clínico de Susana Wignall. Uso exclusivo del consultorio.",
       },
       { name: "robots", content: "noindex, nofollow" },
     ],
@@ -75,7 +80,7 @@ function AuthPage() {
           </div>
           <CardTitle className="font-display text-2xl">CRM Clínico</CardTitle>
           <CardDescription>
-            Acceso privado para LN Susana Wignall
+            Acceso privado para Susana Wignall
           </CardDescription>
         </CardHeader>
         <CardContent>
