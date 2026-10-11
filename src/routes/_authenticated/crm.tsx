@@ -43,7 +43,7 @@ function CrmLayout() {
             <div>
               <div className="font-display text-base leading-tight">CRM Clínico</div>
               <div className="text-xs text-muted-foreground leading-tight">
-                LN Susana Wignall · Céd. 156228944
+                Susana Wignall · Céd. 156228944
               </div>
             </div>
           </Link>

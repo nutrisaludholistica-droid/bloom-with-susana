@@ -80,7 +80,7 @@ function AuthPage() {
           </div>
           <CardTitle className="font-display text-2xl">CRM Clínico</CardTitle>
           <CardDescription>
-            Acceso privado para LN Susana Wignall
+            Acceso privado para Susana Wignall
           </CardDescription>
         </CardHeader>
         <CardContent>
