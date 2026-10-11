@@ -7,7 +7,7 @@ export const PHONE_WHATSAPP = "+52 984 279 9652";
 
 export const WA_MSG = {
   promoGratis:
-    "Hola Susana, vi la promo de agosto y quiero agendar mi consulta gratis 🎉. ¿Cuáles son los horarios disponibles?",
+    "Hola Susana, vi la promo y quiero agendar mi consulta informativa en línea gratis 🎉. ¿Cuáles son los horarios disponibles?",
   hero:
     "Hola Susana, vengo de tu sitio web y quiero agendar mi consulta de nutrición. ¿Me cuentas cómo funciona?",
   howitworks:
@@ -23,7 +23,7 @@ export const WA_MSG = {
   faq:
     "Hola Susana, tengo una duda que no encontré en las preguntas frecuentes:",
   finalCta:
-    "Hola Susana, quiero reservar mi consulta gratis de agosto. ¿Qué necesito para agendar?",
+    "Hola Susana, quiero reservar mi consulta informativa en línea gratis. ¿Qué necesito para agendar?",
   float:
     "Hola Susana, me gustaría más información para agendar una consulta.",
   footer:

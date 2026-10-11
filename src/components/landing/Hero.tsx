@@ -45,8 +45,8 @@ export function Hero() {
 
           <div className="mt-10 grid gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:grid-cols-3">
             <p>
-              <span className="block text-olive">Agosto</span>
-              Primera consulta sin costo · 10 lugares
+              <span className="block text-olive">Octubre</span>
+              Consulta informativa en línea gratis · 10 lugares
             </p>
             <p>
               <span className="block text-olive">Céd. 156228944</span>

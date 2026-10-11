@@ -41,7 +41,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     q: "¿La consulta puede ser presencial o en línea?",
-    a: "Las dos. Presencial en Hea’n Clinic, Av. Paseo Central, Humana Works Center, Fracc. La Gran Plaza, Riviera 2, C.P. 77723, Playa del Carmen, Quintana Roo; o en línea por videollamada desde donde estés.",
+    a: "Las dos. Presencial en Hea’n Clinic, Humana Work Center, Av. Paseo Central esq. Av. Chemuyil, Col. El Pedregal, C.P. 77712, Playa del Carmen, Quintana Roo; o en línea por videollamada desde donde estés.",
   },
   {
     q: "¿Necesito experiencia previa con dietas o ejercicio?",

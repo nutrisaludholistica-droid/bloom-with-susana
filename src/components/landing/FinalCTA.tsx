@@ -20,7 +20,7 @@ export function FinalCTA() {
 
       <div className="container-prose">
         <p className="text-[0.68rem] uppercase tracking-[0.34em] text-cream/60">
-          Agosto · Primera consulta sin costo
+          Octubre · Consulta informativa en línea gratis
         </p>
         <h2 className="mt-7 max-w-3xl font-display text-3xl font-light leading-[1.15] text-cream sm:text-[3rem]">
           Empieza a reconectar con tu cuerpo desde una nutrición{" "}

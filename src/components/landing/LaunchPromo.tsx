@@ -9,12 +9,12 @@ export function LaunchPromo() {
           <div>
             <p className="eyebrow flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-amber" aria-hidden="true" />
-              Agosto 2026 · 10 lugares
+              Octubre 2026 · 10 lugares
             </p>
             <h2 className="mt-5 font-display text-2xl font-light leading-tight text-olive sm:text-[2.4rem]">
-              Primera consulta{" "}
+              Consulta informativa{" "}
               <span className="font-script text-eggplant text-[0.95em] tracking-normal">
-                sin costo
+                en línea gratis
               </span>
             </h2>
             <p className="mt-5 max-w-xl text-[0.95rem] leading-[1.9] text-foreground/70">

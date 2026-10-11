@@ -76,7 +76,7 @@ export const Route = createFileRoute("/")({
           "@type": ["MedicalBusiness", "LocalBusiness"],
           "@id": "https://susanawignall.com/#negocio",
           name: "Nutrióloga Susana Wignall",
-          alternateName: ["Susana Wignall Nutrición", "LN Susana Wignall"],
+          alternateName: ["Susana Wignall Nutrición", "Susana Wignall"],
           url: "https://susanawignall.com/",
           telephone: "+52-984-279-9652",
           image:
@@ -84,10 +84,10 @@ export const Route = createFileRoute("/")({
           address: {
             "@type": "PostalAddress",
             streetAddress:
-              "Av. Paseo Central, Humana Works Center, Fracc. La Gran Plaza, Riviera 2",
+              "Humana Work Center, Av. Paseo Central esq. Av. Chemuyil, Col. El Pedregal",
             addressLocality: "Playa del Carmen",
             addressRegion: "Quintana Roo",
-            postalCode: "77723",
+            postalCode: "77712",
             addressCountry: "MX",
           },
           areaServed: {
@@ -100,8 +100,8 @@ export const Route = createFileRoute("/")({
           },
           geo: {
             "@type": "GeoCoordinates",
-            latitude: 20.6296,
-            longitude: -87.0739,
+            latitude: 20.6461296,
+            longitude: -87.0813174,
           },
           openingHoursSpecification: [
             {

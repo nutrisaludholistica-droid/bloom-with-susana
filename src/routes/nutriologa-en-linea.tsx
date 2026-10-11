@@ -122,7 +122,7 @@ function NutriologaEnLineaPage() {
       eyebrow="Consulta en línea"
       h1="Nutrióloga en línea para todo México"
       intro="Atención nutricional por videollamada con la misma profundidad que en consultorio: valoración completa, plan personalizado y seguimiento cercano, desde donde estés."
-      badge="🎁 Agosto: primera consulta sin costo · Solo 10 lugares"
+      badge="🎁 Consulta informativa en línea gratis · Solo 10 lugares"
       ctaLabel="Agendar consulta en línea"
       ctaMessage={WA_MSG.enLinea}
       eventId="whatsapp_click_online"
