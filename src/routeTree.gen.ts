@@ -9,48 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
-import { Route as AnalisisCorporalTanitaRouteImport } from './routes/analisis-corporal-tanita'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as ConsultaNutricionalRouteImport } from './routes/consulta-nutricional'
-import { Route as NutriologaEnLineaRouteImport } from './routes/nutriologa-en-linea'
-import { Route as NutriologaPlayaDelCarmenRouteImport } from './routes/nutriologa-playa-del-carmen'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as NutriologaPlayaDelCarmenRouteImport } from './routes/nutriologa-playa-del-carmen'
+import { Route as NutriologaEnLineaRouteImport } from './routes/nutriologa-en-linea'
+import { Route as ConsultaNutricionalRouteImport } from './routes/consulta-nutricional'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AnalisisCorporalTanitaRouteImport } from './routes/analisis-corporal-tanita'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedCrmRouteImport } from './routes/_authenticated/crm'
 import { Route as AuthenticatedCrmIndexRouteImport } from './routes/_authenticated/crm.index'
-import { Route as AuthenticatedCrmAgendaRouteImport } from './routes/_authenticated/crm.agenda'
 import { Route as AuthenticatedCrmPacientesRouteImport } from './routes/_authenticated/crm.pacientes'
+import { Route as AuthenticatedCrmAgendaRouteImport } from './routes/_authenticated/crm.agenda'
 import { Route as AuthenticatedCrmPacientesPatientIdRouteImport } from './routes/_authenticated/crm.pacientes.$patientId'
 import { Route as AuthenticatedCrmPacientesPatientIdConsultaRouteImport } from './routes/_authenticated/crm.pacientes.$patientId.consulta'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
-  id: '/_authenticated',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AnalisisCorporalTanitaRoute = AnalisisCorporalTanitaRouteImport.update({
-  id: '/analisis-corporal-tanita',
-  path: '/analisis-corporal-tanita',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthRoute = AuthRouteImport.update({
-  id: '/auth',
-  path: '/auth',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConsultaNutricionalRoute = ConsultaNutricionalRouteImport.update({
-  id: '/consulta-nutricional',
-  path: '/consulta-nutricional',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NutriologaEnLineaRoute = NutriologaEnLineaRouteImport.update({
-  id: '/nutriologa-en-linea',
-  path: '/nutriologa-en-linea',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NutriologaPlayaDelCarmenRoute =
@@ -59,9 +35,33 @@ const NutriologaPlayaDelCarmenRoute =
     path: '/nutriologa-playa-del-carmen',
     getParentRoute: () => rootRouteImport,
   } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const NutriologaEnLineaRoute = NutriologaEnLineaRouteImport.update({
+  id: '/nutriologa-en-linea',
+  path: '/nutriologa-en-linea',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultaNutricionalRoute = ConsultaNutricionalRouteImport.update({
+  id: '/consulta-nutricional',
+  path: '/consulta-nutricional',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalisisCorporalTanitaRoute = AnalisisCorporalTanitaRouteImport.update({
+  id: '/analisis-corporal-tanita',
+  path: '/analisis-corporal-tanita',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthenticatedCrmRoute = AuthenticatedCrmRouteImport.update({
@@ -74,17 +74,17 @@ const AuthenticatedCrmIndexRoute = AuthenticatedCrmIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AuthenticatedCrmRoute,
 } as any)
-const AuthenticatedCrmAgendaRoute = AuthenticatedCrmAgendaRouteImport.update({
-  id: '/agenda',
-  path: '/agenda',
-  getParentRoute: () => AuthenticatedCrmRoute,
-} as any)
 const AuthenticatedCrmPacientesRoute =
   AuthenticatedCrmPacientesRouteImport.update({
     id: '/pacientes',
     path: '/pacientes',
     getParentRoute: () => AuthenticatedCrmRoute,
   } as any)
+const AuthenticatedCrmAgendaRoute = AuthenticatedCrmAgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
+  getParentRoute: () => AuthenticatedCrmRoute,
+} as any)
 const AuthenticatedCrmPacientesPatientIdRoute =
   AuthenticatedCrmPacientesPatientIdRouteImport.update({
     id: '/$patientId',
@@ -205,46 +205,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_authenticated': {
-      id: '/_authenticated'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AuthenticatedRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/analisis-corporal-tanita': {
-      id: '/analisis-corporal-tanita'
-      path: '/analisis-corporal-tanita'
-      fullPath: '/analisis-corporal-tanita'
-      preLoaderRoute: typeof AnalisisCorporalTanitaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/consulta-nutricional': {
-      id: '/consulta-nutricional'
-      path: '/consulta-nutricional'
-      fullPath: '/consulta-nutricional'
-      preLoaderRoute: typeof ConsultaNutricionalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/nutriologa-en-linea': {
-      id: '/nutriologa-en-linea'
-      path: '/nutriologa-en-linea'
-      fullPath: '/nutriologa-en-linea'
-      preLoaderRoute: typeof NutriologaEnLineaRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nutriologa-playa-del-carmen': {
@@ -254,11 +219,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NutriologaPlayaDelCarmenRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
+    '/nutriologa-en-linea': {
+      id: '/nutriologa-en-linea'
+      path: '/nutriologa-en-linea'
+      fullPath: '/nutriologa-en-linea'
+      preLoaderRoute: typeof NutriologaEnLineaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consulta-nutricional': {
+      id: '/consulta-nutricional'
+      path: '/consulta-nutricional'
+      fullPath: '/consulta-nutricional'
+      preLoaderRoute: typeof ConsultaNutricionalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analisis-corporal-tanita': {
+      id: '/analisis-corporal-tanita'
+      path: '/analisis-corporal-tanita'
+      fullPath: '/analisis-corporal-tanita'
+      preLoaderRoute: typeof AnalisisCorporalTanitaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated/crm': {
@@ -275,18 +275,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedCrmIndexRouteImport
       parentRoute: typeof AuthenticatedCrmRoute
     }
-    '/_authenticated/crm/agenda': {
-      id: '/_authenticated/crm/agenda'
-      path: '/agenda'
-      fullPath: '/crm/agenda'
-      preLoaderRoute: typeof AuthenticatedCrmAgendaRouteImport
-      parentRoute: typeof AuthenticatedCrmRoute
-    }
     '/_authenticated/crm/pacientes': {
       id: '/_authenticated/crm/pacientes'
       path: '/pacientes'
       fullPath: '/crm/pacientes'
       preLoaderRoute: typeof AuthenticatedCrmPacientesRouteImport
+      parentRoute: typeof AuthenticatedCrmRoute
+    }
+    '/_authenticated/crm/agenda': {
+      id: '/_authenticated/crm/agenda'
+      path: '/agenda'
+      fullPath: '/crm/agenda'
+      preLoaderRoute: typeof AuthenticatedCrmAgendaRouteImport
       parentRoute: typeof AuthenticatedCrmRoute
     }
     '/_authenticated/crm/pacientes/$patientId': {
