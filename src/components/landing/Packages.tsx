@@ -19,7 +19,7 @@ type Pkg = {
 
 const PACKAGES: Pkg[] = [
   {
-    name: "Básico",
+    name: "Empezar a Cuidarme",
     tagline: "3 meses",
     price: "$4,000 MXN",
     desc: "Acompañamiento inicial para comenzar con estructura, seguimiento y educación nutricional.",
