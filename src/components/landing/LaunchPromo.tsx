@@ -24,7 +24,7 @@ export function LaunchPromo() {
           </div>
 
           <div className="lg:border-l lg:border-olive/15 lg:pl-14">
-            <p className="font-display text-5xl font-extralight text-olive">10/10</p>
+            <p className="font-display text-5xl font-extralight text-olive">10/5</p>
             <p className="mt-2 text-[0.68rem] uppercase tracking-[0.2em] text-muted-foreground">
               Lugares disponibles
             </p>
@@ -38,7 +38,7 @@ export function LaunchPromo() {
               Apartar mi lugar
             </a>
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              Presencial en Playa del Carmen o en línea · Sin costo
+              en línea · Sin costo
             </p>
           </div>
         </div>
