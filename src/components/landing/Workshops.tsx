@@ -1,4 +1,4 @@
-import workshopsImg from "@/assets/workshops.webp";
+import workshopsImg from "@/assets/mercado.jpg";
 import { WHATSAPP_URL } from "@/lib/whatsapp";
 import { trackWaClick } from "@/lib/analytics";
 
@@ -16,9 +16,9 @@ export function Workshops() {
         <div className="order-2 lg:order-1">
           <img
             src={workshopsImg}
-            alt="Cocina saludable en casa con vegetales frescos y fermentos"
-            width={900}
-            height={900}
+            alt="Productos frescos de mercado: maíz, ajo, frijoles y hierbas"
+            width={1792}
+            height={2400}
             loading="lazy"
             className="aspect-square w-full object-cover"
           />
