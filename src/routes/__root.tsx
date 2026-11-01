@@ -114,6 +114,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
 
     scripts: [
+      // Google Analytics (gtag.js), snippet oficial en el <head> de todas las páginas.
+      {
+        async: true,
+        src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
+      },
+      {
+        children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.__gaHead=true;gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`,
+      },
       {
 
         type: "application/ld+json",

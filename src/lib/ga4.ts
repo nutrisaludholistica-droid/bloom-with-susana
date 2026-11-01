@@ -12,6 +12,8 @@ export function initGA4(): void {
   if (typeof window === "undefined") return;
   if (initialized || !GA_MEASUREMENT_ID) return;
   initialized = true;
+  // El snippet oficial del <head> ya cargó y configuró gtag.
+  if ((window as unknown as { __gaHead?: boolean }).__gaHead) return;
 
   window.dataLayer = window.dataLayer || [];
   if (typeof window.gtag !== "function") {
