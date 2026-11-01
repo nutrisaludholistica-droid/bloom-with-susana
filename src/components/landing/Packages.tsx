@@ -51,7 +51,7 @@ const PACKAGES: Pkg[] = [
     includes: [
       "Todo lo del paquete Básico",
       "1 visita al supermercado para revisar opciones de compra",
-      "2 clases de cocina saludable a domicilio",
+      "2 clases de cocina saludable a domicilio (solo Playa del Carmen)",
       "Plan personalizado",
       "Seguimiento por WhatsApp",
       "App Avena Health",
@@ -75,7 +75,7 @@ const PACKAGES: Pkg[] = [
     includes: [
       "Todo lo del paquete Transformación",
       "2 visitas al supermercado",
-      "4 clases de cocina saludable a domicilio",
+      "4 clases de cocina saludable a domicilio (Solo Playa del Carmen)",
       "Plan personalizado",
       "Seguimiento por WhatsApp",
       "App Avena Health",

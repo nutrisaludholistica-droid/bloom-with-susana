@@ -9,7 +9,7 @@ export function LaunchPromo() {
           <div>
             <p className="eyebrow flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-amber" aria-hidden="true" />
-              Octubre 2026 · 10 lugares
+              NOVIEMBR2026 · 10 LUGARES
             </p>
             <h2 className="mt-5 font-display text-2xl font-light leading-tight text-olive sm:text-[2.4rem]">
               Consulta informativa{" "}
