@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { initGA4, trackPageView } from "../lib/ga4";
+import { GA_MEASUREMENT_ID, initGA4, trackPageView } from "../lib/ga4";
 import { initClarity } from "../lib/clarity";
 
 function NotFoundComponent() {
@@ -114,6 +114,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
 
     scripts: [
+      // Google Analytics (gtag.js), snippet oficial en el <head> de todas las páginas.
+      {
+        async: true,
+        src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
+      },
+      {
+        children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.__gaHead=true;gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`,
+      },
       {
 
         type: "application/ld+json",
