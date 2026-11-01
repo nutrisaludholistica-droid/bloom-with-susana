@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { initGA4, trackPageView } from "../lib/ga4";
+import { GA_MEASUREMENT_ID, initGA4, trackPageView } from "../lib/ga4";
 import { initClarity } from "../lib/clarity";
 
 function NotFoundComponent() {
