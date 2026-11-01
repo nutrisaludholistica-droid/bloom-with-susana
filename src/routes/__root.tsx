@@ -6,12 +6,14 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { initGA4, trackPageView } from "../lib/ga4";
+import { initClarity } from "../lib/clarity";
 
 function NotFoundComponent() {
   return (
@@ -36,7 +38,7 @@ function NotFoundComponent() {
 }
 
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -156,6 +158,7 @@ function GoogleAnalytics() {
 
   useEffect(() => {
     let cancelled = false;
+    const clarityTimer = window.setTimeout(() => initClarity(), 3000);
     const start = () => {
       if (cancelled) return;
       initGA4();
@@ -173,6 +176,7 @@ function GoogleAnalytics() {
     });
     return () => {
       cancelled = true;
+      window.clearTimeout(clarityTimer);
       window.removeEventListener("pointerdown", startOnInteraction);
       window.removeEventListener("keydown", startOnInteraction);
       unsubscribe();
